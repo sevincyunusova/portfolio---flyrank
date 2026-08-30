@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const skills = [
   "HTML",
@@ -79,21 +79,13 @@ export default function Home() {
 
   const dark = darkMode
 
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth"
-
-    return () => {
-      document.documentElement.style.scrollBehavior = ""
-    }
-  }, [])
-
   const closeMenu = () => {
     setMenuOpen(false)
   }
 
   return (
     <main
-      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
+      className={`min-h-screen overflow-x-hidden scroll-smooth transition-colors duration-700 ease-in-out ${dark
           ? "bg-[#090718] text-white"
           : "bg-[#fffaf5] text-[#211b35]"
         }`}
@@ -111,15 +103,13 @@ export default function Home() {
             onClick={closeMenu}
             className="group text-xl font-black tracking-tight"
           >
-            <span className={dark ? "text-white" : "text-[#211b35]"}>
-              SY
-            </span>
-            <span className="text-[#a855f7] transition duration-300 group-hover:text-[#06b6d4]">
+            <span className={dark ? "text-white" : "text-[#211b35]"}>SY</span>
+            <span className="text-[#a855f7] transition group-hover:text-[#06b6d4]">
               .
             </span>
           </a>
 
-          {/* Desktop navigation */}
+          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-sm md:flex">
             {navItems.map((item) => (
               <a
@@ -138,7 +128,7 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Theme button */}
+            {/* Theme */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               aria-label="Toggle dark mode"
@@ -168,7 +158,8 @@ export default function Home() {
             >
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
+                  } ${menuOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
               />
 
               <span
@@ -178,13 +169,14 @@ export default function Home() {
 
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""
+                  }`}
               />
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         <div
           className={`overflow-hidden border-t transition-all duration-500 ease-in-out md:hidden ${menuOpen
               ? "max-h-[400px] opacity-100"
@@ -219,83 +211,53 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* NAVBAR OFFSET */}
+      <div className="h-[73px]" />
+
       {/* HERO */}
       <section
         id="home"
-        className="relative mx-auto flex min-h-screen max-w-6xl items-center overflow-hidden px-6 pb-24 pt-32"
+        className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl items-center overflow-hidden px-6 py-24"
       >
-        {/* Animated grid */}
+        {/* Grid */}
         <div
-          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-40" : "opacity-60"
+          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
             }`}
           style={{
             backgroundImage: dark
-              ? "linear-gradient(rgba(139,92,246,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.09) 1px, transparent 1px)"
-              : "linear-gradient(rgba(124,58,237,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.07) 1px, transparent 1px)",
+              ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
+              : "linear-gradient(rgba(124,58,237,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.06) 1px, transparent 1px)",
             backgroundSize: "45px 45px",
             maskImage:
               "radial-gradient(circle at center, black 0%, transparent 75%)",
           }}
         />
 
-        {/* Hero gradient atmosphere */}
+        {/* Glow */}
         <div
-          className={`pointer-events-none absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px] transition-all duration-1000 ${dark
-              ? "bg-[#7c3aed]/15"
-              : "bg-[#c084fc]/20"
-            }`}
-        />
-
-        {/* Purple glow */}
-        <div
-          className={`pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] animate-pulse rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#7c3aed]/25"
-              : "bg-[#c084fc]/25"
-            }`}
-        />
-
-        {/* Cyan glow */}
-        <div
-          className={`pointer-events-none absolute -right-40 top-1/4 h-[450px] w-[450px] animate-pulse rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#06b6d4]/15"
-              : "bg-[#67e8f9]/25"
-            }`}
-          style={{ animationDelay: "1s" }}
-        />
-
-        {/* Decorative ring */}
-        <div
-          className={`pointer-events-none absolute right-[8%] top-[15%] hidden h-44 w-44 rounded-full border md:block ${dark
-              ? "border-[#8b5cf6]/20"
-              : "border-[#a855f7]/20"
+          className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#7c3aed]/20" : "bg-[#c084fc]/25"
             }`}
         />
 
         <div
-          className={`pointer-events-none absolute right-[11%] top-[19%] hidden h-32 w-32 rounded-full border md:block ${dark
-              ? "border-[#06b6d4]/20"
-              : "border-[#0891b2]/20"
+          className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/20"
             }`}
         />
 
-        {/* Floating dots */}
+        {/* Floating visual elements */}
         <div
-          className={`pointer-events-none absolute right-[16%] top-[22%] hidden h-3 w-3 animate-ping rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
+          className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
             }`}
         />
 
         <div
-          className={`pointer-events-none absolute left-[12%] bottom-[22%] hidden h-2 w-2 animate-pulse rounded-full md:block ${dark ? "bg-[#c084fc]" : "bg-[#8b5cf6]"
+          className={`pointer-events-none absolute bottom-[20%] right-[28%] hidden h-2 w-2 animate-ping rounded-full md:block ${dark ? "bg-[#a78bfa]" : "bg-[#7c3aed]"
             }`}
         />
-
-        {/* Decorative line */}
-        <div className="pointer-events-none absolute right-[8%] top-[42%] hidden h-px w-28 rotate-45 bg-gradient-to-r from-transparent via-[#8b5cf6]/40 to-transparent md:block" />
 
         <div className="relative z-10 max-w-4xl">
-          {/* Availability */}
           <div
-            className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] ${dark
+            className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
                 ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
                 : "border-[#a855f7]/25 bg-[#f3e8ff]"
               }`}
@@ -317,19 +279,15 @@ export default function Home() {
             Frontend Developer
           </p>
 
-          {/* Hero title */}
           <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Hi, I&apos;m{" "}
             <span
-              className={`relative inline-block bg-clip-text text-transparent transition-all duration-700 ${dark
+              className={`bg-clip-text text-transparent transition-all duration-700 ${dark
                   ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
                   : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
                 }`}
             >
               Sevincxanim Yunusova.
-              <span
-                className={`absolute -bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-transform duration-700 hover:scale-x-100`}
-              />
             </span>
           </h1>
 
@@ -338,16 +296,15 @@ export default function Home() {
               }`}
           >
             I&apos;m a frontend developer and Information Technologies
-            student focused on building modern, responsive web
-            applications. I&apos;m also exploring frontend AI engineering
-            and creating practical AI-powered experiences.
+            student focused on building modern, responsive web applications.
+            I&apos;m also exploring frontend AI engineering and creating
+            practical AI-powered experiences.
           </p>
 
-          {/* Buttons */}
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/30"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
             >
               <span className="relative z-10">
                 Explore My Work →
@@ -358,7 +315,7 @@ export default function Home() {
 
             <a
               href="#contact"
-              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] ${dark
+              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
                   ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
                   : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
                 }`}
@@ -367,7 +324,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Social links */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
             <a
               href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
@@ -469,7 +425,7 @@ export default function Home() {
             {skills.map((skill, index) => (
               <div
                 key={skill}
-                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${dark
+                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 ${dark
                     ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-[#8b5cf6]/10 hover:shadow-lg hover:shadow-purple-950/30"
                     : "border-[#e5d8ee] bg-white hover:border-[#a855f7]/50 hover:bg-[#faf5ff] hover:shadow-lg hover:shadow-purple-200/40"
                   }`}
@@ -525,7 +481,7 @@ export default function Home() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.01] ${dark
+              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 ${dark
                   ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
                   : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
                 }`}
@@ -616,7 +572,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
+      {/* EXPERIENCE - UPDATED TIMELINE */}
       <section
         id="experience"
         className={`border-y transition-colors duration-700 ${dark
@@ -625,111 +581,231 @@ export default function Home() {
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
-            Experience
-          </p>
+          <div className="mb-14">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+              Experience
+            </p>
 
-          <h2 className="mt-4 text-4xl font-black sm:text-5xl">
-            My current journey.
-          </h2>
+            <h2 className="mt-4 text-4xl font-black sm:text-5xl">
+              My current journey.
+            </h2>
 
-          <div className="mt-12 space-y-5">
-            <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-lg"
+            <p
+              className={`mt-5 max-w-2xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                 }`}
             >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
-                <div>
-                  <h3 className="text-2xl font-black">FlyRank</h3>
+              A timeline of my professional experience and academic
+              development as a frontend developer.
+            </p>
+          </div>
 
-                  <p className="mt-2 font-medium text-[#a855f7]">
-                    Frontend AI Engineering Intern
-                  </p>
-                </div>
-
-                <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
-                    }`}
-                >
-                  Internship
-                </span>
-              </div>
-
-              <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                  }`}
-              >
-                Working on frontend development, AI-powered features,
-                modern web technologies, and practical AI engineering tasks.
-              </p>
-            </div>
-
+          <div className="relative">
+            {/* Timeline line */}
             <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-lg"
+              className={`absolute bottom-0 left-[15px] top-0 w-px md:left-6 ${dark
+                  ? "bg-gradient-to-b from-[#8b5cf6] via-[#06b6d4] to-transparent"
+                  : "bg-gradient-to-b from-[#8b5cf6] via-[#06b6d4] to-transparent"
                 }`}
-            >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
-                <div>
-                  <h3 className="text-2xl font-black">CodeAlpha</h3>
+            />
 
-                  <p className="mt-2 font-medium text-[#0891b2]">
-                    Frontend Development Intern
-                  </p>
+            <div className="space-y-10">
+              {/* FlyRank */}
+              <div className="group relative pl-12 md:pl-16">
+                <div className="absolute left-0 top-8 flex h-8 w-8 items-center justify-center rounded-full border-4 border-[#100d25] bg-gradient-to-br from-[#8b5cf6] to-[#06b6d4] shadow-lg shadow-purple-500/30 transition-transform duration-300 group-hover:scale-125 md:h-12 md:w-12 md:border-[6px]">
+                  <span className="h-2 w-2 rounded-full bg-white md:h-2.5 md:w-2.5" />
                 </div>
 
-                <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
+                <div
+                  className={`relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 md:p-9 ${dark
+                      ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-purple-950/30"
+                      : "border-[#e5dce2] bg-white hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
                     }`}
                 >
-                  Internship
-                </span>
+                  <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8b5cf6]">
+                        01
+                      </span>
+
+                      <h3 className="mt-3 text-2xl font-black md:text-3xl">
+                        FlyRank
+                      </h3>
+
+                      <p className="mt-2 font-semibold text-[#a855f7]">
+                        Frontend AI Engineering Intern
+                      </p>
+                    </div>
+
+                    <span
+                      className={`w-fit rounded-full border px-4 py-2 text-xs font-semibold ${dark
+                          ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                          : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+                        }`}
+                    >
+                      Internship
+                    </span>
+                  </div>
+
+                  <p
+                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/50" : "text-[#6d6572]"
+                      }`}
+                  >
+                    Working on frontend development, AI-powered features,
+                    modern web technologies, and practical AI engineering
+                    tasks.
+                  </p>
+
+                  <div className="relative mt-7 flex flex-wrap gap-2">
+                    {["Frontend", "AI", "Next.js", "TypeScript"].map(
+                      (item) => (
+                        <span
+                          key={item}
+                          className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
+                              ? "bg-white/5 text-white/50"
+                              : "bg-[#f8f1ff] text-[#766d80]"
+                            }`}
+                        >
+                          {item}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
               </div>
 
-              <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                  }`}
-              >
-                Developing frontend projects and strengthening practical
-                skills in modern web development.
-              </p>
-            </div>
-
-            <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/60 hover:shadow-lg"
-                }`}
-            >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
-                <div>
-                  <h3 className="text-2xl font-black">
-                    Azerbaijan State Oil and Industry University
-                  </h3>
-
-                  <p className="mt-2 font-medium text-[#c026d3]">
-                    Information Technologies
-                  </p>
+              {/* CodeAlpha */}
+              <div className="group relative pl-12 md:pl-16">
+                <div className="absolute left-0 top-8 flex h-8 w-8 items-center justify-center rounded-full border-4 border-[#100d25] bg-gradient-to-br from-[#06b6d4] to-[#8b5cf6] shadow-lg shadow-cyan-500/20 transition-transform duration-300 group-hover:scale-125 md:h-12 md:w-12 md:border-[6px]">
+                  <span className="h-2 w-2 rounded-full bg-white md:h-2.5 md:w-2.5" />
                 </div>
 
-                <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
+                <div
+                  className={`relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 md:p-9 ${dark
+                      ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-cyan-950/20"
+                      : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/50 hover:shadow-2xl hover:shadow-cyan-100"
                     }`}
                 >
-                  Bachelor&apos;s
-                </span>
+                  <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#06b6d4]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#06b6d4]">
+                        02
+                      </span>
+
+                      <h3 className="mt-3 text-2xl font-black md:text-3xl">
+                        CodeAlpha
+                      </h3>
+
+                      <p className="mt-2 font-semibold text-[#0891b2]">
+                        Frontend Development Intern
+                      </p>
+                    </div>
+
+                    <span
+                      className={`w-fit rounded-full border px-4 py-2 text-xs font-semibold ${dark
+                          ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                          : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
+                        }`}
+                    >
+                      Internship
+                    </span>
+                  </div>
+
+                  <p
+                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/50" : "text-[#6d6572]"
+                      }`}
+                  >
+                    Developing frontend projects and strengthening practical
+                    skills in modern web development, responsive design, and
+                    interactive interfaces.
+                  </p>
+
+                  <div className="relative mt-7 flex flex-wrap gap-2">
+                    {["HTML", "CSS", "JavaScript", "Frontend"].map(
+                      (item) => (
+                        <span
+                          key={item}
+                          className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
+                              ? "bg-white/5 text-white/50"
+                              : "bg-[#f8f1ff] text-[#766d80]"
+                            }`}
+                        >
+                          {item}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
               </div>
 
-              <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                  }`}
-              >
-                Studying Information Technologies and building a strong
-                foundation in software and web technologies.
-              </p>
+              {/* University */}
+              <div className="group relative pl-12 md:pl-16">
+                <div className="absolute left-0 top-8 flex h-8 w-8 items-center justify-center rounded-full border-4 border-[#100d25] bg-gradient-to-br from-[#f0abfc] to-[#8b5cf6] shadow-lg shadow-fuchsia-500/20 transition-transform duration-300 group-hover:scale-125 md:h-12 md:w-12 md:border-[6px]">
+                  <span className="h-2 w-2 rounded-full bg-white md:h-2.5 md:w-2.5" />
+                </div>
+
+                <div
+                  className={`relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 md:p-9 ${dark
+                      ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-fuchsia-950/20"
+                      : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/60 hover:shadow-2xl hover:shadow-fuchsia-100"
+                    }`}
+                >
+                  <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#f0abfc]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d946ef]">
+                        03
+                      </span>
+
+                      <h3 className="mt-3 max-w-2xl text-2xl font-black md:text-3xl">
+                        Azerbaijan State Oil and Industry University
+                      </h3>
+
+                      <p className="mt-2 font-semibold text-[#c026d3]">
+                        Information Technologies
+                      </p>
+                    </div>
+
+                    <span
+                      className={`w-fit rounded-full border px-4 py-2 text-xs font-semibold ${dark
+                          ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
+                          : "border-[#f0abfc]/30 bg-[#fdf4ff] text-[#c026d3]"
+                        }`}
+                    >
+                      Bachelor&apos;s
+                    </span>
+                  </div>
+
+                  <p
+                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/50" : "text-[#6d6572]"
+                      }`}
+                  >
+                    Studying Information Technologies and building a strong
+                    foundation in software engineering, web development, and
+                    modern technology.
+                  </p>
+
+                  <div className="relative mt-7 flex flex-wrap gap-2">
+                    {["Information Technology", "Software", "Web Development"].map(
+                      (item) => (
+                        <span
+                          key={item}
+                          className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
+                              ? "bg-white/5 text-white/50"
+                              : "bg-[#f8f1ff] text-[#766d80]"
+                            }`}
+                        >
+                          {item}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
