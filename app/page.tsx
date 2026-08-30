@@ -734,8 +734,8 @@ export default function Home() {
       <section
         id="skills"
         className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
-            ? "border-white/10 bg-[#100d25]"
-            : "border-[#e8ddd2] bg-[#f8f1ff]"
+          ? "border-white/10 bg-[#100d25]"
+          : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
@@ -767,8 +767,8 @@ export default function Home() {
             {/* FRONTEND */}
             <div
               className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-xl hover:shadow-purple-200/20"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-xl hover:shadow-purple-200/20"
                 }`}
             >
               {/* Glow */}
@@ -791,8 +791,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                        : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+                      ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                      : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
                       }`}
                   >
                     &lt;/&gt;
@@ -814,8 +814,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
                         }`}
                     >
                       {skill}
@@ -828,8 +828,8 @@ export default function Home() {
             {/* PROGRAMMING */}
             <div
               className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-xl hover:shadow-cyan-200/20"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-xl hover:shadow-cyan-200/20"
                 }`}
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#06b6d4]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
@@ -851,8 +851,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
-                        : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
+                      ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                      : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
                       }`}
                   >
                     {"{ }"}
@@ -872,8 +872,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
                         }`}
                     >
                       {skill}
@@ -886,8 +886,8 @@ export default function Home() {
             {/* AI & DESIGN */}
             <div
               className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/40 hover:shadow-xl hover:shadow-pink-200/20"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/40 hover:shadow-xl hover:shadow-pink-200/20"
                 }`}
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#f0abfc]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
@@ -909,8 +909,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
-                        : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
+                      ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
+                      : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
                       }`}
                   >
                     ✦
@@ -927,8 +927,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
-                          : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
+                        : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
                         }`}
                     >
                       {skill}
@@ -941,8 +941,8 @@ export default function Home() {
             {/* WORKFLOW */}
             <div
               className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#a78bfa]/40 hover:shadow-xl hover:shadow-purple-200/20"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white hover:border-[#a78bfa]/40 hover:shadow-xl hover:shadow-purple-200/20"
                 }`}
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#a78bfa]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
@@ -964,8 +964,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
-                        : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
+                      ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
+                      : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
                       }`}
                   >
                     ↗
@@ -984,8 +984,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
                         }`}
                     >
                       {skill}
@@ -1283,8 +1283,8 @@ export default function Home() {
       >
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
-            ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
-            : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
+              ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
+              : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
             }`}
         >
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
@@ -1303,16 +1303,15 @@ export default function Home() {
                 }`}
             >
               I&apos;m open to connecting with developers, teams, and people
-              interested in frontend development and AI-powered web
-              experiences.
+              interested in frontend development and AI-powered web experiences.
             </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               <a
                 href="mailto:yunusovasevinc08@gmail.com"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
-                  : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
+                    ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
+                    : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#a78bfa]">
@@ -1330,8 +1329,8 @@ export default function Home() {
               <a
                 href="tel:+994516411470"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
-                  : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
+                    ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
+                    : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#67e8f9]">
@@ -1362,8 +1361,8 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/15 text-white hover:bg-white/10"
-                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                    ? "border-white/15 text-white hover:bg-white/10"
+                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 GitHub ↗
@@ -1374,11 +1373,25 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/15 text-white hover:bg-white/10"
-                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                    ? "border-white/15 text-white hover:bg-white/10"
+                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 View CV ↗
+              </a>
+
+              <a
+                href="https://calendly.com/yunusovasevinc08/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-full border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-6 py-3 font-semibold text-[#0891b2] transition-all duration-300 hover:-translate-y-1 hover:border-[#22d3ee] hover:bg-[#22d3ee]/20 hover:shadow-lg hover:shadow-cyan-500/20 dark:text-[#67e8f9]"
+              >
+                <span className="inline-flex items-center gap-2">
+                  Book a meeting
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </span>
               </a>
             </div>
           </div>
