@@ -3,15 +3,26 @@
 import { useEffect, useState } from "react"
 
 const skills = [
-  "HTML",
-  "CSS",
+  "HTML5",
+  "CSS3",
   "Tailwind CSS",
+  "Bootstrap",
   "JavaScript",
   "React",
   "TypeScript",
+  "Next.js",
+  "C++",
+  "C#",
+  "Python",
+  "Microsoft Office",
+  "Canva",
+  "Figma",
   "Git",
   "GitHub",
   "AI Integration",
+  "REST API",
+  "JSON",
+  "Responsive Design",
 ]
 
 const projects = [
@@ -146,7 +157,6 @@ export default function Home() {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180
-
       let currentSection = "home"
 
       for (const section of sections) {
@@ -161,7 +171,6 @@ export default function Home() {
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
-
     handleScroll()
 
     return () => {
@@ -203,12 +212,12 @@ export default function Home() {
           <a
             href="#home"
             onClick={closeMenu}
+            aria-label="Go to homepage"
             className="group text-xl font-black tracking-tight"
           >
             <span className={dark ? "text-white" : "text-[#211b35]"}>
               SY
             </span>
-
             <span className="text-[#a855f7] transition-colors duration-300 group-hover:text-[#06b6d4]">
               .
             </span>
@@ -224,6 +233,7 @@ export default function Home() {
                 <a
                   key={item}
                   href={`#${sectionId}`}
+                  aria-current={isActive ? "page" : undefined}
                   className={`group relative py-2 transition-all duration-300 ${isActive
                       ? dark
                         ? "text-white"
@@ -247,8 +257,11 @@ export default function Home() {
           <div className="flex items-center gap-3">
             {/* THEME BUTTON */}
             <button
+              type="button"
               onClick={() => setDarkMode(!darkMode)}
-              aria-label="Toggle dark mode"
+              aria-label={
+                dark ? "Switch to light mode" : "Switch to dark mode"
+              }
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5 ${dark
                   ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/60 hover:bg-[#8b5cf6]/10"
                   : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#8b5cf6] hover:bg-[#f3e8ff]"
@@ -265,8 +278,9 @@ export default function Home() {
 
             {/* HAMBURGER */}
             <button
+              type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               className={`flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-300 md:hidden ${dark
                   ? "border-white/10 bg-white/5"
@@ -275,7 +289,8 @@ export default function Home() {
             >
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
+                  } ${menuOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
               />
 
               <span
@@ -285,7 +300,8 @@ export default function Home() {
 
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""
+                  }`}
               />
             </button>
           </div>
@@ -343,7 +359,6 @@ export default function Home() {
         id="home"
         className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl items-center overflow-hidden px-6 py-24"
       >
-        {/* GRID */}
         <div
           className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
             }`}
@@ -357,36 +372,29 @@ export default function Home() {
           }}
         />
 
-        {/* GLOW 1 */}
         <div
           className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#7c3aed]/20" : "bg-[#c084fc]/25"
             }`}
         />
 
-        {/* GLOW 2 */}
         <div
           className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/20"
             }`}
         />
 
-        {/* HERO ORBIT */}
         <div className="pointer-events-none absolute right-[8%] top-[20%] hidden h-72 w-72 rounded-full border border-[#8b5cf6]/10 md:block">
           <div className="absolute inset-5 rounded-full border border-[#06b6d4]/10" />
           <div className="absolute inset-12 rounded-full border border-[#a855f7]/10" />
-
           <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#a78bfa] shadow-lg shadow-purple-500/50" />
-
           <div className="absolute bottom-10 right-5 h-2 w-2 rounded-full bg-[#67e8f9] shadow-lg shadow-cyan-500/50" />
         </div>
 
-        {/* FLOATING DOT */}
         <div
           className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
             }`}
         />
 
         <div className="relative z-10 max-w-4xl">
-          {/* AVAILABILITY */}
           <div
             className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
                 ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
@@ -432,7 +440,6 @@ export default function Home() {
             and creating practical AI-powered experiences.
           </p>
 
-          {/* BUTTONS */}
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
@@ -456,7 +463,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* SOCIALS */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
             <a
               href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
@@ -489,7 +495,10 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="about"
+        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
+      >
         <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -506,22 +515,38 @@ export default function Home() {
               }`}
           >
             <p>
-              I&apos;m currently studying Information Technologies at
-              Azerbaijan State Oil and Industry University (ADNSU). My main
-              focus is frontend development and creating modern, responsive
-              user interfaces.
+              I&apos;m an Information Technologies student at Azerbaijan
+              State Oil and Industry University (ADNSU) with a strong
+              interest in frontend development, modern web technologies,
+              and building practical digital experiences. I enjoy
+              transforming ideas into responsive, functional, and
+              user-friendly web applications.
             </p>
 
             <p className="mt-6">
-              I&apos;m currently gaining professional experience through
-              internships and practical projects, working in frontend
-              development and frontend AI engineering.
+              My learning journey combines academic education with
+              hands-on experience through internships, courses, personal
+              projects, and collaborative work. I have worked with
+              technologies such as HTML, CSS, JavaScript, React,
+              TypeScript, Next.js, Tailwind CSS, and various APIs while
+              continuously improving my understanding of modern frontend
+              development.
             </p>
 
             <p className="mt-6">
-              I enjoy turning ideas into functional web experiences and
-              continuously improving my skills through real projects,
-              internships, education, and hands-on development.
+              I&apos;m also exploring frontend AI engineering and
+              AI-powered web applications, with an interest in connecting
+              modern interfaces with intelligent tools and services. I
+              value continuous learning, practical problem-solving, and
+              building projects that help me turn technical knowledge into
+              real-world solutions.
+            </p>
+
+            <p className="mt-6">
+              My goal is to continue developing as a frontend developer,
+              gain experience in professional environments, work on
+              meaningful products, and keep expanding my skills across
+              web development and emerging technologies.
             </p>
           </div>
         </div>
@@ -530,7 +555,7 @@ export default function Home() {
       {/* SKILLS */}
       <section
         id="skills"
-        className={`border-y transition-colors duration-700 ${dark
+        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
             ? "border-white/10 bg-[#100d25]"
             : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
@@ -589,15 +614,18 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="projects"
+        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
+      >
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
-              Selected Work
+              My Projects
             </p>
 
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
-              Things I&apos;ve built.
+              A selection of my work.
             </h2>
           </div>
 
@@ -683,6 +711,7 @@ export default function Home() {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Open ${project.title} live demo`}
                   className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30"
                 >
                   Live Demo ↗
@@ -692,6 +721,7 @@ export default function Home() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Open ${project.title} GitHub repository`}
                   className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${dark
                       ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
                       : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
@@ -708,7 +738,7 @@ export default function Home() {
       {/* EXPERIENCE */}
       <section
         id="experience"
-        className={`border-y transition-colors duration-700 ${dark
+        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
             ? "border-white/10 bg-[#100d25]"
             : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
@@ -732,9 +762,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* TIMELINE */}
           <div className="relative mt-16">
-            {/* VERTICAL LINE */}
             <div
               className={`absolute bottom-0 left-[11px] top-0 w-px md:left-[15px] ${dark
                   ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
@@ -743,7 +771,7 @@ export default function Home() {
             />
 
             <div className="space-y-8">
-              {experiences.map((experience, index) => {
+              {experiences.map((experience) => {
                 const accentColor =
                   experience.accent === "cyan"
                     ? "#06b6d4"
@@ -756,7 +784,6 @@ export default function Home() {
                     key={`${experience.company}-${experience.role}`}
                     className="group relative pl-10 md:pl-14"
                   >
-                    {/* TIMELINE DOT */}
                     <div
                       className="absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-2 md:h-8 md:w-8"
                       style={{
@@ -776,14 +803,12 @@ export default function Home() {
                       />
                     </div>
 
-                    {/* CARD */}
                     <div
                       className={`relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
                           ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
                           : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
                         }`}
                     >
-                      {/* CARD GLOW */}
                       <div
                         className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full blur-3xl opacity-10 transition-all duration-700 group-hover:scale-150 group-hover:opacity-20"
                         style={{
@@ -836,7 +861,6 @@ export default function Home() {
                         {experience.description}
                       </p>
 
-                      {/* BOTTOM ACCENT */}
                       <div
                         className="relative mt-6 h-px w-0 transition-all duration-700 group-hover:w-full"
                         style={{
@@ -853,7 +877,10 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="contact"
+        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
+      >
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
               ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
