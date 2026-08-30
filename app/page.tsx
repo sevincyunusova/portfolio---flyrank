@@ -73,6 +73,63 @@ const projects = [
 
 const navItems = ["About", "Skills", "Projects", "Experience", "Contact"]
 
+const experiences = [
+  {
+    company: "FlyRank",
+    role: "Frontend AI Engineering Intern",
+    date: "2026 July – Present",
+    type: "Internship",
+    description:
+      "Working on frontend development, AI-powered features, modern web technologies, and practical AI engineering tasks.",
+    accent: "purple",
+  },
+  {
+    company: "Baku Design Academy",
+    role: "Frontend Developer — MVP Project",
+    date: "2026 August – 2026 October",
+    type: "MVP Project",
+    description:
+      "Working as a frontend developer on an MVP project, building responsive interfaces and implementing modern frontend solutions.",
+    accent: "cyan",
+  },
+  {
+    company: "CodeAlpha",
+    role: "Frontend Development Intern",
+    date: "2026 August – 2026 September",
+    type: "Internship",
+    description:
+      "Developing frontend projects and strengthening practical skills in modern web development.",
+    accent: "pink",
+  },
+  {
+    company: "Jet Academy",
+    role: "Frontend Developer — Student",
+    date: "2025 November – 2026 July",
+    type: "Course",
+    description:
+      "Completed frontend development training focused on modern web technologies, responsive design, JavaScript, React, and practical project development.",
+    accent: "purple",
+  },
+  {
+    company: "ASOIU İTİF THİK",
+    role: "Team Leader",
+    date: "2025 November – 2026 May",
+    type: "Leadership",
+    description:
+      "Led a team within the Information Technologies and Engineering Faculty Student Scientific Society, coordinating activities and supporting team collaboration.",
+    accent: "cyan",
+  },
+  {
+    company: "Azerbaijan State Oil and Industry University",
+    role: "Information Technologies",
+    date: "2025 – Present",
+    type: "Bachelor's",
+    description:
+      "Studying Information Technologies and building a strong foundation in software development, web technologies, and computer science.",
+    accent: "pink",
+  },
+]
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -89,6 +146,7 @@ export default function Home() {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180
+
       let currentSection = "home"
 
       for (const section of sections) {
@@ -431,10 +489,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section
-        id="about"
-        className="mx-auto max-w-6xl px-6 py-28"
-      >
+      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
         <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -459,14 +514,14 @@ export default function Home() {
 
             <p className="mt-6">
               I&apos;m currently gaining professional experience through
-              internships at FlyRank and CodeAlpha, working in frontend
+              internships and practical projects, working in frontend
               development and frontend AI engineering.
             </p>
 
             <p className="mt-6">
               I enjoy turning ideas into functional web experiences and
               continuously improving my skills through real projects,
-              internships, and hands-on development.
+              internships, education, and hands-on development.
             </p>
           </div>
         </div>
@@ -534,10 +589,7 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section
-        id="projects"
-        className="mx-auto max-w-6xl px-6 py-28"
-      >
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -662,7 +714,7 @@ export default function Home() {
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
               Experience
             </p>
@@ -672,11 +724,11 @@ export default function Home() {
             </h2>
 
             <p
-              className={`mt-5 max-w-2xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+              className={`mt-5 text-base leading-7 ${dark ? "text-white/40" : "text-[#766d80]"
                 }`}
             >
-              A timeline of the experiences and education shaping my path
-              as a frontend developer.
+              A timeline of my education, internships, projects, and
+              leadership experience.
             </p>
           </div>
 
@@ -684,268 +736,124 @@ export default function Home() {
           <div className="relative mt-16">
             {/* VERTICAL LINE */}
             <div
-              className={`absolute left-[11px] top-2 bottom-2 w-px ${dark
-                  ? "bg-gradient-to-b from-[#8b5cf6]/80 via-[#a855f7]/40 to-[#06b6d4]/20"
-                  : "bg-gradient-to-b from-[#8b5cf6]/70 via-[#a855f7]/40 to-[#06b6d4]/20"
+              className={`absolute bottom-0 left-[11px] top-0 w-px md:left-[15px] ${dark
+                  ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
+                  : "bg-gradient-to-b from-[#8b5cf6]/60 via-[#06b6d4]/40 to-transparent"
                 }`}
             />
 
-            <div className="space-y-12">
-              {/* FLYRANK */}
-              <div className="relative pl-12 md:pl-16">
-                {/* DOT */}
-                <div
-                  className={`absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 ${dark
-                      ? "border-[#100d25] bg-[#8b5cf6] shadow-lg shadow-purple-500/40"
-                      : "border-[#f8f1ff] bg-[#8b5cf6] shadow-lg shadow-purple-300/50"
-                    }`}
-                >
-                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                </div>
+            <div className="space-y-8">
+              {experiences.map((experience, index) => {
+                const accentColor =
+                  experience.accent === "cyan"
+                    ? "#06b6d4"
+                    : experience.accent === "pink"
+                      ? "#f0abfc"
+                      : "#a855f7"
 
-                {/* CONNECTING LINE */}
-                <div className="absolute left-6 top-[41px] hidden h-px w-10 bg-gradient-to-r from-[#8b5cf6]/60 to-transparent md:block" />
+                return (
+                  <div
+                    key={`${experience.company}-${experience.role}`}
+                    className="group relative pl-10 md:pl-14"
+                  >
+                    {/* TIMELINE DOT */}
+                    <div
+                      className="absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-2 md:h-8 md:w-8"
+                      style={{
+                        borderColor: `${accentColor}66`,
+                        backgroundColor: dark
+                          ? "#100d25"
+                          : "#f8f1ff",
+                        boxShadow: `0 0 20px ${accentColor}22`,
+                      }}
+                    >
+                      <div
+                        className="h-2 w-2 rounded-full md:h-2.5 md:w-2.5"
+                        style={{
+                          backgroundColor: accentColor,
+                          boxShadow: `0 0 12px ${accentColor}88`,
+                        }}
+                      />
+                    </div>
 
-                <div
-                  className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
-                      ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-purple-950/40"
-                      : "border-[#e5dce2] bg-white hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
-                    }`}
-                >
-                  <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-all duration-700 group-hover:scale-150" />
+                    {/* CARD */}
+                    <div
+                      className={`relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
+                          ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
+                          : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
+                        }`}
+                    >
+                      {/* CARD GLOW */}
+                      <div
+                        className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full blur-3xl opacity-10 transition-all duration-700 group-hover:scale-150 group-hover:opacity-20"
+                        style={{
+                          backgroundColor: accentColor,
+                        }}
+                      />
 
-                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
-                    <div>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-black">
-                          FlyRank
-                        </h3>
+                      <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
+                        <div className="max-w-3xl">
+                          <div className="flex flex-wrap items-center gap-3">
+                            <h3
+                              className={`text-2xl font-black transition-colors duration-300 ${dark
+                                  ? "text-white group-hover:text-[#c4b5fd]"
+                                  : "text-[#211b35] group-hover:text-[#7c3aed]"
+                                }`}
+                            >
+                              {experience.company}
+                            </h3>
+
+                            <span
+                              className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${dark
+                                  ? "border-white/10 bg-white/[0.04] text-white/40"
+                                  : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
+                                }`}
+                            >
+                              {experience.type}
+                            </span>
+                          </div>
+
+                          <p
+                            className="mt-2 font-semibold"
+                            style={{ color: accentColor }}
+                          >
+                            {experience.role}
+                          </p>
+                        </div>
 
                         <span
-                          className={`rounded-full border px-3 py-1 text-xs ${dark
-                              ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                              : "border-[#a855f7]/30 bg-[#f3e8ff] text-[#7c3aed]"
+                          className={`shrink-0 text-sm font-medium ${dark ? "text-white/35" : "text-[#91858f]"
                             }`}
                         >
-                          Internship
+                          {experience.date}
                         </span>
                       </div>
 
-                      <p className="mt-2 font-medium text-[#a855f7]">
-                        Frontend AI Engineering Intern
-                      </p>
-                    </div>
-
-                    <span
-                      className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
-                        }`}
-                    >
-                      2026 — Present
-                    </span>
-                  </div>
-
-                  <p
-                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                      }`}
-                  >
-                    Working on frontend development, AI-powered features,
-                    modern web technologies, and practical AI engineering
-                    tasks.
-                  </p>
-
-                  <div className="relative mt-6 flex flex-wrap gap-2">
-                    {[
-                      "Frontend",
-                      "AI Engineering",
-                      "React",
-                      "Next.js",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
-                            ? "bg-white/5 text-white/50"
-                            : "bg-[#f5eff9] text-[#756b7d]"
+                      <p
+                        className={`relative mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                           }`}
                       >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* CODEALPHA */}
-              <div className="relative pl-12 md:pl-16">
-                {/* DOT */}
-                <div
-                  className={`absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 ${dark
-                      ? "border-[#100d25] bg-[#06b6d4] shadow-lg shadow-cyan-500/40"
-                      : "border-[#f8f1ff] bg-[#06b6d4] shadow-lg shadow-cyan-300/50"
-                    }`}
-                >
-                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                </div>
-
-                {/* CONNECTING LINE */}
-                <div className="absolute left-6 top-[41px] hidden h-px w-10 bg-gradient-to-r from-[#06b6d4]/60 to-transparent md:block" />
-
-                <div
-                  className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
-                      ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-cyan-950/30"
-                      : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/50 hover:shadow-2xl hover:shadow-cyan-100"
-                    }`}
-                >
-                  <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#06b6d4]/10 blur-3xl transition-all duration-700 group-hover:scale-150" />
-
-                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
-                    <div>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-black">
-                          CodeAlpha
-                        </h3>
-
-                        <span
-                          className={`rounded-full border px-3 py-1 text-xs ${dark
-                              ? "border-[#06b6d4]/30 bg-[#06b6d4]/10 text-[#67e8f9]"
-                              : "border-[#06b6d4]/30 bg-[#ecfeff] text-[#0891b2]"
-                            }`}
-                        >
-                          Internship
-                        </span>
-                      </div>
-
-                      <p className="mt-2 font-medium text-[#0891b2]">
-                        Frontend Development Intern
+                        {experience.description}
                       </p>
+
+                      {/* BOTTOM ACCENT */}
+                      <div
+                        className="relative mt-6 h-px w-0 transition-all duration-700 group-hover:w-full"
+                        style={{
+                          background: `linear-gradient(to right, ${accentColor}, transparent)`,
+                        }}
+                      />
                     </div>
-
-                    <span
-                      className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
-                        }`}
-                    >
-                      2026
-                    </span>
                   </div>
-
-                  <p
-                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                      }`}
-                  >
-                    Developing frontend projects and strengthening
-                    practical skills in modern web development.
-                  </p>
-
-                  <div className="relative mt-6 flex flex-wrap gap-2">
-                    {[
-                      "Frontend Development",
-                      "JavaScript",
-                      "Responsive UI",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
-                            ? "bg-white/5 text-white/50"
-                            : "bg-[#eefcff] text-[#55717a]"
-                          }`}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* UNIVERSITY */}
-              <div className="relative pl-12 md:pl-16">
-                {/* DOT */}
-                <div
-                  className={`absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 ${dark
-                      ? "border-[#100d25] bg-[#f0abfc] shadow-lg shadow-fuchsia-500/40"
-                      : "border-[#f8f1ff] bg-[#c026d3] shadow-lg shadow-fuchsia-300/50"
-                    }`}
-                >
-                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                </div>
-
-                {/* CONNECTING LINE */}
-                <div className="absolute left-6 top-[41px] hidden h-px w-10 bg-gradient-to-r from-[#f0abfc]/60 to-transparent md:block" />
-
-                <div
-                  className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
-                      ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/50 hover:bg-white/[0.055] hover:shadow-2xl hover:shadow-fuchsia-950/30"
-                      : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/60 hover:shadow-2xl hover:shadow-fuchsia-100"
-                    }`}
-                >
-                  <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#f0abfc]/10 blur-3xl transition-all duration-700 group-hover:scale-150" />
-
-                  <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-start">
-                    <div>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-black">
-                          Azerbaijan State Oil and Industry University
-                        </h3>
-
-                        <span
-                          className={`rounded-full border px-3 py-1 text-xs ${dark
-                              ? "border-[#f0abfc]/30 bg-[#f0abfc]/10 text-[#f5d0fe]"
-                              : "border-[#c026d3]/20 bg-[#fdf4ff] text-[#c026d3]"
-                            }`}
-                        >
-                          Education
-                        </span>
-                      </div>
-
-                      <p className="mt-2 font-medium text-[#c026d3]">
-                        Information Technologies
-                      </p>
-                    </div>
-
-                    <span
-                      className={`whitespace-nowrap text-sm ${dark ? "text-white/30" : "text-[#91858f]"
-                        }`}
-                    >
-                      2025 — 2029
-                    </span>
-                  </div>
-
-                  <p
-                    className={`relative mt-6 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
-                      }`}
-                  >
-                    Studying Information Technologies and building a strong
-                    foundation in software, web development, and modern
-                    technology.
-                  </p>
-
-                  <div className="relative mt-6 flex flex-wrap gap-2">
-                    {[
-                      "Information Technologies",
-                      "Software",
-                      "Web Development",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        className={`rounded-full px-3 py-1.5 text-xs font-medium ${dark
-                            ? "bg-white/5 text-white/50"
-                            : "bg-[#fdf4ff] text-[#756b7d]"
-                          }`}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section
-        id="contact"
-        className="mx-auto max-w-6xl px-6 py-28"
-      >
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
               ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
@@ -1052,17 +960,11 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer
-        className={`border-t transition-colors duration-700 ${dark
-            ? "border-white/10"
-            : "border-[#e8dfd3]"
+        className={`border-t transition-colors duration-700 ${dark ? "border-white/10" : "border-[#e8dfd3]"
           }`}
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p
-            className={
-              dark ? "text-white/30" : "text-[#8b7f8c]"
-            }
-          >
+          <p className={dark ? "text-white/30" : "text-[#8b7f8c]"}>
             © 2026 Sevincxanim Yunusova. All rights reserved.
           </p>
 
