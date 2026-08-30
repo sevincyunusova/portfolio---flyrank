@@ -76,25 +76,8 @@ const navItems = ["About", "Skills", "Projects", "Experience", "Contact"]
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   const dark = darkMode
-
-  const closeMenu = () => {
-    setMenuOpen(false)
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth"
@@ -103,6 +86,10 @@ export default function Home() {
       document.documentElement.style.scrollBehavior = ""
     }
   }, [])
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <main
@@ -113,57 +100,45 @@ export default function Home() {
     >
       {/* NAVBAR */}
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${scrolled
-            ? dark
-              ? "border-white/10 bg-[#090718]/90 shadow-lg shadow-black/10"
-              : "border-[#e8ddd2] bg-[#fffaf5]/95 shadow-lg shadow-purple-100/30"
-            : dark
-              ? "border-white/10 bg-[#090718]/70"
-              : "border-[#e8ddd2] bg-[#fffaf5]/80"
+        className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${dark
+            ? "border-white/10 bg-[#090718]/80"
+            : "border-[#e8ddd2] bg-[#fffaf5]/85"
           }`}
       >
-        <div
-          className={`mx-auto flex max-w-6xl items-center justify-between px-6 transition-all duration-500 ${scrolled ? "py-3" : "py-4"
-            }`}
-        >
-          {/* LOGO */}
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
             href="#home"
             onClick={closeMenu}
-            className="group text-xl font-black tracking-tight transition-transform duration-300 hover:scale-105"
+            className="group text-xl font-black tracking-tight"
           >
             <span className={dark ? "text-white" : "text-[#211b35]"}>
               SY
             </span>
-
-            <span className="text-[#a855f7] transition-colors duration-300 group-hover:text-[#06b6d4]">
+            <span className="text-[#a855f7] transition duration-300 group-hover:text-[#06b6d4]">
               .
             </span>
           </a>
 
-          {/* DESKTOP NAVIGATION */}
+          {/* Desktop navigation */}
           <div className="hidden items-center gap-8 text-sm md:flex">
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`group relative py-2 transition-all duration-300 ${dark
-                    ? "text-white/60 hover:-translate-y-0.5 hover:text-white"
-                    : "text-[#625a70] hover:-translate-y-0.5 hover:text-[#7c3aed]"
+                className={`group relative py-2 transition duration-300 ${dark
+                    ? "text-white/60 hover:text-white"
+                    : "text-[#625a70] hover:text-[#7c3aed]"
                   }`}
               >
                 {item}
 
-                <span
-                  className={`absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-300 group-hover:w-full`}
-                />
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
-            {/* THEME BUTTON */}
+            {/* Theme button */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               aria-label="Toggle dark mode"
@@ -181,22 +156,19 @@ export default function Home() {
               </span>
             </button>
 
-            {/* HAMBURGER */}
+            {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
               className={`flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-300 md:hidden ${dark
-                  ? "border-white/10 bg-white/5 hover:bg-white/10"
-                  : "border-[#ded3c7] bg-white hover:bg-[#f8f0ff]"
+                  ? "border-white/10 bg-white/5"
+                  : "border-[#ded3c7] bg-white"
                 }`}
             >
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen
-                    ? "translate-y-2 rotate-45"
-                    : ""
-                  }`}
+                  } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
               />
 
               <span
@@ -206,16 +178,13 @@ export default function Home() {
 
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen
-                    ? "-translate-y-2 -rotate-45"
-                    : ""
-                  }`}
+                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
               />
             </button>
           </div>
         </div>
 
-        {/* MOBILE MENU */}
+        {/* Mobile menu */}
         <div
           className={`overflow-hidden border-t transition-all duration-500 ease-in-out md:hidden ${menuOpen
               ? "max-h-[400px] opacity-100"
@@ -255,52 +224,78 @@ export default function Home() {
         id="home"
         className="relative mx-auto flex min-h-screen max-w-6xl items-center overflow-hidden px-6 pb-24 pt-32"
       >
-        {/* BACKGROUND GRID */}
+        {/* Animated grid */}
         <div
-          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
+          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-40" : "opacity-60"
             }`}
           style={{
             backgroundImage: dark
-              ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
-              : "linear-gradient(rgba(124,58,237,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.06) 1px, transparent 1px)",
+              ? "linear-gradient(rgba(139,92,246,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.09) 1px, transparent 1px)"
+              : "linear-gradient(rgba(124,58,237,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.07) 1px, transparent 1px)",
             backgroundSize: "45px 45px",
             maskImage:
               "radial-gradient(circle at center, black 0%, transparent 75%)",
           }}
         />
 
-        {/* GLOW 1 */}
+        {/* Hero gradient atmosphere */}
         <div
-          className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#7c3aed]/20"
+          className={`pointer-events-none absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px] transition-all duration-1000 ${dark
+              ? "bg-[#7c3aed]/15"
+              : "bg-[#c084fc]/20"
+            }`}
+        />
+
+        {/* Purple glow */}
+        <div
+          className={`pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] animate-pulse rounded-full blur-3xl transition-all duration-1000 ${dark
+              ? "bg-[#7c3aed]/25"
               : "bg-[#c084fc]/25"
             }`}
         />
 
-        {/* GLOW 2 */}
+        {/* Cyan glow */}
         <div
-          className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#06b6d4]/10"
-              : "bg-[#67e8f9]/20"
+          className={`pointer-events-none absolute -right-40 top-1/4 h-[450px] w-[450px] animate-pulse rounded-full blur-3xl transition-all duration-1000 ${dark
+              ? "bg-[#06b6d4]/15"
+              : "bg-[#67e8f9]/25"
+            }`}
+          style={{ animationDelay: "1s" }}
+        />
+
+        {/* Decorative ring */}
+        <div
+          className={`pointer-events-none absolute right-[8%] top-[15%] hidden h-44 w-44 rounded-full border md:block ${dark
+              ? "border-[#8b5cf6]/20"
+              : "border-[#a855f7]/20"
             }`}
         />
 
-        {/* FLOATING DOT */}
         <div
-          className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
+          className={`pointer-events-none absolute right-[11%] top-[19%] hidden h-32 w-32 rounded-full border md:block ${dark
+              ? "border-[#06b6d4]/20"
+              : "border-[#0891b2]/20"
             }`}
         />
 
-        {/* SECOND FLOATING DOT */}
+        {/* Floating dots */}
         <div
-          className={`pointer-events-none absolute bottom-[20%] right-[30%] hidden h-2 w-2 animate-pulse rounded-full md:block ${dark ? "bg-[#a78bfa]" : "bg-[#8b5cf6]"
+          className={`pointer-events-none absolute right-[16%] top-[22%] hidden h-3 w-3 animate-ping rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
             }`}
         />
+
+        <div
+          className={`pointer-events-none absolute left-[12%] bottom-[22%] hidden h-2 w-2 animate-pulse rounded-full md:block ${dark ? "bg-[#c084fc]" : "bg-[#8b5cf6]"
+            }`}
+        />
+
+        {/* Decorative line */}
+        <div className="pointer-events-none absolute right-[8%] top-[42%] hidden h-px w-28 rotate-45 bg-gradient-to-r from-transparent via-[#8b5cf6]/40 to-transparent md:block" />
 
         <div className="relative z-10 max-w-4xl">
-          {/* AVAILABILITY */}
+          {/* Availability */}
           <div
-            className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
+            className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] ${dark
                 ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
                 : "border-[#a855f7]/25 bg-[#f3e8ff]"
               }`}
@@ -311,9 +306,7 @@ export default function Home() {
             </span>
 
             <span
-              className={`text-sm ${dark
-                  ? "text-[#c4b5fd]"
-                  : "text-[#6d28d9]"
+              className={`text-sm ${dark ? "text-[#c4b5fd]" : "text-[#6d28d9]"
                 }`}
             >
               Available for opportunities
@@ -324,22 +317,24 @@ export default function Home() {
             Frontend Developer
           </p>
 
+          {/* Hero title */}
           <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Hi, I&apos;m{" "}
             <span
-              className={`bg-clip-text text-transparent transition-all duration-700 ${dark
+              className={`relative inline-block bg-clip-text text-transparent transition-all duration-700 ${dark
                   ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
                   : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
                 }`}
             >
               Sevincxanim Yunusova.
+              <span
+                className={`absolute -bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-transform duration-700 hover:scale-x-100`}
+              />
             </span>
           </h1>
 
           <p
-            className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark
-                ? "text-white/55"
-                : "text-[#625a70]"
+            className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
               }`}
           >
             I&apos;m a frontend developer and Information Technologies
@@ -348,11 +343,11 @@ export default function Home() {
             and creating practical AI-powered experiences.
           </p>
 
-          {/* BUTTONS */}
+          {/* Buttons */}
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/30"
             >
               <span className="relative z-10">
                 Explore My Work →
@@ -363,7 +358,7 @@ export default function Home() {
 
             <a
               href="#contact"
-              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
+              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] ${dark
                   ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
                   : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
                 }`}
@@ -372,7 +367,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* SOCIAL LINKS */}
+          {/* Social links */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
             <a
               href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
@@ -405,10 +400,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section
-        id="about"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
-      >
+      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
         <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -421,9 +413,7 @@ export default function Home() {
           </div>
 
           <div
-            className={`text-lg leading-8 transition-colors duration-700 ${dark
-                ? "text-white/55"
-                : "text-[#625a70]"
+            className={`text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
               }`}
           >
             <p>
@@ -451,7 +441,7 @@ export default function Home() {
       {/* SKILLS */}
       <section
         id="skills"
-        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
+        className={`border-y transition-colors duration-700 ${dark
             ? "border-white/10 bg-[#100d25]"
             : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
@@ -467,9 +457,7 @@ export default function Home() {
             </h2>
 
             <p
-              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark
-                  ? "text-white/40"
-                  : "text-[#766d80]"
+              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
                 }`}
             >
               A growing toolkit focused on modern frontend development,
@@ -481,7 +469,7 @@ export default function Home() {
             {skills.map((skill, index) => (
               <div
                 key={skill}
-                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 ${dark
+                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${dark
                     ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-[#8b5cf6]/10 hover:shadow-lg hover:shadow-purple-950/30"
                     : "border-[#e5d8ee] bg-white hover:border-[#a855f7]/50 hover:bg-[#faf5ff] hover:shadow-lg hover:shadow-purple-200/40"
                   }`}
@@ -489,9 +477,7 @@ export default function Home() {
                 <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#06b6d4]/10 blur-2xl transition-all duration-500 group-hover:scale-150" />
 
                 <span
-                  className={`relative text-xs ${dark
-                      ? "text-white/30"
-                      : "text-[#9a8da3]"
+                  className={`relative text-xs ${dark ? "text-white/30" : "text-[#9a8da3]"
                     }`}
                 >
                   {String(index + 1).padStart(2, "0")}
@@ -514,10 +500,7 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section
-        id="projects"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
-      >
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -530,9 +513,7 @@ export default function Home() {
           </div>
 
           <p
-            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark
-                ? "text-white/40"
-                : "text-[#766d80]"
+            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
               }`}
           >
             A collection of frontend projects built while learning,
@@ -544,12 +525,11 @@ export default function Home() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 ${dark
+              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.01] ${dark
                   ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
                   : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
                 }`}
             >
-              {/* CARD GLOW */}
               <div
                 className={`absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150 ${index % 2 === 0
                     ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
@@ -557,14 +537,11 @@ export default function Home() {
                   }`}
               />
 
-              {/* SHINE */}
               <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
 
               <div className="relative flex items-center justify-between">
                 <span
-                  className={`text-sm font-bold ${dark
-                      ? "text-white/20"
-                      : "text-[#c7bcc9]"
+                  className={`text-sm font-bold ${dark ? "text-white/20" : "text-[#c7bcc9]"
                     }`}
                 >
                   {project.number}
@@ -591,9 +568,7 @@ export default function Home() {
                 </h3>
 
                 <p
-                  className={`mt-4 text-sm leading-7 ${dark
-                      ? "text-white/45"
-                      : "text-[#6d6572]"
+                  className={`mt-4 text-sm leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                     }`}
                 >
                   {project.description}
@@ -644,7 +619,7 @@ export default function Home() {
       {/* EXPERIENCE */}
       <section
         id="experience"
-        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
+        className={`border-y transition-colors duration-700 ${dark
             ? "border-white/10 bg-[#100d25]"
             : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
@@ -659,7 +634,6 @@ export default function Home() {
           </h2>
 
           <div className="mt-12 space-y-5">
-            {/* FLYRANK */}
             <div
               className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
                   ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
@@ -668,9 +642,7 @@ export default function Home() {
             >
               <div className="flex flex-col justify-between gap-4 md:flex-row">
                 <div>
-                  <h3 className="text-2xl font-black">
-                    FlyRank
-                  </h3>
+                  <h3 className="text-2xl font-black">FlyRank</h3>
 
                   <p className="mt-2 font-medium text-[#a855f7]">
                     Frontend AI Engineering Intern
@@ -678,9 +650,7 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark
-                      ? "text-white/30"
-                      : "text-[#91858f]"
+                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
                     }`}
                 >
                   Internship
@@ -688,9 +658,7 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark
-                    ? "text-white/45"
-                    : "text-[#6d6572]"
+                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                   }`}
               >
                 Working on frontend development, AI-powered features,
@@ -698,7 +666,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* CODEALPHA */}
             <div
               className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
                   ? "border-white/10 bg-white/[0.03] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
@@ -707,9 +674,7 @@ export default function Home() {
             >
               <div className="flex flex-col justify-between gap-4 md:flex-row">
                 <div>
-                  <h3 className="text-2xl font-black">
-                    CodeAlpha
-                  </h3>
+                  <h3 className="text-2xl font-black">CodeAlpha</h3>
 
                   <p className="mt-2 font-medium text-[#0891b2]">
                     Frontend Development Intern
@@ -717,9 +682,7 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark
-                      ? "text-white/30"
-                      : "text-[#91858f]"
+                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
                     }`}
                 >
                   Internship
@@ -727,9 +690,7 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark
-                    ? "text-white/45"
-                    : "text-[#6d6572]"
+                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                   }`}
               >
                 Developing frontend projects and strengthening practical
@@ -737,7 +698,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* UNIVERSITY */}
             <div
               className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
                   ? "border-white/10 bg-white/[0.03] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
@@ -756,9 +716,7 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark
-                      ? "text-white/30"
-                      : "text-[#91858f]"
+                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
                     }`}
                 >
                   Bachelor&apos;s
@@ -766,9 +724,7 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark
-                    ? "text-white/45"
-                    : "text-[#6d6572]"
+                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
                   }`}
               >
                 Studying Information Technologies and building a strong
@@ -780,10 +736,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section
-        id="contact"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
-      >
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
               ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
@@ -802,9 +755,7 @@ export default function Home() {
             </h2>
 
             <p
-              className={`mt-5 max-w-2xl leading-7 ${dark
-                  ? "text-white/50"
-                  : "text-[#665b6f]"
+              className={`mt-5 max-w-2xl leading-7 ${dark ? "text-white/50" : "text-[#665b6f]"
                 }`}
             >
               I&apos;m open to connecting with developers, teams, and people
@@ -825,9 +776,7 @@ export default function Home() {
                 </p>
 
                 <p
-                  className={`mt-2 text-sm font-medium ${dark
-                      ? "text-white/80"
-                      : "text-[#332b40]"
+                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
                     }`}
                 >
                   yunusovasevinc08@gmail.com
@@ -846,9 +795,7 @@ export default function Home() {
                 </p>
 
                 <p
-                  className={`mt-2 text-sm font-medium ${dark
-                      ? "text-white/80"
-                      : "text-[#332b40]"
+                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
                     }`}
                 >
                   +994 51 641 14 70
@@ -896,19 +843,11 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer
-        className={`border-t transition-colors duration-700 ${dark
-            ? "border-white/10"
-            : "border-[#e8dfd3]"
+        className={`border-t transition-colors duration-700 ${dark ? "border-white/10" : "border-[#e8dfd3]"
           }`}
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p
-            className={
-              dark
-                ? "text-white/30"
-                : "text-[#8b7f8c]"
-            }
-          >
+          <p className={dark ? "text-white/30" : "text-[#8b7f8c]"}>
             © 2026 Sevincxanim Yunusova. All rights reserved.
           </p>
 
