@@ -85,13 +85,12 @@ export default function Home() {
 
   return (
     <main
-      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
+      className={`min-h-screen overflow-x-hidden scroll-smooth transition-colors duration-700 ease-in-out ${dark
           ? "bg-[#090718] text-white"
           : "bg-[#fffaf5] text-[#211b35]"
         }`}
     >
       {/* NAVBAR */}
-
       <nav
         className={`sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${dark
             ? "border-white/10 bg-[#090718]/80"
@@ -107,33 +106,31 @@ export default function Home() {
             <span className={dark ? "text-white" : "text-[#211b35]"}>
               SY
             </span>
-            <span className="text-[#a855f7] transition group-hover:text-[#06b6d4]">
+            <span className="text-[#a855f7] transition-colors duration-300 group-hover:text-[#06b6d4]">
               .
             </span>
           </a>
 
-          {/* Desktop navigation */}
-
+          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 text-sm md:flex">
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`relative py-2 transition duration-300 ${dark
+                className={`group relative py-2 transition-all duration-300 ${dark
                     ? "text-white/60 hover:text-white"
                     : "text-[#625a70] hover:text-[#7c3aed]"
                   }`}
               >
                 {item}
 
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-300 hover:w-full" />
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Theme button */}
-
+            {/* Theme Button */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               aria-label="Toggle dark mode"
@@ -152,7 +149,6 @@ export default function Home() {
             </button>
 
             {/* Hamburger */}
-
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
@@ -164,7 +160,8 @@ export default function Home() {
             >
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
+                  } ${menuOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
               />
 
               <span
@@ -174,14 +171,16 @@ export default function Home() {
 
               <span
                 className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+                  } ${menuOpen
+                    ? "-translate-y-2 -rotate-45"
+                    : ""
+                  }`}
               />
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
-
+        {/* Mobile Menu */}
         <div
           className={`overflow-hidden border-t transition-all duration-500 ease-in-out md:hidden ${menuOpen
               ? "max-h-[400px] opacity-100"
@@ -217,15 +216,13 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-
       <section
         id="home"
         className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl items-center overflow-hidden px-6 py-24"
       >
-        {/* Background grid */}
-
+        {/* Grid */}
         <div
-          className={`pointer-events-none absolute inset-0 opacity-40 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
+          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
             }`}
           style={{
             backgroundImage: dark
@@ -237,34 +234,40 @@ export default function Home() {
           }}
         />
 
-        {/* Glow 1 */}
-
+        {/* Main Glow */}
         <div
-          className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#7c3aed]/20"
+          className={`pointer-events-none absolute left-[-180px] top-[-100px] h-[500px] w-[500px] rounded-full blur-[120px] transition-all duration-1000 ${dark
+              ? "bg-[#7c3aed]/25"
               : "bg-[#c084fc]/25"
             }`}
         />
 
-        {/* Glow 2 */}
-
+        {/* Cyan Glow */}
         <div
-          className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${dark
-              ? "bg-[#06b6d4]/10"
+          className={`pointer-events-none absolute right-[-160px] top-[20%] h-[450px] w-[450px] rounded-full blur-[120px] transition-all duration-1000 ${dark
+              ? "bg-[#06b6d4]/15"
               : "bg-[#67e8f9]/20"
             }`}
         />
 
-        {/* Floating circle */}
-
+        {/* Floating Orb */}
         <div
-          className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
+          className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-4 w-4 animate-pulse rounded-full md:block ${dark
+              ? "bg-[#67e8f9] shadow-lg shadow-cyan-400/50"
+              : "bg-[#0891b2] shadow-lg shadow-cyan-400/30"
+            }`}
+        />
+
+        {/* Decorative Ring */}
+        <div
+          className={`pointer-events-none absolute right-[8%] top-[32%] hidden h-48 w-48 rounded-full border opacity-40 md:block ${dark
+              ? "border-[#8b5cf6]/30"
+              : "border-[#a855f7]/20"
             }`}
         />
 
         <div className="relative z-10 max-w-4xl">
           {/* Availability */}
-
           <div
             className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
                 ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
@@ -277,7 +280,9 @@ export default function Home() {
             </span>
 
             <span
-              className={`text-sm ${dark ? "text-[#c4b5fd]" : "text-[#6d28d9]"
+              className={`text-sm ${dark
+                  ? "text-[#c4b5fd]"
+                  : "text-[#6d28d9]"
                 }`}
             >
               Available for opportunities
@@ -301,7 +306,9 @@ export default function Home() {
           </h1>
 
           <p
-            className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
+            className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark
+                ? "text-white/55"
+                : "text-[#625a70]"
               }`}
           >
             I&apos;m a frontend developer and Information Technologies
@@ -311,11 +318,10 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/30"
             >
               <span className="relative z-10">
                 Explore My Work →
@@ -326,7 +332,7 @@ export default function Home() {
 
             <a
               href="#contact"
-              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
+              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] ${dark
                   ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
                   : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
                 }`}
@@ -335,8 +341,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Social links */}
-
+          {/* Social Links */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
             <a
               href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
@@ -369,8 +374,10 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-
-      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="about"
+        className="mx-auto max-w-6xl px-6 py-28"
+      >
         <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -380,10 +387,14 @@ export default function Home() {
             <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
               Frontend development meets AI.
             </h2>
+
+            <div className="mt-7 h-1 w-20 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-500 hover:w-32" />
           </div>
 
           <div
-            className={`text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
+            className={`text-lg leading-8 transition-colors duration-700 ${dark
+                ? "text-white/55"
+                : "text-[#625a70]"
               }`}
           >
             <p>
@@ -409,7 +420,6 @@ export default function Home() {
       </section>
 
       {/* SKILLS */}
-
       <section
         id="skills"
         className={`border-y transition-colors duration-700 ${dark
@@ -428,7 +438,9 @@ export default function Home() {
             </h2>
 
             <p
-              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
+              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark
+                  ? "text-white/40"
+                  : "text-[#766d80]"
                 }`}
             >
               A growing toolkit focused on modern frontend development,
@@ -436,19 +448,22 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Skills Grid */}
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
             {skills.map((skill, index) => (
               <div
                 key={skill}
-                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 ${dark
+                className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${dark
                     ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-[#8b5cf6]/10 hover:shadow-lg hover:shadow-purple-950/30"
                     : "border-[#e5d8ee] bg-white hover:border-[#a855f7]/50 hover:bg-[#faf5ff] hover:shadow-lg hover:shadow-purple-200/40"
                   }`}
               >
-                <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#06b6d4]/10 blur-2xl transition-all duration-500 group-hover:scale-150" />
+                <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#06b6d4]/10 blur-2xl transition-all duration-500 group-hover:scale-[2]" />
 
                 <span
-                  className={`relative text-xs ${dark ? "text-white/30" : "text-[#9a8da3]"
+                  className={`relative text-xs ${dark
+                      ? "text-white/30"
+                      : "text-[#9a8da3]"
                     }`}
                 >
                   {String(index + 1).padStart(2, "0")}
@@ -471,8 +486,10 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="projects"
+        className="mx-auto max-w-6xl px-6 py-28"
+      >
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
@@ -485,7 +502,9 @@ export default function Home() {
           </div>
 
           <p
-            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
+            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark
+                ? "text-white/40"
+                : "text-[#766d80]"
               }`}
           >
             A collection of frontend projects built while learning,
@@ -497,13 +516,12 @@ export default function Home() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 ${dark
+              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${dark
                   ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
                   : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
                 }`}
             >
-              {/* Card glow */}
-
+              {/* Card Glow */}
               <div
                 className={`absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150 ${index % 2 === 0
                     ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
@@ -512,12 +530,13 @@ export default function Home() {
               />
 
               {/* Shine */}
-
               <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
 
               <div className="relative flex items-center justify-between">
                 <span
-                  className={`text-sm font-bold ${dark ? "text-white/20" : "text-[#c7bcc9]"
+                  className={`text-sm font-bold ${dark
+                      ? "text-white/20"
+                      : "text-[#c7bcc9]"
                     }`}
                 >
                   {project.number}
@@ -544,7 +563,9 @@ export default function Home() {
                 </h3>
 
                 <p
-                  className={`mt-4 text-sm leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                  className={`mt-4 text-sm leading-7 ${dark
+                      ? "text-white/45"
+                      : "text-[#6d6572]"
                     }`}
                 >
                   {project.description}
@@ -570,7 +591,7 @@ export default function Home() {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30"
+                  className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
                 >
                   Live Demo ↗
                 </a>
@@ -579,7 +600,7 @@ export default function Home() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${dark
+                  className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${dark
                       ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
                       : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
                     }`}
@@ -593,7 +614,6 @@ export default function Home() {
       </section>
 
       {/* EXPERIENCE */}
-
       <section
         id="experience"
         className={`border-y transition-colors duration-700 ${dark
@@ -611,13 +631,16 @@ export default function Home() {
           </h2>
 
           <div className="mt-12 space-y-5">
+            {/* FlyRank */}
             <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-lg"
+              className={`group relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-white/[0.05] hover:shadow-xl hover:shadow-purple-950/30"
+                  : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-xl hover:shadow-purple-200/30"
                 }`}
             >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
+              <div className="absolute right-0 top-0 h-32 w-32 translate-x-12 -translate-y-12 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+              <div className="relative flex flex-col justify-between gap-4 md:flex-row">
                 <div>
                   <h3 className="text-2xl font-black">
                     FlyRank
@@ -629,7 +652,9 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
+                  className={`text-sm ${dark
+                      ? "text-white/30"
+                      : "text-[#91858f]"
                     }`}
                 >
                   Internship
@@ -637,7 +662,9 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                className={`relative mt-5 max-w-3xl leading-7 ${dark
+                    ? "text-white/45"
+                    : "text-[#6d6572]"
                   }`}
               >
                 Working on frontend development, AI-powered features,
@@ -645,13 +672,16 @@ export default function Home() {
               </p>
             </div>
 
+            {/* CodeAlpha */}
             <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-lg"
+              className={`group relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.03] hover:border-[#06b6d4]/50 hover:bg-white/[0.05] hover:shadow-xl hover:shadow-cyan-950/30"
+                  : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-xl hover:shadow-cyan-200/30"
                 }`}
             >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
+              <div className="absolute right-0 top-0 h-32 w-32 translate-x-12 -translate-y-12 rounded-full bg-[#06b6d4]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+              <div className="relative flex flex-col justify-between gap-4 md:flex-row">
                 <div>
                   <h3 className="text-2xl font-black">
                     CodeAlpha
@@ -663,7 +693,9 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
+                  className={`text-sm ${dark
+                      ? "text-white/30"
+                      : "text-[#91858f]"
                     }`}
                 >
                   Internship
@@ -671,7 +703,9 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                className={`relative mt-5 max-w-3xl leading-7 ${dark
+                    ? "text-white/45"
+                    : "text-[#6d6572]"
                   }`}
               >
                 Developing frontend projects and strengthening practical
@@ -679,13 +713,16 @@ export default function Home() {
               </p>
             </div>
 
+            {/* University */}
             <div
-              className={`group rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/[0.03] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/60 hover:shadow-lg"
+              className={`group relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.03] hover:border-[#f0abfc]/50 hover:bg-white/[0.05] hover:shadow-xl hover:shadow-fuchsia-950/30"
+                  : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/60 hover:shadow-xl hover:shadow-fuchsia-200/30"
                 }`}
             >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
+              <div className="absolute right-0 top-0 h-32 w-32 translate-x-12 -translate-y-12 rounded-full bg-[#f0abfc]/10 blur-3xl transition-all duration-500 group-hover:scale-150" />
+
+              <div className="relative flex flex-col justify-between gap-4 md:flex-row">
                 <div>
                   <h3 className="text-2xl font-black">
                     Azerbaijan State Oil and Industry University
@@ -697,7 +734,9 @@ export default function Home() {
                 </div>
 
                 <span
-                  className={`text-sm ${dark ? "text-white/30" : "text-[#91858f]"
+                  className={`text-sm ${dark
+                      ? "text-white/30"
+                      : "text-[#91858f]"
                     }`}
                 >
                   Bachelor&apos;s
@@ -705,7 +744,9 @@ export default function Home() {
               </div>
 
               <p
-                className={`mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                className={`relative mt-5 max-w-3xl leading-7 ${dark
+                    ? "text-white/45"
+                    : "text-[#6d6572]"
                   }`}
               >
                 Studying Information Technologies and building a strong
@@ -717,15 +758,17 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
+      <section
+        id="contact"
+        className="mx-auto max-w-6xl px-6 py-28"
+      >
         <div
-          className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
+          className={`group relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 hover:-translate-y-1 sm:p-12 ${dark
               ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
               : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
             }`}
         >
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
           <div className="relative">
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
@@ -737,7 +780,9 @@ export default function Home() {
             </h2>
 
             <p
-              className={`mt-5 max-w-2xl leading-7 ${dark ? "text-white/50" : "text-[#665b6f]"
+              className={`mt-5 max-w-2xl leading-7 ${dark
+                  ? "text-white/50"
+                  : "text-[#665b6f]"
                 }`}
             >
               I&apos;m open to connecting with developers, teams, and people
@@ -748,7 +793,7 @@ export default function Home() {
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               <a
                 href="mailto:yunusovasevinc08@gmail.com"
-                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
+                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] ${dark
                     ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
                     : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
                   }`}
@@ -758,7 +803,9 @@ export default function Home() {
                 </p>
 
                 <p
-                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
+                  className={`mt-2 text-sm font-medium ${dark
+                      ? "text-white/80"
+                      : "text-[#332b40]"
                     }`}
                 >
                   yunusovasevinc08@gmail.com
@@ -767,7 +814,7 @@ export default function Home() {
 
               <a
                 href="tel:+994516411470"
-                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
+                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] ${dark
                     ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
                     : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
                   }`}
@@ -777,7 +824,9 @@ export default function Home() {
                 </p>
 
                 <p
-                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
+                  className={`mt-2 text-sm font-medium ${dark
+                      ? "text-white/80"
+                      : "text-[#332b40]"
                     }`}
                 >
                   +994 51 641 14 70
@@ -790,7 +839,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30"
+                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
               >
                 LinkedIn ↗
               </a>
@@ -799,7 +848,7 @@ export default function Home() {
                 href="https://github.com/sevincyunusova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
+                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${dark
                     ? "border-white/15 text-white hover:bg-white/10"
                     : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
@@ -811,7 +860,7 @@ export default function Home() {
                 href="https://canva.link/19vm7ro7zqvgspn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
+                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${dark
                     ? "border-white/15 text-white hover:bg-white/10"
                     : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
@@ -824,13 +873,20 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-
       <footer
-        className={`border-t transition-colors duration-700 ${dark ? "border-white/10" : "border-[#e8dfd3]"
+        className={`border-t transition-colors duration-700 ${dark
+            ? "border-white/10"
+            : "border-[#e8dfd3]"
           }`}
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className={dark ? "text-white/30" : "text-[#8b7f8c]"}>
+          <p
+            className={
+              dark
+                ? "text-white/30"
+                : "text-[#8b7f8c]"
+            }
+          >
             © 2026 Sevincxanim Yunusova. All rights reserved.
           </p>
 
