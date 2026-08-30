@@ -197,15 +197,15 @@ export default function Home() {
   return (
     <main
       className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
-          ? "bg-[#090718] text-white"
-          : "bg-[#fffaf5] text-[#211b35]"
+        ? "bg-[#090718] text-white"
+        : "bg-[#fffaf5] text-[#211b35]"
         }`}
     >
       {/* NAVBAR */}
       <nav
         className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${dark
-            ? "border-white/10 bg-[#090718]/80"
-            : "border-[#e8ddd2] bg-[#fffaf5]/85"
+          ? "border-white/10 bg-[#090718]/80"
+          : "border-[#e8ddd2] bg-[#fffaf5]/85"
           }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -235,12 +235,12 @@ export default function Home() {
                   href={`#${sectionId}`}
                   aria-current={isActive ? "page" : undefined}
                   className={`group relative py-2 transition-all duration-300 ${isActive
-                      ? dark
-                        ? "text-white"
-                        : "text-[#7c3aed]"
-                      : dark
-                        ? "text-white/60 hover:text-white"
-                        : "text-[#625a70] hover:text-[#7c3aed]"
+                    ? dark
+                      ? "text-white"
+                      : "text-[#7c3aed]"
+                    : dark
+                      ? "text-white/60 hover:text-white"
+                      : "text-[#625a70] hover:text-[#7c3aed]"
                     }`}
                 >
                   {item}
@@ -263,8 +263,8 @@ export default function Home() {
                 dark ? "Switch to light mode" : "Switch to dark mode"
               }
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5 ${dark
-                  ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/60 hover:bg-[#8b5cf6]/10"
-                  : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#8b5cf6] hover:bg-[#f3e8ff]"
+                ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/60 hover:bg-[#8b5cf6]/10"
+                : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#8b5cf6] hover:bg-[#f3e8ff]"
                 }`}
             >
               <span className="hidden sm:inline">
@@ -283,8 +283,8 @@ export default function Home() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               className={`flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-300 md:hidden ${dark
-                  ? "border-white/10 bg-white/5"
-                  : "border-[#ded3c7] bg-white"
+                ? "border-white/10 bg-white/5"
+                : "border-[#ded3c7] bg-white"
                 }`}
             >
               <span
@@ -310,8 +310,8 @@ export default function Home() {
         {/* MOBILE MENU */}
         <div
           className={`overflow-hidden border-t transition-all duration-500 ease-in-out md:hidden ${menuOpen
-              ? "max-h-[400px] opacity-100"
-              : "max-h-0 border-transparent opacity-0"
+            ? "max-h-[400px] opacity-100"
+            : "max-h-0 border-transparent opacity-0"
             } ${dark
               ? "border-white/10 bg-[#090718]"
               : "border-[#e8ddd2] bg-[#fffaf5]"
@@ -329,12 +329,12 @@ export default function Home() {
                     href={`#${sectionId}`}
                     onClick={closeMenu}
                     className={`rounded-xl px-4 py-3 transition-all duration-300 ${isActive
-                        ? dark
-                          ? "bg-white/5 pl-6 text-[#c4b5fd]"
-                          : "bg-[#f3e8ff] pl-6 text-[#7c3aed]"
-                        : dark
-                          ? "text-white/65 hover:bg-white/5 hover:pl-6 hover:text-[#c4b5fd]"
-                          : "text-[#625a70] hover:bg-[#f3e8ff] hover:pl-6 hover:text-[#7c3aed]"
+                      ? dark
+                        ? "bg-white/5 pl-6 text-[#c4b5fd]"
+                        : "bg-[#f3e8ff] pl-6 text-[#7c3aed]"
+                      : dark
+                        ? "text-white/65 hover:bg-white/5 hover:pl-6 hover:text-[#c4b5fd]"
+                        : "text-[#625a70] hover:bg-[#f3e8ff] hover:pl-6 hover:text-[#7c3aed]"
                       }`}
                     style={{
                       transitionDelay: menuOpen
@@ -397,8 +397,8 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl">
           <div
             className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
-                ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
-                : "border-[#a855f7]/25 bg-[#f3e8ff]"
+              ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
+              : "border-[#a855f7]/25 bg-[#f3e8ff]"
               }`}
           >
             <span className="relative flex h-2.5 w-2.5">
@@ -422,8 +422,8 @@ export default function Home() {
             Hi, I&apos;m{" "}
             <span
               className={`bg-clip-text text-transparent transition-all duration-700 ${dark
-                  ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
-                  : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
+                ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
+                : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
                 }`}
             >
               Sevincxanim Yunusova.
@@ -455,8 +455,8 @@ export default function Home() {
             <a
               href="#contact"
               className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
-                  : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
+                ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
+                : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
                 }`}
             >
               Let&apos;s Connect
@@ -497,57 +497,220 @@ export default function Home() {
       {/* ABOUT */}
       <section
         id="about"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
+        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24"
       >
-        <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
-              About Me
-            </p>
+        {/* HEADER */}
+        <div className="max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+            About Me
+          </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
-              Frontend development meets AI.
-            </h2>
+          <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+            Building for the web,
+            <span className="block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+              learning as I go.
+            </span>
+          </h2>
+        </div>
+
+        {/* MAIN INTRO */}
+        <div
+          className={`relative mt-10 overflow-hidden rounded-[28px] border p-7 sm:p-8 lg:p-10 ${dark
+            ? "border-white/10 bg-gradient-to-br from-white/[0.06] via-white/[0.025] to-transparent"
+            : "border-[#e5dce2] bg-gradient-to-br from-white via-[#faf7ff] to-[#f5fbff] shadow-sm"
+            }`}
+        >
+          {/* Decorative elements */}
+          <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-3xl" />
+
+          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-[#06b6d4]/10 blur-3xl" />
+
+          <div className="relative grid gap-8 lg:grid-cols-[1fr_0.65fr] lg:items-center">
+            {/* TEXT */}
+            <div>
+              <p
+                className={`text-lg leading-8 sm:text-xl sm:leading-9 ${dark ? "text-white/70" : "text-[#51485b]"
+                  }`}
+              >
+                I&apos;m an Information Technologies student at Azerbaijan State
+                Oil and Industry University and a frontend developer passionate
+                about building modern digital experiences.
+              </p>
+
+              <p
+                className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/45" : "text-[#766d80]"
+                  }`}
+              >
+                My journey combines academic learning with hands-on experience
+                through internships, personal projects, and real-world development.
+                I enjoy transforming ideas into responsive, functional interfaces
+                and continuously improving the way I build for the web.
+              </p>
+            </div>
+
+            {/* QUICK INFO */}
+            <div className="grid grid-cols-2 gap-3">
+              <div
+                className={`rounded-2xl border p-4 ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-[#e5dce2] bg-white"
+                  }`}
+              >
+                <p className="text-2xl font-black text-[#a78bfa]">01</p>
+
+                <p
+                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
+                    }`}
+                >
+                  Frontend
+                </p>
+              </div>
+
+              <div
+                className={`rounded-2xl border p-4 ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-[#e5dce2] bg-white"
+                  }`}
+              >
+                <p className="text-2xl font-black text-[#67e8f9]">02</p>
+
+                <p
+                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
+                    }`}
+                >
+                  AI Engineering
+                </p>
+              </div>
+
+              <div
+                className={`rounded-2xl border p-4 ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-[#e5dce2] bg-white"
+                  }`}
+              >
+                <p className="text-2xl font-black text-[#c084fc]">03</p>
+
+                <p
+                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
+                    }`}
+                >
+                  Helpdesk
+                </p>
+              </div>
+
+              <div
+                className={`rounded-2xl border p-4 ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-[#e5dce2] bg-white"
+                  }`}
+              >
+                <p className="text-2xl font-black text-[#a78bfa]">04</p>
+
+                <p
+                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
+                    }`}
+                >
+                  Continuous Learning
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
 
+        {/* THREE FEATURE CARDS */}
+        <div className="mt-5 grid gap-5 md:grid-cols-3">
+          {/* FRONTEND */}
           <div
-            className={`text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
+            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+              ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
+              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
               }`}
           >
-            <p>
-              I&apos;m an Information Technologies student at Azerbaijan
-              State Oil and Industry University (ADNSU) with a strong
-              interest in frontend development, modern web technologies,
-              and building practical digital experiences. I enjoy
-              transforming ideas into responsive, functional, and
-              user-friendly web applications.
-            </p>
+            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#8b5cf6]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
 
-            <p className="mt-6">
-              My learning journey combines academic education with
-              hands-on experience through internships, courses, personal
-              projects, and collaborative work. I have worked with
-              technologies such as HTML, CSS, JavaScript, React,
-              TypeScript, Next.js, Tailwind CSS, and various APIs while
-              continuously improving my understanding of modern frontend
-              development.
-            </p>
+            <div className="relative">
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#8b5cf6]">
+                FOCUS
+              </span>
 
-            <p className="mt-6">
-              I&apos;m also exploring frontend AI engineering and
-              AI-powered web applications, with an interest in connecting
-              modern interfaces with intelligent tools and services. I
-              value continuous learning, practical problem-solving, and
-              building projects that help me turn technical knowledge into
-              real-world solutions.
-            </p>
+              <h3
+                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
+              >
+                Frontend Development
+              </h3>
 
-            <p className="mt-6">
-              My goal is to continue developing as a frontend developer,
-              gain experience in professional environments, work on
-              meaningful products, and keep expanding my skills across
-              web development and emerging technologies.
-            </p>
+              <p
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                  }`}
+              >
+                Building responsive interfaces with JavaScript, React, Next.js,
+                TypeScript, Tailwind CSS, and modern web technologies.
+              </p>
+            </div>
+          </div>
+
+          {/* AI */}
+          <div
+            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+              ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
+              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
+              }`}
+          >
+            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#06b6d4]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
+
+            <div className="relative">
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#06b6d4]">
+                EXPLORING
+              </span>
+
+              <h3
+                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
+              >
+                AI Engineering
+              </h3>
+
+              <p
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                  }`}
+              >
+                Exploring AI integration in frontend applications and building
+                practical AI-powered web experiences.
+              </p>
+            </div>
+          </div>
+
+          {/* HELPDESK */}
+          <div
+            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+              ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
+              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
+              }`}
+          >
+            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#f0abfc]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
+
+            <div className="relative">
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
+                FOCUS
+              </span>
+
+              <h3
+                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
+              >
+                Helpdesk
+              </h3>
+
+              <p
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                  }`}
+              >
+                Supporting users with technical issues, troubleshooting problems,
+                resolving software and hardware-related issues, and providing
+                effective technical assistance.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -556,8 +719,8 @@ export default function Home() {
       <section
         id="skills"
         className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
-            ? "border-white/10 bg-[#100d25]"
-            : "border-[#e8ddd2] bg-[#f8f1ff]"
+          ? "border-white/10 bg-[#100d25]"
+          : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
@@ -584,8 +747,8 @@ export default function Home() {
               <div
                 key={skill}
                 className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-500 hover:-translate-y-2 ${dark
-                    ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-[#8b5cf6]/10 hover:shadow-lg hover:shadow-purple-950/30"
-                    : "border-[#e5d8ee] bg-white hover:border-[#a855f7]/50 hover:bg-[#faf5ff] hover:shadow-lg hover:shadow-purple-200/40"
+                  ? "border-white/10 bg-white/[0.03] hover:border-[#8b5cf6]/50 hover:bg-[#8b5cf6]/10 hover:shadow-lg hover:shadow-purple-950/30"
+                  : "border-[#e5d8ee] bg-white hover:border-[#a855f7]/50 hover:bg-[#faf5ff] hover:shadow-lg hover:shadow-purple-200/40"
                   }`}
               >
                 <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-gradient-to-br from-[#8b5cf6]/20 to-[#06b6d4]/10 blur-2xl transition-all duration-500 group-hover:scale-150" />
@@ -599,8 +762,8 @@ export default function Home() {
 
                 <p
                   className={`relative mt-3 font-semibold transition-all duration-300 ${dark
-                      ? "text-white/80 group-hover:text-[#c4b5fd]"
-                      : "text-[#332b40] group-hover:text-[#7c3aed]"
+                    ? "text-white/80 group-hover:text-[#c4b5fd]"
+                    : "text-[#332b40] group-hover:text-[#7c3aed]"
                     }`}
                 >
                   {skill}
@@ -643,14 +806,14 @@ export default function Home() {
             <article
               key={project.title}
               className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${dark
-                  ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
-                  : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
+                ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
+                : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
                 }`}
             >
               <div
                 className={`absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150 ${index % 2 === 0
-                    ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
-                    : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
+                  ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
+                  : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
                   }`}
               />
 
@@ -666,8 +829,8 @@ export default function Home() {
 
                 <span
                   className={`rounded-full border px-3 py-1 text-xs ${dark
-                      ? "border-white/10 text-white/40"
-                      : "border-[#e5dce2] text-[#8b7f8c]"
+                    ? "border-white/10 text-white/40"
+                    : "border-[#e5dce2] text-[#8b7f8c]"
                     }`}
                 >
                   Project
@@ -677,8 +840,8 @@ export default function Home() {
               <div className="relative mt-12 flex-1">
                 <h3
                   className={`text-2xl font-black transition-all duration-300 ${dark
-                      ? "text-white group-hover:text-[#c4b5fd]"
-                      : "text-[#211b35] group-hover:text-[#7c3aed]"
+                    ? "text-white group-hover:text-[#c4b5fd]"
+                    : "text-[#211b35] group-hover:text-[#7c3aed]"
                     }`}
                 >
                   {project.title}
@@ -696,8 +859,8 @@ export default function Home() {
                     <span
                       key={technology}
                       className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 ${dark
-                          ? "bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                          : "bg-[#f3e8ff] text-[#7c3aed]"
+                        ? "bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                        : "bg-[#f3e8ff] text-[#7c3aed]"
                         }`}
                     >
                       {technology}
@@ -723,8 +886,8 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label={`Open ${project.title} GitHub repository`}
                   className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${dark
-                      ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
-                      : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
+                    ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
+                    : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
                     }`}
                 >
                   GitHub ↗
@@ -739,8 +902,8 @@ export default function Home() {
       <section
         id="experience"
         className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
-            ? "border-white/10 bg-[#100d25]"
-            : "border-[#e8ddd2] bg-[#f8f1ff]"
+          ? "border-white/10 bg-[#100d25]"
+          : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
@@ -765,8 +928,8 @@ export default function Home() {
           <div className="relative mt-16">
             <div
               className={`absolute bottom-0 left-[11px] top-0 w-px md:left-[15px] ${dark
-                  ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
-                  : "bg-gradient-to-b from-[#8b5cf6]/60 via-[#06b6d4]/40 to-transparent"
+                ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
+                : "bg-gradient-to-b from-[#8b5cf6]/60 via-[#06b6d4]/40 to-transparent"
                 }`}
             />
 
@@ -805,8 +968,8 @@ export default function Home() {
 
                     <div
                       className={`relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
-                          : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
+                        ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
+                        : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
                         }`}
                     >
                       <div
@@ -821,8 +984,8 @@ export default function Home() {
                           <div className="flex flex-wrap items-center gap-3">
                             <h3
                               className={`text-2xl font-black transition-colors duration-300 ${dark
-                                  ? "text-white group-hover:text-[#c4b5fd]"
-                                  : "text-[#211b35] group-hover:text-[#7c3aed]"
+                                ? "text-white group-hover:text-[#c4b5fd]"
+                                : "text-[#211b35] group-hover:text-[#7c3aed]"
                                 }`}
                             >
                               {experience.company}
@@ -830,8 +993,8 @@ export default function Home() {
 
                             <span
                               className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${dark
-                                  ? "border-white/10 bg-white/[0.04] text-white/40"
-                                  : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
+                                ? "border-white/10 bg-white/[0.04] text-white/40"
+                                : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
                                 }`}
                             >
                               {experience.type}
@@ -883,8 +1046,8 @@ export default function Home() {
       >
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
-              ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
-              : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
+            ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
+            : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
             }`}
         >
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
@@ -911,8 +1074,8 @@ export default function Home() {
               <a
                 href="mailto:yunusovasevinc08@gmail.com"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
-                    : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
+                  ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
+                  : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#a78bfa]">
@@ -930,8 +1093,8 @@ export default function Home() {
               <a
                 href="tel:+994516411470"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
-                    : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
+                  ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
+                  : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#67e8f9]">
@@ -962,8 +1125,8 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/15 text-white hover:bg-white/10"
-                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                  ? "border-white/15 text-white hover:bg-white/10"
+                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 GitHub ↗
@@ -974,8 +1137,8 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/15 text-white hover:bg-white/10"
-                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                  ? "border-white/15 text-white hover:bg-white/10"
+                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 View CV ↗
