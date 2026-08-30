@@ -94,6 +94,7 @@ const experiences = [
       "Working on frontend development, AI-powered features, modern web technologies, and practical AI engineering tasks.",
     accent: "purple",
   },
+
   {
     company: "Baku Design Academy",
     role: "Frontend Developer — MVP Project",
@@ -103,6 +104,7 @@ const experiences = [
       "Working as a frontend developer on an MVP project, building responsive interfaces and implementing modern frontend solutions.",
     accent: "cyan",
   },
+
   {
     company: "CodeAlpha",
     role: "Frontend Development Intern",
@@ -112,6 +114,17 @@ const experiences = [
       "Developing frontend projects and strengthening practical skills in modern web development.",
     accent: "pink",
   },
+
+  {
+    company: "Azerbaijan State Oil and Industry University",
+    role: "Helpdesk Intern — Digital Development Department",
+    date: "2026 September – Present",
+    type: "Internship",
+    description:
+      "Working as a Helpdesk Intern within the Digital Development Department, supporting users with technical issues and gaining practical experience in IT support and troubleshooting.",
+    accent: "cyan",
+  },
+
   {
     company: "Jet Academy",
     role: "Frontend Developer — Student",
@@ -121,6 +134,7 @@ const experiences = [
       "Completed frontend development training focused on modern web technologies, responsive design, JavaScript, React, and practical project development.",
     accent: "purple",
   },
+
   {
     company: "ASOIU İTİF THİK",
     role: "Team Leader",
@@ -130,6 +144,7 @@ const experiences = [
       "Led a team within the Information Technologies and Engineering Faculty Student Scientific Society, coordinating activities and supporting team collaboration.",
     accent: "cyan",
   },
+
   {
     company: "Azerbaijan State Oil and Industry University",
     role: "Information Technologies",
