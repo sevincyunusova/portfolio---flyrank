@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react"
 
+type ContactForm = {
+  name: string
+  email: string
+  message: string
+}
 const skills = [
   "HTML5",
   "CSS3",
@@ -160,6 +165,15 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const [sending, setSending] = useState(false)
+  const [status, setStatus] = useState("")
 
   const dark = darkMode
 
@@ -1283,8 +1297,8 @@ export default function Home() {
       >
         <div
           className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
-              ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
-              : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
+            ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
+            : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
             }`}
         >
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
@@ -1310,8 +1324,8 @@ export default function Home() {
               <a
                 href="mailto:yunusovasevinc08@gmail.com"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
-                    : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
+                  ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
+                  : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#a78bfa]">
@@ -1329,8 +1343,8 @@ export default function Home() {
               <a
                 href="tel:+994516411470"
                 className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
-                    : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
+                  ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
+                  : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
                   }`}
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-[#67e8f9]">
@@ -1361,8 +1375,8 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/15 text-white hover:bg-white/10"
-                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                  ? "border-white/15 text-white hover:bg-white/10"
+                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 GitHub ↗
@@ -1373,8 +1387,8 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/15 text-white hover:bg-white/10"
-                    : "border-[#d9cddf] text-[#332b40] hover:bg-white"
+                  ? "border-white/15 text-white hover:bg-white/10"
+                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
                   }`}
               >
                 View CV ↗
