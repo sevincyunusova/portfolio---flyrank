@@ -1408,6 +1408,137 @@ export default function Home() {
                 </span>
               </a>
             </div>
+
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault()
+                setSending(true)
+                setStatus("")
+
+                try {
+                  const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(form),
+                  })
+
+                  const data = await response.json()
+
+                  if (!response.ok) {
+                    throw new Error(data.error || "Failed to send message.")
+                  }
+
+                  setStatus("Message sent successfully!")
+                  setForm({
+                    name: "",
+                    email: "",
+                    message: "",
+                  })
+                } catch (error) {
+                  setStatus(
+                    error instanceof Error
+                      ? error.message
+                      : "Failed to send message."
+                  )
+                } finally {
+                  setSending(false)
+                }
+              }}
+              className="mt-10 max-w-2xl space-y-5"
+            >
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Name
+                </label>
+
+                <input
+                  id="name"
+                  type="text"
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
+                  required
+                  placeholder="Your name"
+                  className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    }`}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  type="email"
+                  value={form.email}
+                  onChange={(e) =>
+                    setForm({ ...form, email: e.target.value })
+                  }
+                  required
+                  placeholder="your@email.com"
+                  className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    }`}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Message
+                </label>
+
+                <textarea
+                  id="message"
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
+                  required
+                  rows={6}
+                  placeholder="Write your message..."
+                  className={`w-full resize-none rounded-2xl border px-5 py-4 outline-none transition ${dark
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    }`}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={sending}
+                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-7 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {sending ? "Sending..." : "Send Message"}
+              </button>
+
+              {status && (
+                <p
+                  className={`text-sm font-medium ${status === "Message sent successfully!"
+                      ? "text-green-500"
+                      : "text-red-500"
+                    }`}
+                >
+                  {status}
+                </p>
+              )}
+            </form>
           </div>
         </div>
       </section>
