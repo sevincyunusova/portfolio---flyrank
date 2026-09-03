@@ -16,20 +16,8 @@ export const metadata: Metadata = {
   title: "Sevincxanim Yunusova | Frontend Developer",
   description:
     "Personal portfolio of Sevincxanim Yunusova, a Frontend Developer focused on modern web development and AI-powered experiences.",
-
-  openGraph: {
-    title: "Sevincxanim Yunusova | Frontend Developer",
-    description:
-      "Personal portfolio of Sevincxanim Yunusova, a Frontend Developer focused on modern web development and AI-powered experiences.",
-    type: "website",
-    locale: "en_US",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Sevincxanim Yunusova | Frontend Developer",
-    description:
-      "Personal portfolio of Sevincxanim Yunusova, a Frontend Developer focused on modern web development and AI-powered experiences.",
+  verification: {
+    google: "JI7vZ_FA4g3xemqDFyHOq7q1stUTiTA0Z__HCWVQMKY",
   },
 }
 
