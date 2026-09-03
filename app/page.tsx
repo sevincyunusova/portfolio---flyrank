@@ -443,7 +443,7 @@ export default function Home() {
             </span>
           </div>
 
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#8b5cf6]">
+          <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
             Frontend Developer
           </p>
 
@@ -530,7 +530,7 @@ export default function Home() {
       >
         {/* HEADER */}
         <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
             About Me
           </p>
 
@@ -658,7 +658,7 @@ export default function Home() {
             <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#8b5cf6]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
 
             <div className="relative">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#8b5cf6]">
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
                 FOCUS
               </span>
 
@@ -757,7 +757,7 @@ export default function Home() {
           {/* HEADER */}
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
                 Skills
               </p>
 
@@ -791,7 +791,7 @@ export default function Home() {
               <div className="relative">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#8b5cf6]">
+                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
                       01
                     </span>
 
@@ -1034,7 +1034,7 @@ export default function Home() {
       >
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
               My Projects
             </p>
 
@@ -1159,14 +1159,13 @@ export default function Home() {
       >
         <div className="mx-auto max-w-6xl px-6 py-28">
           <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8b5cf6]">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
               Experience
             </p>
 
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
               My current journey.
             </h2>
-
             <p
               className={`mt-5 text-base leading-7 ${dark ? "text-white/60" : "text-[#766d80]"
                 }`}
@@ -1558,14 +1557,14 @@ export default function Home() {
               href="https://github.com/sevincyunusova"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8b5cf6] transition hover:text-[#a855f7]"
+              className="text-[#a78bfa] transition hover:text-[#a855f7]"
             >
               GitHub
             </a>
 
             <a
               href="mailto:yunusovasevinc08@gmail.com"
-              className="text-[#8b5cf6] transition hover:text-[#a855f7]"
+              className="text-[#a78bfa] transition hover:text-[#a855f7]"
             >
               Email
             </a>
