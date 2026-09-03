@@ -567,7 +567,7 @@ export default function Home() {
               </p>
 
               <p
-                className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/45" : "text-[#766d80]"
+                className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/65" : "text-[#766d80]"
                   }`}
               >
                 My journey combines academic learning with hands-on experience
@@ -670,7 +670,7 @@ export default function Home() {
               </h3>
 
               <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
                   }`}
               >
                 Building responsive interfaces with JavaScript, React, Next.js,
@@ -701,7 +701,7 @@ export default function Home() {
               </h3>
 
               <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
                   }`}
               >
                 Exploring AI integration in frontend applications and building
@@ -732,7 +732,7 @@ export default function Home() {
               </h3>
 
               <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/40" : "text-[#766d80]"
+                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
                   }`}
               >
                 Supporting users with technical issues, troubleshooting problems,
@@ -767,7 +767,7 @@ export default function Home() {
             </div>
 
             <p
-              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
+              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/60" : "text-[#766d80]"
                 }`}
             >
               A growing toolkit focused on frontend development, programming,
@@ -1015,7 +1015,7 @@ export default function Home() {
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
 
             <span
-              className={`text-[10px] font-bold uppercase tracking-[0.25em] ${dark ? "text-white/20" : "text-[#a397a7]"
+              className={`text-[10px] font-bold uppercase tracking-[0.25em] ${dark ? "text-white/50" : "text-[#a397a7]"
                 }`}
             >
               Always learning · Always building
@@ -1044,7 +1044,7 @@ export default function Home() {
           </div>
 
           <p
-            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/40" : "text-[#766d80]"
+            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/60" : "text-[#766d80]"
               }`}
           >
             A collection of frontend projects built while learning,
@@ -1072,7 +1072,7 @@ export default function Home() {
 
               <div className="relative flex items-center justify-between">
                 <span
-                  className={`text-sm font-bold ${dark ? "text-white/20" : "text-[#c7bcc9]"
+                  className={`text-sm font-bold ${dark ? "text-white/50" : "text-[#c7bcc9]"
                     }`}
                 >
                   {project.number}
@@ -1080,7 +1080,7 @@ export default function Home() {
 
                 <span
                   className={`rounded-full border px-3 py-1 text-xs ${dark
-                    ? "border-white/10 text-white/40"
+                    ? "border-white/10 text-white/60"
                     : "border-[#e5dce2] text-[#8b7f8c]"
                     }`}
                 >
@@ -1099,7 +1099,7 @@ export default function Home() {
                 </h3>
 
                 <p
-                  className={`mt-4 text-sm leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                  className={`mt-4 text-sm leading-7 ${dark ? "text-white/65" : "text-[#6d6572]"
                     }`}
                 >
                   {project.description}
@@ -1168,7 +1168,7 @@ export default function Home() {
             </h2>
 
             <p
-              className={`mt-5 text-base leading-7 ${dark ? "text-white/40" : "text-[#766d80]"
+              className={`mt-5 text-base leading-7 ${dark ? "text-white/60" : "text-[#766d80]"
                 }`}
             >
               A timeline of my education, internships, projects, and
@@ -1244,7 +1244,7 @@ export default function Home() {
 
                             <span
                               className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${dark
-                                ? "border-white/10 bg-white/[0.04] text-white/40"
+                                ? "border-white/10 bg-white/[0.04] text-white/60"
                                 : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
                                 }`}
                             >
@@ -1261,7 +1261,7 @@ export default function Home() {
                         </div>
 
                         <span
-                          className={`shrink-0 text-sm font-medium ${dark ? "text-white/35" : "text-[#91858f]"
+                          className={`shrink-0 text-sm font-medium ${dark ? "text-white/60" : "text-[#91858f]"
                             }`}
                         >
                           {experience.date}
@@ -1269,7 +1269,7 @@ export default function Home() {
                       </div>
 
                       <p
-                        className={`relative mt-5 max-w-3xl leading-7 ${dark ? "text-white/45" : "text-[#6d6572]"
+                        className={`relative mt-5 max-w-3xl leading-7 ${dark ? "text-white/65" : "text-[#6d6572]"
                           }`}
                       >
                         {experience.description}
@@ -1466,7 +1466,7 @@ export default function Home() {
                   required
                   placeholder="Your name"
                   className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
                       : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
@@ -1490,7 +1490,7 @@ export default function Home() {
                   required
                   placeholder="your@email.com"
                   className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
                       : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
@@ -1514,7 +1514,7 @@ export default function Home() {
                   rows={6}
                   placeholder="Write your message..."
                   className={`w-full resize-none rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:border-[#a78bfa]"
+                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
                       : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
@@ -1549,7 +1549,7 @@ export default function Home() {
           }`}
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className={dark ? "text-white/30" : "text-[#8b7f8c]"}>
+          <p className={dark ? "text-white/60" : "text-[#8b7f8c]"}>
             © 2026 Sevincxanim Yunusova. All rights reserved.
           </p>
 
