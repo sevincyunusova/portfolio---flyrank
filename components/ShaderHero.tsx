@@ -17,7 +17,6 @@ export default function ShaderHero() {
             return
         }
 
-        // Vertex shader: decides where each point/triangle is placed.
         const vertexShaderSource = `
             attribute vec2 a_position;
 
@@ -26,12 +25,23 @@ export default function ShaderHero() {
             }
         `
 
-        // Fragment shader: decides the color of every pixel.
         const fragmentShaderSource = `
             precision mediump float;
 
+            uniform float u_time;
+            uniform vec2 u_resolution;
+
             void main() {
-                gl_FragColor = vec4(0.49, 0.23, 0.93, 1.0);
+                vec2 uv = gl_FragCoord.xy / u_resolution;
+
+                float wave = sin(uv.x * 6.0 + u_time) * 0.5 + 0.5;
+
+                vec3 purple = vec3(0.49, 0.23, 0.93);
+                vec3 cyan = vec3(0.02, 0.71, 0.83);
+
+                vec3 color = mix(purple, cyan, wave);
+
+                gl_FragColor = vec4(color, 1.0);
             }
         `
 
@@ -80,7 +90,6 @@ export default function ShaderHero() {
             return
         }
 
-        // Two triangles create one fullscreen rectangle.
         const positions = new Float32Array([
             -1, -1,
              1, -1,
@@ -107,6 +116,16 @@ export default function ShaderHero() {
             "a_position"
         )
 
+        const timeLocation = gl.getUniformLocation(
+            program,
+            "u_time"
+        )
+
+        const resolutionLocation = gl.getUniformLocation(
+            program,
+            "u_resolution"
+        )
+
         gl.useProgram(program)
 
         gl.enableVertexAttribArray(positionLocation)
@@ -121,10 +140,18 @@ export default function ShaderHero() {
         )
 
         function resizeCanvas() {
-            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
+            const pixelRatio = Math.min(
+                window.devicePixelRatio || 1,
+                2
+            )
 
-            const width = canvas.clientWidth * pixelRatio
-            const height = canvas.clientHeight * pixelRatio
+            const width = Math.floor(
+                canvas.clientWidth * pixelRatio
+            )
+
+            const height = Math.floor(
+                canvas.clientHeight * pixelRatio
+            )
 
             if (
                 canvas.width !== width ||
@@ -146,19 +173,61 @@ export default function ShaderHero() {
 
         window.addEventListener("resize", resizeCanvas)
 
-        gl.clearColor(0, 0, 0, 0)
-        gl.clear(gl.COLOR_BUFFER_BIT)
+        let animationFrameId = 0
+        const startTime = performance.now()
 
-        gl.drawArrays(
-            gl.TRIANGLES,
-            0,
-            6
-        )
+        function render(currentTime: number) {
+            resizeCanvas()
+
+            const elapsedTime =
+                (currentTime - startTime) / 1000
+
+            gl.useProgram(program)
+
+            gl.uniform1f(
+                timeLocation,
+                elapsedTime
+            )
+
+            gl.uniform2f(
+                resolutionLocation,
+                canvas.width,
+                canvas.height
+            )
+
+            gl.drawArrays(
+                gl.TRIANGLES,
+                0,
+                6
+            )
+
+            animationFrameId =
+                requestAnimationFrame(render)
+        }
+
+        animationFrameId =
+            requestAnimationFrame(render)
 
         return () => {
-            window.removeEventListener("resize", resizeCanvas)
+            cancelAnimationFrame(animationFrameId)
+
+            window.removeEventListener(
+                "resize",
+                resizeCanvas
+            )
 
             gl.deleteBuffer(buffer)
             gl.deleteShader(vertexShader)
             gl.deleteShader(fragmentShader)
-            gl.delete
+            gl.deleteProgram(program)
+        }
+    }, [])
+
+    return (
+        <canvas
+            ref={canvasRef}
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full"
+        />
+    )
+}
