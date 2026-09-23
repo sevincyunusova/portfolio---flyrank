@@ -30,18 +30,43 @@ export default function ShaderHero() {
 
             uniform float u_time;
             uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
 
             void main() {
                 vec2 uv = gl_FragCoord.xy / u_resolution;
 
-                float wave = sin(uv.x * 6.0 + u_time) * 0.5 + 0.5;
+                vec2 mouse = u_mouse / u_resolution;
 
-                vec3 purple = vec3(0.49, 0.23, 0.93);
-                vec3 cyan = vec3(0.02, 0.71, 0.83);
+                float distanceFromMouse =
+                    distance(uv, mouse);
 
-                vec3 color = mix(purple, cyan, wave);
+                float mouseGlow =
+                    1.0 - smoothstep(
+                        0.0,
+                        0.5,
+                        distanceFromMouse
+                    );
 
-                gl_FragColor = vec4(color, 1.0);
+                float wave =
+                    sin(
+                        uv.x * 6.0 +
+                        u_time +
+                        mouseGlow * 3.0
+                    ) * 0.5 + 0.5;
+
+                vec3 purple =
+                    vec3(0.49, 0.23, 0.93);
+
+                vec3 cyan =
+                    vec3(0.02, 0.71, 0.83);
+
+                vec3 color =
+                    mix(purple, cyan, wave);
+
+                color += mouseGlow * 0.12;
+
+                gl_FragColor =
+                    vec4(color, 1.0);
             }
         `
 
@@ -111,24 +136,35 @@ export default function ShaderHero() {
             gl.STATIC_DRAW
         )
 
-        const positionLocation = gl.getAttribLocation(
-            program,
-            "a_position"
-        )
+        const positionLocation =
+            gl.getAttribLocation(
+                program,
+                "a_position"
+            )
 
-        const timeLocation = gl.getUniformLocation(
-            program,
-            "u_time"
-        )
+        const timeLocation =
+            gl.getUniformLocation(
+                program,
+                "u_time"
+            )
 
-        const resolutionLocation = gl.getUniformLocation(
-            program,
-            "u_resolution"
-        )
+        const resolutionLocation =
+            gl.getUniformLocation(
+                program,
+                "u_resolution"
+            )
+
+        const mouseLocation =
+            gl.getUniformLocation(
+                program,
+                "u_mouse"
+            )
 
         gl.useProgram(program)
 
-        gl.enableVertexAttribArray(positionLocation)
+        gl.enableVertexAttribArray(
+            positionLocation
+        )
 
         gl.vertexAttribPointer(
             positionLocation,
@@ -171,12 +207,42 @@ export default function ShaderHero() {
 
         resizeCanvas()
 
-        window.addEventListener("resize", resizeCanvas)
+        window.addEventListener(
+            "resize",
+            resizeCanvas
+        )
+
+        const mouse = {
+            x: canvas.clientWidth / 2,
+            y: canvas.clientHeight / 2,
+        }
+
+        function handleMouseMove(
+            event: MouseEvent
+        ) {
+            const rect =
+                canvas.getBoundingClientRect()
+
+            mouse.x =
+                event.clientX - rect.left
+
+            mouse.y =
+                rect.height -
+                (event.clientY - rect.top)
+        }
+
+        window.addEventListener(
+            "mousemove",
+            handleMouseMove
+        )
 
         let animationFrameId = 0
+
         const startTime = performance.now()
 
-        function render(currentTime: number) {
+        function render(
+            currentTime: number
+        ) {
             resizeCanvas()
 
             const elapsedTime =
@@ -195,6 +261,18 @@ export default function ShaderHero() {
                 canvas.height
             )
 
+            const pixelRatio =
+                Math.min(
+                    window.devicePixelRatio || 1,
+                    2
+                )
+
+            gl.uniform2f(
+                mouseLocation,
+                mouse.x * pixelRatio,
+                mouse.y * pixelRatio
+            )
+
             gl.drawArrays(
                 gl.TRIANGLES,
                 0,
@@ -209,11 +287,18 @@ export default function ShaderHero() {
             requestAnimationFrame(render)
 
         return () => {
-            cancelAnimationFrame(animationFrameId)
+            cancelAnimationFrame(
+                animationFrameId
+            )
 
             window.removeEventListener(
                 "resize",
                 resizeCanvas
+            )
+
+            window.removeEventListener(
+                "mousemove",
+                handleMouseMove
             )
 
             gl.deleteBuffer(buffer)
