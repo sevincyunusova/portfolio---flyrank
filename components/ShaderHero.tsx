@@ -117,12 +117,12 @@ export default function ShaderHero() {
 
         const positions = new Float32Array([
             -1, -1,
-             1, -1,
-            -1,  1,
+            1, -1,
+            -1, 1,
 
-            -1,  1,
-             1, -1,
-             1,  1,
+            -1, 1,
+            1, -1,
+            1, 1,
         ])
 
         const buffer = gl.createBuffer()
@@ -130,6 +130,7 @@ export default function ShaderHero() {
         if (!buffer) return
 
         gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+
         gl.bufferData(
             gl.ARRAY_BUFFER,
             positions,
@@ -312,7 +313,6 @@ export default function ShaderHero() {
         <canvas
             ref={canvasRef}
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full"
-        />
+            className="pointer-events-none absolute inset-0 z-0 h-full w-full" />
     )
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import ShaderHero from "@/components/ShaderHero"
 
 type ContactForm = {
   name: string
@@ -388,6 +389,13 @@ export default function Home() {
         id="home"
         className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl items-center overflow-hidden px-6 py-24"
       >
+        <ShaderHero />
+        <div
+          className={`pointer-events-none absolute inset-0 z-[1] ${dark
+              ? "bg-[#090718]/55"
+              : "bg-[#fffaf5]/45"
+            }`}
+        />
         <div
           className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
             }`}
@@ -1465,8 +1473,8 @@ export default function Home() {
                   required
                   placeholder="Your name"
                   className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
+                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
               </div>
@@ -1489,8 +1497,8 @@ export default function Home() {
                   required
                   placeholder="your@email.com"
                   className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
+                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
               </div>
@@ -1513,8 +1521,8 @@ export default function Home() {
                   rows={6}
                   placeholder="Write your message..."
                   className={`w-full resize-none rounded-2xl border px-5 py-4 outline-none transition ${dark
-                      ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
+                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
+                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
                     }`}
                 />
               </div>
@@ -1530,8 +1538,8 @@ export default function Home() {
               {status && (
                 <p
                   className={`text-sm font-medium ${status === "Message sent successfully!"
-                      ? "text-green-500"
-                      : "text-red-500"
+                    ? "text-green-500"
+                    : "text-red-500"
                     }`}
                 >
                   {status}
