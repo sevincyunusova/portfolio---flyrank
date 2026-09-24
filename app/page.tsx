@@ -1794,128 +1794,289 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* PROJECTS */}
-      <section
-        id="projects"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
-      >
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
-              My Projects
-            </p>
+     
+     <section
+  id="projects"
+  className={`relative overflow-hidden scroll-mt-24 py-24 ${
+    dark ? "bg-[#090718]" : "bg-[#fcf9ff]"
+  }`}
+>
+  {/* PROJECTS BACKGROUND */}
 
-            <h2 className="mt-4 text-4xl font-black sm:text-5xl">
-              A selection of my work.
-            </h2>
-          </div>
+  {/* Soft moving glow */}
+  <div
+    className={`pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full blur-[120px] ${
+      dark ? "bg-[#7c3aed]/12" : "bg-[#a855f7]/10"
+    }`}
+    style={{
+      animation: "techOrbOne 12s ease-in-out infinite",
+    }}
+  />
 
-          <p
-            className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/60" : "text-[#766d80]"
-              }`}
-          >
-            A collection of frontend projects built while learning,
-            experimenting, and working with modern web technologies.
+  <div
+    className={`pointer-events-none absolute -right-40 bottom-10 h-[420px] w-[420px] rounded-full blur-[120px] ${
+      dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/10"
+    }`}
+    style={{
+      animation: "techOrbTwo 15s ease-in-out infinite",
+    }}
+  />
+
+  {/* Large decorative orbit */}
+  <div
+    className={`pointer-events-none absolute left-1/2 top-[55%] h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+      dark ? "border-[#8b5cf6]/[0.07]" : "border-[#a855f7]/[0.08]"
+    }`}
+    style={{
+      animation: "techOrbitOne 60s linear infinite",
+    }}
+  >
+    <div
+      className={`absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full ${
+        dark
+          ? "bg-[#67e8f9] shadow-[0_0_20px_rgba(103,232,249,0.9)]"
+          : "bg-[#06b6d4] shadow-[0_0_20px_rgba(6,182,212,0.45)]"
+      }`}
+    />
+  </div>
+
+  {/* Second orbit */}
+  <div
+    className={`pointer-events-none absolute left-1/2 top-[55%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+      dark ? "border-[#06b6d4]/[0.06]" : "border-[#06b6d4]/[0.07]"
+    }`}
+    style={{
+      animation: "techOrbitTwo 42s linear infinite",
+    }}
+  >
+    <div
+      className={`absolute bottom-8 right-10 h-2 w-2 rounded-full ${
+        dark
+          ? "bg-[#c084fc] shadow-[0_0_18px_rgba(192,132,252,0.9)]"
+          : "bg-[#a855f7] shadow-[0_0_18px_rgba(168,85,247,0.4)]"
+      }`}
+    />
+  </div>
+
+  {/* Small floating particles */}
+  <div
+    className={`pointer-events-none absolute left-[12%] top-[30%] h-1.5 w-1.5 rounded-full ${
+      dark
+        ? "bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.9)]"
+        : "bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.35)]"
+    }`}
+    style={{
+      animation: "techParticle 5s ease-in-out infinite",
+    }}
+  />
+
+  <div
+    className={`pointer-events-none absolute right-[15%] top-[22%] h-1.5 w-1.5 rounded-full ${
+      dark
+        ? "bg-[#c084fc] shadow-[0_0_12px_rgba(192,132,252,0.9)]"
+        : "bg-[#a855f7] shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+    }`}
+    style={{
+      animation: "techParticle 6s ease-in-out infinite 1s",
+    }}
+  />
+
+  <div
+    className={`pointer-events-none absolute bottom-[18%] left-[28%] h-1 w-1 rounded-full ${
+      dark
+        ? "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.9)]"
+        : "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.35)]"
+    }`}
+    style={{
+      animation: "techParticle 7s ease-in-out infinite 2s",
+    }}
+  />
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl px-6">
+    {/* Header */}
+    <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <div>
+        <div className="mb-4 flex items-center gap-3">
+          <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4]" />
+
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#a78bfa]">
+            My Projects
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <article
-              key={project.title}
-              className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${dark
-                ? "border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] hover:border-[#8b5cf6]/50 hover:shadow-2xl hover:shadow-purple-950/50"
-                : "border-[#e6ddd3] bg-white shadow-sm hover:border-[#a855f7]/50 hover:shadow-2xl hover:shadow-purple-200/40"
-                }`}
-            >
-              <div
-                className={`absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150 ${index % 2 === 0
+        <h2
+          className={`text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl ${
+            dark ? "text-white" : "text-[#211b35]"
+          }`}
+        >
+          A selection of{" "}
+          <span className="bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+            my work.
+          </span>
+        </h2>
+      </div>
+
+      <p
+        className={`max-w-md text-sm leading-7 transition-colors duration-700 ${
+          dark ? "text-white/55" : "text-[#766d80]"
+        }`}
+      >
+        A collection of frontend projects built while learning,
+        experimenting, and working with modern web technologies.
+      </p>
+    </div>
+
+    {/* Projects */}
+    <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project, index) => (
+        <article
+          key={project.title}
+          className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[30px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${
+            dark
+              ? "border-white/[0.09] bg-white/[0.035] backdrop-blur-xl hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_25px_70px_rgba(124,58,237,0.18)]"
+              : "border-[#e6ddd3] bg-white/75 shadow-sm backdrop-blur-xl hover:border-[#a855f7]/45 hover:shadow-[0_25px_70px_rgba(168,85,247,0.14)]"
+          }`}
+        >
+          {/* Card glow */}
+          <div
+            className={`absolute -right-20 -top-20 h-48 w-48 rounded-full blur-[70px] transition-all duration-700 group-hover:scale-150 ${
+              index % 2 === 0
+                ? dark
                   ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
-                  : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
+                  : "bg-[#a855f7]/10 group-hover:bg-[#a855f7]/15"
+                : dark
+                  ? "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
+                  : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/15"
+            }`}
+          />
+
+          {/* Bottom glow */}
+          <div
+            className={`absolute -bottom-24 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full blur-[70px] opacity-0 transition-opacity duration-700 group-hover:opacity-100 ${
+              index % 2 === 0
+                ? "bg-[#7c3aed]/20"
+                : "bg-[#06b6d4]/20"
+            }`}
+          />
+
+          {/* Existing moving shine — kept and enhanced */}
+          <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent transition-transform duration-[1200ms] ease-out group-hover:translate-x-full" />
+
+          {/* Thin animated top line */}
+          <div className="pointer-events-none absolute left-0 top-0 h-px w-full overflow-hidden">
+            <div
+              className={`h-full w-1/3 bg-gradient-to-r from-transparent ${
+                index % 2 === 0
+                  ? "via-[#a78bfa] to-transparent"
+                  : "via-[#67e8f9] to-transparent"
+              }`}
+              style={{
+                animation: `techLine ${
+                  4 + index * 0.6
+                }s ease-in-out infinite`,
+              }}
+            />
+          </div>
+
+          {/* Top row */}
+          <div className="relative flex items-center justify-between">
+            <span
+              className={`text-sm font-bold tracking-wider ${
+                dark ? "text-white/35" : "text-[#c7bcc9]"
+              }`}
+            >
+              {project.number}
+            </span>
+
+            <span
+              className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] ${
+                dark
+                  ? "border-white/10 bg-white/[0.025] text-white/50"
+                  : "border-[#e5dce2] bg-white/70 text-[#8b7f8c]"
+              }`}
+            >
+              Project
+            </span>
+          </div>
+
+          {/* Main content */}
+          <div className="relative mt-10 flex-1">
+            <h3
+              className={`text-2xl font-black tracking-tight transition-all duration-300 ${
+                dark
+                  ? "text-white group-hover:text-[#d8ccff]"
+                  : "text-[#211b35] group-hover:text-[#7c3aed]"
+              }`}
+            >
+              {project.title}
+            </h3>
+
+            <p
+              className={`mt-4 text-sm leading-7 ${
+                dark ? "text-white/60" : "text-[#6d6572]"
+              }`}
+            >
+              {project.description}
+            </p>
+
+            {/* Tech tags */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {project.tech.map((technology) => (
+                <span
+                  key={technology}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 ${
+                    dark
+                      ? "border-[#8b5cf6]/10 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                      : "border-[#e9d5ff] bg-[#f3e8ff] text-[#7c3aed]"
                   }`}
-              />
-
-              <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-
-              <div className="relative flex items-center justify-between">
-                <span
-                  className={`text-sm font-bold ${dark ? "text-white/50" : "text-[#c7bcc9]"
-                    }`}
                 >
-                  {project.number}
+                  {technology}
                 </span>
+              ))}
+            </div>
+          </div>
 
-                <span
-                  className={`rounded-full border px-3 py-1 text-xs ${dark
-                    ? "border-white/10 text-white/60"
-                    : "border-[#e5dce2] text-[#8b7f8c]"
-                    }`}
-                >
-                  Project
-                </span>
-              </div>
+          {/* Bottom buttons */}
+          <div className="relative mt-8 flex gap-3">
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title} live demo`}
+              className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(139,92,246,0.35)]"
+            >
+              Live Demo ↗
+            </a>
 
-              <div className="relative mt-12 flex-1">
-                <h3
-                  className={`text-2xl font-black transition-all duration-300 ${dark
-                    ? "text-white group-hover:text-[#c4b5fd]"
-                    : "text-[#211b35] group-hover:text-[#7c3aed]"
-                    }`}
-                >
-                  {project.title}
-                </h3>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title} GitHub repository`}
+              className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${
+                dark
+                  ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
+                  : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
+              }`}
+            >
+              GitHub ↗
+            </a>
+          </div>
 
-                <p
-                  className={`mt-4 text-sm leading-7 ${dark ? "text-white/65" : "text-[#6d6572]"
-                    }`}
-                >
-                  {project.description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tech.map((technology) => (
-                    <span
-                      key={technology}
-                      className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 ${dark
-                        ? "bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                        : "bg-[#f3e8ff] text-[#7c3aed]"
-                        }`}
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative mt-8 flex gap-3">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${project.title} live demo`}
-                  className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30"
-                >
-                  Live Demo ↗
-                </a>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${project.title} GitHub repository`}
-                  className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${dark
-                    ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
-                    : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
-                    }`}
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
+          {/* Corner accent */}
+          <div
+            className={`absolute bottom-0 right-0 h-16 w-16 rounded-tl-[40px] opacity-0 transition-all duration-500 group-hover:opacity-100 ${
+              index % 2 === 0
+                ? "bg-gradient-to-tl from-[#7c3aed]/10"
+                : "bg-gradient-to-tl from-[#06b6d4]/10"
+            }`}
+          />
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
       {/* EXPERIENCE */}
       <section
         id="experience"
