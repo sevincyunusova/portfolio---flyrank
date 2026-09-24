@@ -385,152 +385,178 @@ export default function Home() {
       <div className="h-[73px]" />
 
       {/* HERO */}
-      <section
-        id="home"
-        className="relative mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl items-center overflow-hidden px-6 py-24"
+<section
+  id="home"
+  className="relative min-h-[calc(100vh-73px)] w-full overflow-hidden"
+>
+  <ShaderHero dark={dark} />
+
+  <div
+    className={`pointer-events-none absolute inset-0 z-[1] ${
+      dark
+        ? "bg-[#090718]/55"
+        : "bg-[#fffaf5]/45"
+    }`}
+  />
+
+  <div
+    className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
+      dark ? "opacity-30" : "opacity-50"
+    }`}
+    style={{
+      backgroundImage: dark
+        ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
+        : "linear-gradient(rgba(124,58,237,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.06) 1px, transparent 1px)",
+      backgroundSize: "45px 45px",
+      maskImage:
+        "radial-gradient(circle at center, black 0%, transparent 75%)",
+    }}
+  />
+
+  <div
+    className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${
+      dark
+        ? "bg-[#7c3aed]/20"
+        : "bg-[#c084fc]/25"
+    }`}
+  />
+
+  <div
+    className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${
+      dark
+        ? "bg-[#06b6d4]/10"
+        : "bg-[#67e8f9]/20"
+    }`}
+  />
+
+  <div className="pointer-events-none absolute right-[8%] top-[20%] hidden h-72 w-72 rounded-full border border-[#8b5cf6]/10 md:block">
+    <div className="absolute inset-5 rounded-full border border-[#06b6d4]/10" />
+    <div className="absolute inset-12 rounded-full border border-[#a855f7]/10" />
+
+    <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#a78bfa] shadow-lg shadow-purple-500/50" />
+
+    <div className="absolute bottom-10 right-5 h-2 w-2 rounded-full bg-[#67e8f9] shadow-lg shadow-cyan-500/50" />
+  </div>
+
+  <div
+    className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${
+      dark
+        ? "bg-[#67e8f9]"
+        : "bg-[#0891b2]"
+    }`}
+  />
+
+  {/* HERO CONTENT */}
+  <div className="relative z-10 mx-auto flex min-h-[calc(100vh-73px)] w-full max-w-7xl items-center px-8 py-24">
+    <div className="max-w-4xl">
+      <div
+        className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${
+          dark
+            ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
+            : "border-[#a855f7]/25 bg-[#f3e8ff]"
+        }`}
       >
-        <ShaderHero />
-        <div
-          className={`pointer-events-none absolute inset-0 z-[1] ${dark
-              ? "bg-[#090718]/55"
-              : "bg-[#fffaf5]/45"
-            }`}
-        />
-        <div
-          className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${dark ? "opacity-30" : "opacity-50"
-            }`}
-          style={{
-            backgroundImage: dark
-              ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
-              : "linear-gradient(rgba(124,58,237,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.06) 1px, transparent 1px)",
-            backgroundSize: "45px 45px",
-            maskImage:
-              "radial-gradient(circle at center, black 0%, transparent 75%)",
-          }}
-        />
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a78bfa] opacity-75" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8b5cf6]" />
+        </span>
 
-        <div
-          className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#7c3aed]/20" : "bg-[#c084fc]/25"
-            }`}
-        />
+        <span
+          className={`text-sm ${
+            dark
+              ? "text-[#c4b5fd]"
+              : "text-[#6d28d9]"
+          }`}
+        >
+          Available for opportunities
+        </span>
+      </div>
 
-        <div
-          className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/20"
-            }`}
-        />
+      <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+        Frontend Developer
+      </p>
 
-        <div className="pointer-events-none absolute right-[8%] top-[20%] hidden h-72 w-72 rounded-full border border-[#8b5cf6]/10 md:block">
-          <div className="absolute inset-5 rounded-full border border-[#06b6d4]/10" />
-          <div className="absolute inset-12 rounded-full border border-[#a855f7]/10" />
-          <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#a78bfa] shadow-lg shadow-purple-500/50" />
-          <div className="absolute bottom-10 right-5 h-2 w-2 rounded-full bg-[#67e8f9] shadow-lg shadow-cyan-500/50" />
-        </div>
+      <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+        Hi, I&apos;m{" "}
+        <span
+          className={`bg-clip-text text-transparent transition-all duration-700 ${
+            dark
+              ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
+              : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
+          }`}
+        >
+          Sevincxanim Yunusova.
+        </span>
+      </h1>
 
-        <div
-          className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${dark ? "bg-[#67e8f9]" : "bg-[#0891b2]"
-            }`}
-        />
+      <p
+        className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${
+          dark
+            ? "text-white/55"
+            : "text-[#625a70]"
+        }`}
+      >
+        I&apos;m a frontend developer and Information Technologies
+        student focused on building modern, responsive web
+        applications. I&apos;m also exploring frontend AI engineering
+        and creating practical AI-powered experiences.
+      </p>
 
-        <div className="relative z-10 max-w-4xl">
-          <div
-            className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${dark
-              ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
-              : "border-[#a855f7]/25 bg-[#f3e8ff]"
-              }`}
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a78bfa] opacity-75" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8b5cf6]" />
-            </span>
+      <div className="mt-9 flex flex-wrap gap-4">
+        <a
+          href="#projects"
+          className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
+        >
+          <span className="relative z-10">
+            Explore My Work →
+          </span>
 
-            <span
-              className={`text-sm ${dark ? "text-[#c4b5fd]" : "text-[#6d28d9]"
-                }`}
-            >
-              Available for opportunities
-            </span>
-          </div>
+          <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
+        </a>
 
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
-            Frontend Developer
-          </p>
+        <a
+          href="#contact"
+          className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${
+            dark
+              ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
+              : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
+          }`}
+        >
+          Let&apos;s Connect
+        </a>
+      </div>
 
-          <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            Hi, I&apos;m{" "}
-            <span
-              className={`bg-clip-text text-transparent transition-all duration-700 ${dark
-                ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
-                : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
-                }`}
-            >
-              Sevincxanim Yunusova.
-            </span>
-          </h1>
+      <div className="mt-10 flex flex-wrap gap-6 text-sm">
+        <a
+          href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-[#a78bfa] transition-all duration-300 hover:-translate-y-1 hover:text-[#c4b5fd]"
+        >
+          LinkedIn ↗
+        </a>
 
-          <p
-            className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#625a70]"
-              }`}
-          >
-            I&apos;m a frontend developer and Information Technologies
-            student focused on building modern, responsive web
-            applications. I&apos;m also exploring frontend AI engineering
-            and creating practical AI-powered experiences.
-          </p>
+        <a
+          href="https://github.com/sevincyunusova"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-[#67e8f9] transition-all duration-300 hover:-translate-y-1 hover:text-[#a5f3fc]"
+        >
+          GitHub ↗
+        </a>
 
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
-            >
-              <span className="relative z-10">
-                Explore My Work →
-              </span>
-
-              <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
-            </a>
-
-            <a
-              href="#contact"
-              className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
-                : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
-                }`}
-            >
-              Let&apos;s Connect
-            </a>
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-6 text-sm">
-            <a
-              href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[#a78bfa] transition-all duration-300 hover:-translate-y-1 hover:text-[#c4b5fd]"
-            >
-              LinkedIn ↗
-            </a>
-
-            <a
-              href="https://github.com/sevincyunusova"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[#67e8f9] transition-all duration-300 hover:-translate-y-1 hover:text-[#a5f3fc]"
-            >
-              GitHub ↗
-            </a>
-
-            <a
-              href="https://canva.link/19vm7ro7zqvgspn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[#f0abfc] transition-all duration-300 hover:-translate-y-1 hover:text-[#f5d0fe]"
-            >
-              View CV ↗
-            </a>
-          </div>
-        </div>
-      </section>
-
+        <a
+          href="https://canva.link/19vm7ro7zqvgspn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-[#f0abfc] transition-all duration-300 hover:-translate-y-1 hover:text-[#f5d0fe]"
+        >
+          View CV ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       {/* ABOUT */}
       <section
         id="about"
