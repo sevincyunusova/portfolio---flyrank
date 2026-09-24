@@ -385,178 +385,357 @@ export default function Home() {
       <div className="h-[73px]" />
 
       {/* HERO */}
-<section
-  id="home"
-  className="relative min-h-[calc(100vh-73px)] w-full overflow-hidden"
->
-  <ShaderHero dark={dark} />
-
-  <div
-    className={`pointer-events-none absolute inset-0 z-[1] ${
-      dark
-        ? "bg-[#090718]/55"
-        : "bg-[#fffaf5]/45"
-    }`}
-  />
-
-  <div
-    className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
-      dark ? "opacity-30" : "opacity-50"
-    }`}
-    style={{
-      backgroundImage: dark
-        ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
-        : "linear-gradient(rgba(124,58,237,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.06) 1px, transparent 1px)",
-      backgroundSize: "45px 45px",
-      maskImage:
-        "radial-gradient(circle at center, black 0%, transparent 75%)",
-    }}
-  />
-
-  <div
-    className={`pointer-events-none absolute -left-40 top-0 h-[420px] w-[420px] rounded-full blur-3xl transition-all duration-1000 ${
-      dark
-        ? "bg-[#7c3aed]/20"
-        : "bg-[#c084fc]/25"
-    }`}
-  />
-
-  <div
-    className={`pointer-events-none absolute right-[-120px] top-1/4 h-[400px] w-[400px] rounded-full blur-3xl transition-all duration-1000 ${
-      dark
-        ? "bg-[#06b6d4]/10"
-        : "bg-[#67e8f9]/20"
-    }`}
-  />
-
-  <div className="pointer-events-none absolute right-[8%] top-[20%] hidden h-72 w-72 rounded-full border border-[#8b5cf6]/10 md:block">
-    <div className="absolute inset-5 rounded-full border border-[#06b6d4]/10" />
-    <div className="absolute inset-12 rounded-full border border-[#a855f7]/10" />
-
-    <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#a78bfa] shadow-lg shadow-purple-500/50" />
-
-    <div className="absolute bottom-10 right-5 h-2 w-2 rounded-full bg-[#67e8f9] shadow-lg shadow-cyan-500/50" />
-  </div>
-
-  <div
-    className={`pointer-events-none absolute right-[15%] top-[18%] hidden h-3 w-3 animate-pulse rounded-full md:block ${
-      dark
-        ? "bg-[#67e8f9]"
-        : "bg-[#0891b2]"
-    }`}
-  />
-
-  {/* HERO CONTENT */}
-  <div className="relative z-10 mx-auto flex min-h-[calc(100vh-73px)] w-full max-w-7xl items-center px-8 py-24">
-    <div className="max-w-4xl">
-      <div
-        className={`mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${
-          dark
-            ? "border-[#8b5cf6]/30 bg-[#8b5cf6]/10"
-            : "border-[#a855f7]/25 bg-[#f3e8ff]"
-        }`}
+      {/* HERO */}
+      <section
+        id="home"
+        className="relative min-h-[calc(100vh-73px)] w-full overflow-hidden"
       >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a78bfa] opacity-75" />
-          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8b5cf6]" />
-        </span>
+        {/* Shader background */}
+        <ShaderHero dark={dark} />
 
-        <span
-          className={`text-sm ${
-            dark
-              ? "text-[#c4b5fd]"
-              : "text-[#6d28d9]"
-          }`}
-        >
-          Available for opportunities
-        </span>
-      </div>
+        {/* Main readability overlay */}
+        <div
+          className={`pointer-events-none absolute inset-0 z-[1] ${dark ? "bg-[#090718]/45" : "bg-[#fffaf5]/40"
+            }`}
+        />
 
-      <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
-        Frontend Developer
-      </p>
+        {/* Soft blurred color atmosphere */}
+        <div
+          className={`pointer-events-none absolute left-[8%] top-[18%] z-[1] h-[420px] w-[420px] rounded-full blur-[120px] transition-all duration-1000 ${dark ? "bg-[#7c3aed]/20" : "bg-[#c084fc]/20"
+            }`}
+        />
 
-      <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-        Hi, I&apos;m{" "}
-        <span
-          className={`bg-clip-text text-transparent transition-all duration-700 ${
-            dark
-              ? "bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9]"
-              : "bg-gradient-to-r from-[#7c3aed] via-[#a855f7] to-[#0891b2]"
-          }`}
-        >
-          Sevincxanim Yunusova.
-        </span>
-      </h1>
+        <div
+          className={`pointer-events-none absolute right-[8%] top-[12%] z-[1] h-[500px] w-[500px] rounded-full blur-[130px] transition-all duration-1000 ${dark ? "bg-[#06b6d4]/15" : "bg-[#67e8f9]/20"
+            }`}
+        />
 
-      <p
-        className={`mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${
-          dark
-            ? "text-white/55"
-            : "text-[#625a70]"
-        }`}
-      >
-        I&apos;m a frontend developer and Information Technologies
-        student focused on building modern, responsive web
-        applications. I&apos;m also exploring frontend AI engineering
-        and creating practical AI-powered experiences.
-      </p>
+        {/* Very subtle grid */}
+        <div
+          className={`pointer-events-none absolute inset-0 z-[1] transition-opacity duration-700 ${dark ? "opacity-20" : "opacity-35"
+            }`}
+          style={{
+            backgroundImage: dark
+              ? "linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px)"
+              : "linear-gradient(rgba(124,58,237,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.05) 1px, transparent 1px)",
+            backgroundSize: "55px 55px",
+            maskImage:
+              "radial-gradient(circle at center, black 0%, transparent 78%)",
+            WebkitMaskImage:
+              "radial-gradient(circle at center, black 0%, transparent 78%)",
+          }}
+        />
 
-      <div className="mt-9 flex flex-wrap gap-4">
-        <a
-          href="#projects"
-          className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
-        >
-          <span className="relative z-10">
-            Explore My Work →
-          </span>
+        {/* HERO CONTENT */}
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-73px)] w-full max-w-7xl items-center gap-12 px-8 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          {/* LEFT SIDE */}
+          <div className="relative max-w-3xl">
+            {/* Small glow behind text */}
+            <div
+              className={`pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full blur-[100px] ${dark ? "bg-[#8b5cf6]/15" : "bg-[#a855f7]/10"
+                }`}
+            />
 
-          <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
-        </a>
+            {/* Availability badge */}
+            <div
+              className={`relative mb-7 inline-flex items-center gap-3 rounded-full border px-4 py-2 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
+                ? "border-[#a78bfa]/30 bg-[#8b5cf6]/10 shadow-lg shadow-purple-500/10"
+                : "border-[#a855f7]/25 bg-white/70 shadow-lg shadow-purple-500/10"
+                }`}
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a78bfa] opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8b5cf6]" />
+              </span>
 
-        <a
-          href="#contact"
-          className={`rounded-full border px-7 py-3.5 font-semibold transition-all duration-300 hover:-translate-y-1 ${
-            dark
-              ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10"
-              : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#a855f7] hover:bg-[#f8f0ff]"
-          }`}
-        >
-          Let&apos;s Connect
-        </a>
-      </div>
+              <span
+                className={`text-sm ${dark ? "text-[#ddd6fe]" : "text-[#6d28d9]"
+                  }`}
+              >
+                Available for opportunities
+              </span>
+            </div>
 
-      <div className="mt-10 flex flex-wrap gap-6 text-sm">
-        <a
-          href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-[#a78bfa] transition-all duration-300 hover:-translate-y-1 hover:text-[#c4b5fd]"
-        >
-          LinkedIn ↗
-        </a>
+            {/* Role */}
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.32em] text-[#a78bfa]">
+              Frontend Developer
+            </p>
 
-        <a
-          href="https://github.com/sevincyunusova"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-[#67e8f9] transition-all duration-300 hover:-translate-y-1 hover:text-[#a5f3fc]"
-        >
-          GitHub ↗
-        </a>
+            {/* Main heading */}
+            <h1 className="relative max-w-4xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
+              <span className={dark ? "text-white" : "text-[#211b35]"}>
+                Hi, I&apos;m
+              </span>{" "}
+              <span className="relative inline-block">
+                {/* Glow behind name */}
+                <span
+                  className="pointer-events-none absolute -inset-x-4 -inset-y-3 rounded-full bg-gradient-to-r from-[#7c3aed]/30 via-[#c084fc]/25 to-[#06b6d4]/25 blur-2xl"
+                  aria-hidden="true"
+                />
 
-        <a
-          href="https://canva.link/19vm7ro7zqvgspn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-[#f0abfc] transition-all duration-300 hover:-translate-y-1 hover:text-[#f5d0fe]"
-        >
-          View CV ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+                {/* Shimmering name */}
+                <span
+                  className={`relative bg-[length:200%_100%] bg-clip-text text-transparent animate-[gradient_5s_ease_infinite] ${dark
+                    ? "bg-gradient-to-r from-[#a78bfa] via-[#f0abfc] to-[#67e8f9]"
+                    : "bg-gradient-to-r from-[#7c3aed] via-[#c026d3] to-[#0891b2]"
+                    }`}
+                >
+                  Sevincxanim Yunusova.
+                </span>
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p
+              className={`relative mt-8 max-w-2xl text-lg leading-8 transition-colors duration-700 ${dark ? "text-white/60" : "text-[#625a70]"
+                }`}
+            >
+              I&apos;m a frontend developer and Information Technologies student
+              focused on building modern, responsive web applications. I&apos;m
+              also exploring frontend AI engineering and creating practical
+              AI-powered experiences.
+            </p>
+
+            {/* Buttons */}
+            <div className="relative mt-9 flex flex-wrap gap-4">
+              {/* Primary button */}
+              <a
+                href="#projects"
+                className="group relative overflow-hidden rounded-full p-[1px] shadow-[0_0_35px_rgba(124,58,237,0.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(124,58,237,0.45)]"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-[#7c3aed] via-[#c026d3] to-[#06b6d4] opacity-90" />
+
+                <span className="relative block rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#06b6d4] px-7 py-3.5 font-semibold text-white">
+                  <span className="relative z-10">
+                    Explore My Work →
+                  </span>
+
+                  <span className="absolute inset-0 -translate-x-full bg-white/25 transition-transform duration-700 group-hover:translate-x-full" />
+                </span>
+              </a>
+
+              {/* Secondary button */}
+              <a
+                href="#contact"
+                className={`group relative overflow-hidden rounded-full border px-7 py-3.5 font-semibold backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${dark
+                  ? "border-white/15 bg-white/[0.04] text-white shadow-[0_0_25px_rgba(167,139,250,0.05)] hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/10 hover:shadow-[0_0_35px_rgba(167,139,250,0.18)]"
+                  : "border-[#ded3c7] bg-white/70 text-[#211b35] shadow-[0_0_25px_rgba(168,85,247,0.08)] hover:border-[#a855f7] hover:bg-[#f8f0ff] hover:shadow-[0_0_35px_rgba(168,85,247,0.15)]"
+                  }`}
+              >
+                <span className="relative z-10">Let&apos;s Connect</span>
+
+                <span
+                  className={`absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full`}
+                />
+              </a>
+            </div>
+
+            {/* Social links */}
+            <div className="relative mt-10 flex flex-wrap gap-6 text-sm">
+              <a
+                href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#a78bfa] transition-all duration-300 hover:-translate-y-1 hover:text-[#ddd6fe] hover:drop-shadow-[0_0_12px_rgba(167,139,250,0.7)]"
+              >
+                LinkedIn ↗
+              </a>
+
+              <a
+                href="https://github.com/sevincyunusova"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#67e8f9] transition-all duration-300 hover:-translate-y-1 hover:text-[#a5f3fc] hover:drop-shadow-[0_0_12px_rgba(103,232,249,0.7)]"
+              >
+                GitHub ↗
+              </a>
+
+              <a
+                href="https://canva.link/19vm7ro7zqvgspn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#f0abfc] transition-all duration-300 hover:-translate-y-1 hover:text-[#f5d0fe] hover:drop-shadow-[0_0_12px_rgba(240,171,252,0.7)]"
+              >
+                View CV ↗
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE — DEVELOPER VISUAL */}
+          {/* RIGHT SIDE — GLOWING DEVELOPER FRAME */}
+          <div className="relative hidden min-h-[520px] items-center justify-center lg:flex">
+
+            {/* Ambient glow */}
+            <div
+              className={`absolute h-[430px] w-[430px] rounded-full blur-[110px] ${dark ? "bg-[#7c3aed]/20" : "bg-[#a855f7]/15"
+                }`}
+            />
+
+            <div
+              className={`absolute h-[300px] w-[300px] rounded-full blur-[100px] ${dark ? "bg-[#06b6d4]/15" : "bg-[#67e8f9]/15"
+                }`}
+            />
+
+            {/* Rotating outer rings */}
+            <div className="absolute h-[360px] w-[360px] animate-[spin_75s_linear_infinite_reverse] rounded-full border border-[#06b6d4]/10">
+              <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_22px_rgba(103,232,249,0.95)]" />
+
+              <div className="absolute bottom-12 right-7 h-2.5 w-2.5 rounded-full bg-[#c084fc] shadow-[0_0_20px_rgba(192,132,252,0.9)]" />
+            </div>
+
+            {/* GLOWING FRAME */}
+            <div className="relative w-[450px]">
+
+              {/* Animated cyan/purple glowing border */}
+              <div
+                className="absolute -inset-[2px] rounded-[30px] opacity-90 blur-[1px]"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, transparent 0deg, transparent 45deg, #67e8f9 75deg, #a78bfa 110deg, transparent 145deg, transparent 240deg, #06b6d4 275deg, #c084fc 310deg, transparent 345deg)",
+                  animation: "spin 7s linear infinite",
+                }}
+              />
+
+              {/* Outer glow */}
+              <div
+                className="absolute -inset-4 rounded-[34px] opacity-40 blur-xl"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, transparent, #67e8f9, transparent, #a78bfa, transparent)",
+                  animation: "spin 7s linear infinite reverse",
+                }}
+              />
+
+              {/* Glass card */}
+              <div
+                className={`relative overflow-hidden rounded-[28px] border backdrop-blur-2xl ${dark
+                  ? "border-white/10 bg-[#0b0818]/80 shadow-[0_0_70px_rgba(6,182,212,0.12),0_0_100px_rgba(124,58,237,0.12)]"
+                  : "border-white/80 bg-white/70 shadow-[0_0_70px_rgba(168,85,247,0.15)]"
+                  }`}
+              >
+
+                {/* Inner top glow */}
+                <div
+                  className={`pointer-events-none absolute -top-32 left-1/2 h-48 w-80 -translate-x-1/2 rounded-full blur-3xl ${dark
+                    ? "bg-gradient-to-r from-[#7c3aed]/20 via-[#67e8f9]/25 to-[#c084fc]/20"
+                    : "bg-gradient-to-r from-[#c084fc]/15 via-[#67e8f9]/15 to-[#a78bfa]/15"
+                    }`}
+                />
+
+                {/* Small top accent line */}
+                <div className="relative h-[2px] w-full overflow-hidden bg-white/5">
+                  <div
+                    className="absolute left-0 top-0 h-full w-32 rounded-full bg-gradient-to-r from-transparent via-[#67e8f9] to-[#a78bfa] shadow-[0_0_15px_rgba(103,232,249,0.9)]"
+                    style={{
+                      animation: "frameLine 4s ease-in-out infinite",
+                    }}
+                  />
+                </div>
+
+                {/* Code content */}
+                <div className="relative px-8 py-9 font-mono text-sm leading-8">
+
+                  <div className={dark ? "text-white/25" : "text-black/25"}>
+                    01
+                  </div>
+
+                  <div className="pl-6">
+                    <span className="text-[#c084fc]">const</span>{" "}
+                    <span className={dark ? "text-white" : "text-[#211b35]"}>
+                      developer
+                    </span>{" "}
+                    <span className="text-[#67e8f9]">=</span>{" "}
+                    <span className="text-[#a5f3fc]">{"{"}</span>
+                  </div>
+
+                  <div className="pl-12">
+                    <span className="text-[#a78bfa]">name</span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      :
+                    </span>{" "}
+                    <span className="text-[#f0abfc]">
+                      &quot;Sevincxanim Yunusova&quot;
+                    </span>
+                    <span className={dark ? "text-white/30" : "text-black/30"}>
+                      ,
+                    </span>
+                  </div>
+
+                  <div className="pl-12">
+                    <span className="text-[#a78bfa]">role</span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      :
+                    </span>{" "}
+                    <span className="text-[#67e8f9]">
+                      &quot;Frontend Developer&quot;
+                    </span>
+                    <span className={dark ? "text-white/30" : "text-black/30"}>
+                      ,
+                    </span>
+                  </div>
+
+                  <div className="pl-12">
+                    <span className="text-[#a78bfa]">focus</span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      :
+                    </span>{" "}
+                    <span className="text-[#c4b5fd]">
+                      &quot;Web + AI + Helpdesk&quot;
+                    </span>
+                    <span className={dark ? "text-white/30" : "text-black/30"}>
+                      ,
+                    </span>
+                  </div>
+
+                  <div className="pl-12">
+                    <span className="text-[#a78bfa]">stack</span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      :
+                    </span>{" "}
+                    <span className="text-[#f0abfc]">
+                      [&quot;React&quot;, &quot;Next.js&quot;]
+                    </span>
+                  </div>
+
+                  <div className="pl-6 text-[#a5f3fc]">
+                    {"}"}
+                  </div>
+
+                  <div className="mt-6 pl-6">
+                    <span className="text-[#c084fc]">build</span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      {" "}
+                      {"→"}{" "}
+                    </span>
+                    <span className="text-[#67e8f9]">
+                      create
+                    </span>
+                    <span className={dark ? "text-white/40" : "text-black/40"}>
+                      {" "}
+                      {"→"}{" "}
+                    </span>
+                    <span className="text-[#f0abfc]">
+                      innovate
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom glowing line */}
+                <div className="relative h-[1px] w-full overflow-hidden bg-white/5">
+                  <div
+                    className="absolute right-0 top-0 h-full w-28 rounded-full bg-gradient-to-l from-transparent via-[#67e8f9] to-[#a78bfa] shadow-[0_0_14px_rgba(103,232,249,0.8)]"
+                    style={{
+                      animation: "frameLineReverse 4s ease-in-out infinite",
+                    }}
+                  />
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
       <section
         id="about"
