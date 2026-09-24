@@ -1125,288 +1125,697 @@ export default function Home() {
   </div>
 </section>
       {/* SKILLS */}
-      <section
-        id="skills"
-        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
-          ? "border-white/10 bg-[#100d25]"
-          : "border-[#e8ddd2] bg-[#f8f1ff]"
-          }`}
+      {/* SKILLS */}
+<section
+  id="skills"
+  className={`relative scroll-mt-24 overflow-hidden border-y transition-colors duration-700 ${
+    dark
+      ? "border-white/10 bg-[#100d25]"
+      : "border-[#e8ddd2] bg-[#f8f1ff]"
+  }`}
+>
+  {/* Ambient background glows */}
+  <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+  <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+
+  <div className="relative mx-auto max-w-7xl px-6 py-28">
+    {/* HEADER */}
+    <div className="relative max-w-3xl">
+      <div className="mb-4 flex items-center gap-3">
+        <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+
+        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+          Skills & Toolkit
+        </p>
+      </div>
+
+      <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+        Tools behind
+        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+          what I build.
+        </span>
+      </h2>
+
+      <p
+        className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
+          dark ? "text-white/50" : "text-[#766d80]"
+        }`}
       >
-        <div className="mx-auto max-w-6xl px-6 py-28">
+        A growing toolkit shaped by frontend development, programming,
+        AI integration, and real-world digital workflows.
+      </p>
+    </div>
 
-          {/* HEADER */}
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+    {/* SKILL CARDS */}
+    <div className="mt-14 grid gap-5 md:grid-cols-2">
+      {/* FRONTEND */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/20" />
+
+        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
+
+        <div className="relative">
+          <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
-                Skills
-              </p>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                01 / FRONTEND
+              </span>
 
-              <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-                Tools I use to build.
-              </h2>
+              <h3
+                className={`mt-3 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Frontend Development
+              </h3>
             </div>
 
-            <p
-              className={`max-w-md text-sm leading-6 transition-colors duration-700 ${dark ? "text-white/60" : "text-[#766d80]"
-                }`}
-            >
-              A growing toolkit focused on frontend development, programming,
-              AI integration, and modern digital workflows.
-            </p>
-          </div>
-
-          {/* SKILL CATEGORIES */}
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
-
-            {/* FRONTEND */}
             <div
-              className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-                : "border-[#e5dce2] bg-white hover:border-[#a855f7]/40 hover:shadow-xl hover:shadow-purple-200/20"
-                }`}
+              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${
+                dark
+                  ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                  : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+              }`}
             >
-              {/* Glow */}
-              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/20" />
-
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                      01
-                    </span>
-
-                    <h3
-                      className={`mt-2 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
-                        }`}
-                    >
-                      Frontend Development
-                    </h3>
-                  </div>
-
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                      ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                      : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
-                      }`}
-                  >
-                    &lt;/&gt;
-                  </div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2.5">
-                  {[
-                    "HTML5",
-                    "CSS3",
-                    "JavaScript",
-                    "TypeScript",
-                    "React",
-                    "Next.js",
-                    "Tailwind CSS",
-                    "Bootstrap",
-                    "Responsive Design",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
-                        }`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* PROGRAMMING */}
-            <div
-              className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-                : "border-[#e5dce2] bg-white hover:border-[#06b6d4]/40 hover:shadow-xl hover:shadow-cyan-200/20"
-                }`}
-            >
-              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#06b6d4]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
-
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
-                      02
-                    </span>
-
-                    <h3
-                      className={`mt-2 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
-                        }`}
-                    >
-                      Programming & APIs
-                    </h3>
-                  </div>
-
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                      ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
-                      : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
-                      }`}
-                  >
-                    {"{ }"}
-                  </div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2.5">
-                  {[
-                    "C++",
-                    "C#",
-                    "Python",
-                    "REST API",
-                    "JSON",
-                    "Git",
-                    "GitHub",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
-                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
-                        }`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* AI & DESIGN */}
-            <div
-              className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-                : "border-[#e5dce2] bg-white hover:border-[#f0abfc]/40 hover:shadow-xl hover:shadow-pink-200/20"
-                }`}
-            >
-              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#f0abfc]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
-
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
-                      03
-                    </span>
-
-                    <h3
-                      className={`mt-2 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
-                        }`}
-                    >
-                      AI & Design
-                    </h3>
-                  </div>
-
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                      ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
-                      : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
-                      }`}
-                  >
-                    ✦
-                  </div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2.5">
-                  {[
-                    "AI Integration",
-                    "Figma",
-                    "Canva",
-                    "Microsoft Office",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
-                        : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
-                        }`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* WORKFLOW */}
-            <div
-              className={`group relative overflow-hidden rounded-[28px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
-                : "border-[#e5dce2] bg-white hover:border-[#a78bfa]/40 hover:shadow-xl hover:shadow-purple-200/20"
-                }`}
-            >
-              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#a78bfa]/10 blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
-
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                      04
-                    </span>
-
-                    <h3
-                      className={`mt-2 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
-                        }`}
-                    >
-                      Workflow
-                    </h3>
-                  </div>
-
-                  <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                      ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
-                      : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
-                      }`}
-                  >
-                    ↗
-                  </div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2.5">
-                  {[
-                    "Git",
-                    "GitHub",
-                    "Responsive Design",
-                    "REST API",
-                    "JSON",
-                    "Component Design",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
-                        }`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              &lt;/&gt;
             </div>
           </div>
 
-          {/* BOTTOM LINE */}
-          <div className="mt-10 flex items-center gap-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+          <p
+            className={`mt-5 max-w-xl text-xs leading-6 ${
+              dark ? "text-white/45" : "text-[#766d80]"
+            }`}
+          >
+            Building responsive, interactive interfaces with modern frontend
+            technologies and component-based architecture.
+          </p>
 
-            <span
-              className={`text-[10px] font-bold uppercase tracking-[0.25em] ${dark ? "text-white/50" : "text-[#a397a7]"
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {[
+              "HTML5",
+              "CSS3",
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Next.js",
+              "Tailwind CSS",
+              "Bootstrap",
+              "Responsive Design",
+            ].map((skill, index) => (
+              <span
+                key={skill}
+                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
                 }`}
-            >
-              Always learning · Always building
-            </span>
-
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
+                style={{
+                  animationDelay: `${index * 40}ms`,
+                }}
+              >
+                {skill}
+              </span>
+            ))}
           </div>
-
         </div>
-      </section>
+      </div>
 
+      {/* PROGRAMMING */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/40 hover:shadow-[0_25px_70px_rgba(6,182,212,0.10)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
+
+        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
+
+        <div className="relative">
+          <div className="flex items-start justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
+                02 / PROGRAMMING
+              </span>
+
+              <h3
+                className={`mt-3 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Programming & APIs
+              </h3>
+            </div>
+
+            <div
+              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${
+                dark
+                  ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                  : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
+              }`}
+            >
+              {"{ }"}
+            </div>
+          </div>
+
+          <p
+            className={`mt-5 max-w-xl text-xs leading-6 ${
+              dark ? "text-white/45" : "text-[#766d80]"
+            }`}
+          >
+            Working with programming languages, APIs, data formats, version
+            control, and application communication.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {[
+              "C++",
+              "C#",
+              "Python",
+              "REST API",
+              "JSON",
+              "Git",
+              "GitHub",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
+                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
+                }`}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* AI & DESIGN */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/40 hover:shadow-[0_25px_70px_rgba(240,171,252,0.10)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
+
+        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#f0abfc] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
+
+        <div className="relative">
+          <div className="flex items-start justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
+                03 / AI + DESIGN
+              </span>
+
+              <h3
+                className={`mt-3 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                AI & Design
+              </h3>
+            </div>
+
+            <div
+              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${
+                dark
+                  ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
+                  : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
+              }`}
+            >
+              ✦
+            </div>
+          </div>
+
+          <p
+            className={`mt-5 max-w-xl text-xs leading-6 ${
+              dark ? "text-white/45" : "text-[#766d80]"
+            }`}
+          >
+            Exploring AI-powered interfaces while combining development with
+            visual design and productivity tools.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {[
+              "AI Integration",
+              "Figma",
+              "Canva",
+              "Microsoft Office",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
+                    : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
+                }`}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* WORKFLOW */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
+
+        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#8b5cf6] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
+
+        <div className="relative">
+          <div className="flex items-start justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                04 / WORKFLOW
+              </span>
+
+              <h3
+                className={`mt-3 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Workflow
+              </h3>
+            </div>
+
+            <div
+              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${
+                dark
+                  ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
+                  : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
+              }`}
+            >
+              ↗
+            </div>
+          </div>
+
+          <p
+            className={`mt-5 max-w-xl text-xs leading-6 ${
+              dark ? "text-white/45" : "text-[#766d80]"
+            }`}
+          >
+            Organizing projects with version control, reusable components,
+            responsive layouts, APIs, and iterative development.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {[
+              "Git",
+              "GitHub",
+              "Responsive Design",
+              "REST API",
+              "JSON",
+              "Component Design",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                }`}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* BOTTOM LINE */}
+    <div className="mt-12 flex items-center gap-4">
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+
+      <span
+        className={`text-[10px] font-bold uppercase tracking-[0.25em] ${
+          dark ? "text-white/30" : "text-[#a397a7]"
+        }`}
+      >
+        Always learning · Always building
+      </span>
+
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
+    </div>
+  </div>
+</section>
+
+{/* TECHNOLOGIES */}
+<section
+  id="technologies"
+  className={`relative scroll-mt-24 overflow-hidden transition-colors duration-700 ${
+    dark ? "bg-[#0c091d]" : "bg-[#fcf8ff]"
+  }`}
+>
+  {/* Ambient glows */}
+  <div className="pointer-events-none absolute left-1/4 top-0 h-72 w-72 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+  <div className="pointer-events-none absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+
+  <div className="relative mx-auto max-w-7xl px-6 py-28">
+    {/* HEADER */}
+    <div className="max-w-3xl">
+      <div className="mb-4 flex items-center gap-3">
+        <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+
+        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+          Technologies
+        </p>
+      </div>
+
+      <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+        Technologies I
+        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+          work with.
+        </span>
+      </h2>
+
+      <p
+        className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
+          dark ? "text-white/50" : "text-[#766d80]"
+        }`}
+      >
+        A visual overview of the technologies and tools I have been working
+        with across development, design, AI, and technical support.
+      </p>
+    </div>
+
+    {/* TECHNOLOGY GROUPS */}
+    <div className="mt-14 grid gap-5 md:grid-cols-2">
+      {/* FRONTEND */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/35"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/35 hover:shadow-[0_25px_70px_rgba(124,58,237,0.08)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/15" />
+
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                01
+              </span>
+
+              <h3
+                className={`mt-2 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Frontend
+              </h3>
+            </div>
+
+            <span className="text-2xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+              ◇
+            </span>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            {[
+              ["HTML5", 100],
+              ["CSS3", 95],
+              ["JavaScript", 85],
+              ["Tailwind CSS", 90],
+              ["React", 60],
+              ["Next.js", 55],
+              ["Bootstrap", 85],
+              ["TypeScript", 45],
+            ].map(([name, level]) => (
+              <div key={name} className="group/item">
+                <div className="mb-2 flex items-center justify-between">
+                  <span
+                    className={`text-xs font-semibold ${
+                      dark ? "text-white/70" : "text-[#51485c]"
+                    }`}
+                  >
+                    {name}
+                  </span>
+                </div>
+
+                <div
+                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  }`}
+                >
+                  <div
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    style={{ width: `${level}%` }}
+                  >
+                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#e0faff] shadow-[0_0_8px_rgba(103,232,249,1)]" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* PROGRAMMING */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/35"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/35 hover:shadow-[0_25px_70px_rgba(6,182,212,0.08)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/15" />
+
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
+                02
+              </span>
+
+              <h3
+                className={`mt-2 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Programming & APIs
+              </h3>
+            </div>
+
+            <span className="text-2xl text-[#67e8f9] transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110">
+              {"{ }"}
+            </span>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            {[
+              ["C++", 70],
+              ["C#", 60],
+              ["Python", 65],
+              ["REST API", 75],
+              ["JSON", 85],
+              ["Git", 90],
+              ["GitHub", 90],
+            ].map(([name, level]) => (
+              <div key={name} className="group/item">
+                <div className="mb-2 flex items-center justify-between">
+                  <span
+                    className={`text-xs font-semibold ${
+                      dark ? "text-white/70" : "text-[#51485c]"
+                    }`}
+                  >
+                    {name}
+                  </span>
+                </div>
+
+                <div
+                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  }`}
+                >
+                  <div
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#0891b2] via-[#06b6d4] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    style={{ width: `${level}%` }}
+                  >
+                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#e0faff] shadow-[0_0_8px_rgba(103,232,249,1)]" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* AI & DESIGN */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/35"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/35 hover:shadow-[0_25px_70px_rgba(240,171,252,0.08)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/15" />
+
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
+                03
+              </span>
+
+              <h3
+                className={`mt-2 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                AI & Design
+              </h3>
+            </div>
+
+            <span className="text-2xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+              ✦
+            </span>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            {[
+              ["AI Integration", 65],
+              ["Figma", 45],
+              ["Canva", 75],
+              ["Microsoft Word", 90],
+              ["PowerPoint", 90],
+              ["Excel", 80],
+            ].map(([name, level]) => (
+              <div key={name} className="group/item">
+                <div className="mb-2 flex items-center justify-between">
+                  <span
+                    className={`text-xs font-semibold ${
+                      dark ? "text-white/70" : "text-[#51485c]"
+                    }`}
+                  >
+                    {name}
+                  </span>
+                </div>
+
+                <div
+                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  }`}
+                >
+                  <div
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#c026d3] via-[#f0abfc] to-[#c4b5fd] shadow-[0_0_10px_rgba(240,171,252,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(240,171,252,0.8)]"
+                    style={{ width: `${level}%` }}
+                  >
+                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#fff2ff] shadow-[0_0_8px_rgba(240,171,252,1)]" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* SUPPORT & WORKFLOW */}
+      <div
+        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+          dark
+            ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/35"
+            : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/35 hover:shadow-[0_25px_70px_rgba(124,58,237,0.08)]"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/15" />
+
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                04
+              </span>
+
+              <h3
+                className={`mt-2 text-xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Support & Workflow
+              </h3>
+            </div>
+
+            <span className="text-2xl text-[#c4b5fd] transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110">
+              ↗
+            </span>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            {[
+              ["Technical Support", 75],
+              ["Troubleshooting", 80],
+              ["Component Design", 75],
+              ["Responsive Design", 90],
+              ["Problem Solving", 85],
+              ["Team Collaboration", 85],
+            ].map(([name, level]) => (
+              <div key={name} className="group/item">
+                <div className="mb-2 flex items-center justify-between">
+                  <span
+                    className={`text-xs font-semibold ${
+                      dark ? "text-white/70" : "text-[#51485c]"
+                    }`}
+                  >
+                    {name}
+                  </span>
+                </div>
+
+                <div
+                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  }`}
+                >
+                  <div
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_10px_rgba(167,139,250,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    style={{ width: `${level}%` }}
+                  >
+                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#f5f3ff] shadow-[0_0_8px_rgba(167,139,250,1)]" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* BOTTOM NOTE */}
+    <div className="mt-12 flex items-center gap-4">
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+
+      <span
+        className={`text-center text-[10px] font-bold uppercase tracking-[0.25em] ${
+          dark ? "text-white/30" : "text-[#a397a7]"
+        }`}
+      >
+        Progress, not perfection
+      </span>
+
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
+    </div>
+  </div>
+</section>
       {/* PROJECTS */}
       <section
         id="projects"
