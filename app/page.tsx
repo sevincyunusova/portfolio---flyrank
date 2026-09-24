@@ -229,150 +229,141 @@ export default function Home() {
 
   return (
     <main
-      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${
-        dark
+      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
           ? "bg-[#090718] text-white"
           : "bg-[#fffaf5] text-[#211b35]"
-      }`}
-    >
-{/* NAVBAR */}
-<nav
-  className={`fixed left-1/2 top-4 z-50 w-[calc(100%-32px)] max-w-6xl -translate-x-1/2 rounded-2xl border backdrop-blur-2xl transition-all duration-300 ${
-    dark
-      ? "border-white/10 bg-[#090718]/55 shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
-      : "border-white/70 bg-white/55 shadow-[0_8px_40px_rgba(124,58,237,0.10)]"
-  }`}
->
-  {/* Purple / cyan ambient glow */}
-  <div className="pointer-events-none absolute -left-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#7c3aed]/15 blur-3xl" />
-
-  <div className="pointer-events-none absolute -right-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#06b6d4]/10 blur-3xl" />
-
-  <div className="relative flex h-[68px] items-center justify-between px-5">
-    {/* Logo */}
-    <a
-      href="#home"
-      className="group relative flex items-center gap-2"
-    >
-      <span
-        className={`text-lg font-bold tracking-tight transition-colors ${
-          dark ? "text-white" : "text-[#171225]"
         }`}
-      >
-        S<span className="text-[#8b5cf6]">.</span>
-      </span>
-
-      {/* Logo glow */}
-      <span className="absolute -left-2 top-1/2 -z-10 h-8 w-8 -translate-y-1/2 rounded-full bg-[#8b5cf6]/30 blur-xl transition-all duration-300 group-hover:bg-[#06b6d4]/40" />
-    </a>
-
-    {/* Navigation */}
-    <div
-      className={`hidden items-center gap-1 rounded-xl border px-1.5 py-1.5 md:flex ${
-        dark
-          ? "border-white/5 bg-white/[0.03]"
-          : "border-black/5 bg-black/[0.02]"
-      }`}
     >
-      {[
-        ["Home", "#home"],
-        ["About", "#about"],
-        ["Skills", "#skills"],
-        ["Projects", "#projects"],
-        ["Experience", "#experience"],
-        ["Contact", "#contact"],
-      ].map(([label, href]) => (
-        <a
-          key={href}
-          href={href}
-          className={`group relative rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 ${
-            dark
-              ? "text-white/60 hover:bg-white/[0.06] hover:text-white"
-              : "text-black/55 hover:bg-black/[0.04] hover:text-black"
+      {/* NAVBAR */}
+      <nav
+        className={`fixed left-1/2 top-4 z-50 w-[calc(100%-32px)] max-w-6xl -translate-x-1/2 rounded-2xl border backdrop-blur-2xl transition-all duration-300 ${dark
+            ? "border-white/10 bg-[#090718]/55 shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
+            : "border-white/70 bg-white/55 shadow-[0_8px_40px_rgba(124,58,237,0.10)]"
           }`}
-        >
-          {label}
-
-          {/* Hover glow */}
-          <span className="absolute bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.7)] transition-all duration-300 group-hover:w-4" />
-        </a>
-      ))}
-    </div>
-
-    {/* Right side */}
-    <div className="flex items-center gap-2">
-      {/* Theme button */}
-      <button
-        type="button"
-        onClick={toggleDark}
-        aria-label="Toggle theme"
-        className={`group relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border transition-all duration-300 ${
-          dark
-            ? "border-white/10 bg-white/[0.04] text-white/70 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-white"
-            : "border-black/10 bg-black/[0.03] text-black/60 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-black"
-        }`}
       >
-        <span className="text-sm transition-transform duration-300 group-hover:rotate-12">
-          {dark ? "☀" : "☾"}
-        </span>
+        {/* Purple / cyan ambient glow */}
+        <div className="pointer-events-none absolute -left-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#7c3aed]/15 blur-3xl" />
 
-        <span className="absolute inset-0 -z-10 rounded-xl bg-[#8b5cf6]/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
-      </button>
+        <div className="pointer-events-none absolute -right-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#06b6d4]/10 blur-3xl" />
 
-      {/* Mobile menu button */}
-      <button
-        type="button"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Open navigation menu"
-        className={`flex h-9 w-9 items-center justify-center rounded-xl border md:hidden ${
-          dark
-            ? "border-white/10 bg-white/[0.04] text-white"
-            : "border-black/10 bg-black/[0.03] text-black"
-        }`}
-      >
-        <div className="flex flex-col gap-1">
-          <span className="h-[2px] w-4 rounded-full bg-current" />
-          <span className="h-[2px] w-3 rounded-full bg-current" />
-          <span className="h-[2px] w-4 rounded-full bg-current" />
+        <div className="relative flex h-[68px] items-center justify-between px-5">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="group relative flex items-center gap-2"
+          >
+            <span
+              className={`text-lg font-bold tracking-tight transition-colors ${dark ? "text-white" : "text-[#171225]"
+                }`}
+            >
+              S<span className="text-[#8b5cf6]">.</span>
+            </span>
+
+            {/* Logo glow */}
+            <span className="absolute -left-2 top-1/2 -z-10 h-8 w-8 -translate-y-1/2 rounded-full bg-[#8b5cf6]/30 blur-xl transition-all duration-300 group-hover:bg-[#06b6d4]/40" />
+          </a>
+
+          {/* Navigation */}
+          <div
+            className={`hidden items-center gap-1 rounded-xl border px-1.5 py-1.5 md:flex ${dark
+                ? "border-white/5 bg-white/[0.03]"
+                : "border-black/5 bg-black/[0.02]"
+              }`}
+          >
+            {[
+              ["Home", "#home"],
+              ["About", "#about"],
+              ["Skills", "#skills"],
+              ["Projects", "#projects"],
+              ["Experience", "#experience"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className={`group relative rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 ${dark
+                    ? "text-white/60 hover:bg-white/[0.06] hover:text-white"
+                    : "text-black/55 hover:bg-black/[0.04] hover:text-black"
+                  }`}
+              >
+                {label}
+
+                {/* Hover glow */}
+                <span className="absolute bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.7)] transition-all duration-300 group-hover:w-4" />
+              </a>
+            ))}
+          </div>
+
+          {/* Right side */}
+          <div className="flex items-center gap-2">
+            {/* Theme button */}
+            <button
+              type="button"
+              onClick={toggleDark}
+              aria-label="Toggle theme"
+              className={`group relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border transition-all duration-300 ${dark
+                  ? "border-white/10 bg-white/[0.04] text-white/70 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-white"
+                  : "border-black/10 bg-black/[0.03] text-black/60 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-black"
+                }`}
+            >
+              <span className="text-sm transition-transform duration-300 group-hover:rotate-12">
+                {dark ? "☀" : "☾"}
+              </span>
+
+              <span className="absolute inset-0 -z-10 rounded-xl bg-[#8b5cf6]/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+            </button>
+
+            {/* Mobile menu button */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Open navigation menu"
+              className={`flex h-9 w-9 items-center justify-center rounded-xl border md:hidden ${dark
+                  ? "border-white/10 bg-white/[0.04] text-white"
+                  : "border-black/10 bg-black/[0.03] text-black"
+                }`}
+            >
+              <div className="flex flex-col gap-1">
+                <span className="h-[2px] w-4 rounded-full bg-current" />
+                <span className="h-[2px] w-3 rounded-full bg-current" />
+                <span className="h-[2px] w-4 rounded-full bg-current" />
+              </div>
+            </button>
+          </div>
         </div>
-      </button>
-    </div>
-  </div>
 
-  {/* Mobile menu */}
-  {menuOpen && (
-    <div
-      className={`border-t px-4 py-3 md:hidden ${
-        dark ? "border-white/10" : "border-black/10"
-      }`}
-    >
-      {[
-        ["Home", "#home"],
-        ["About", "#about"],
-        ["Skills", "#skills"],
-        ["Projects", "#projects"],
-        ["Experience", "#experience"],
-        ["Contact", "#contact"],
-      ].map(([label, href]) => (
-        <a
-          key={href}
-          href={href}
-          onClick={() => setMenuOpen(false)}
-          className={`block rounded-xl px-4 py-3 text-sm transition-colors ${
-            dark
-              ? "text-white/65 hover:bg-white/[0.05] hover:text-white"
-              : "text-black/60 hover:bg-black/[0.04] hover:text-black"
-          }`}
-        >
-          {label}
-        </a>
-      ))}
-    </div>
-  )}
-</nav>
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div
+            className={`border-t px-4 py-3 md:hidden ${dark ? "border-white/10" : "border-black/10"
+              }`}
+          >
+            {[
+              ["Home", "#home"],
+              ["About", "#about"],
+              ["Skills", "#skills"],
+              ["Projects", "#projects"],
+              ["Experience", "#experience"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`block rounded-xl px-4 py-3 text-sm transition-colors ${dark
+                    ? "text-white/65 hover:bg-white/[0.05] hover:text-white"
+                    : "text-black/60 hover:bg-black/[0.04] hover:text-black"
+                  }`}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        )}
+      </nav>
 
-{/* NAVBAR OFFSET */}
-<div className="h-[73px]" />
+      {/* NAVBAR OFFSET */}
+      <div className="h-[73px]" />
       {/* HERO */}
       <section
         id="home"
@@ -720,226 +711,419 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section
-        id="about"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24"
-      >
-        {/* HEADER */}
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
-            About Me
+      {/* ABOUT */}
+<section
+  id="about"
+  className="relative mx-auto max-w-7xl scroll-mt-24 overflow-hidden px-6 py-28"
+>
+  {/* Ambient background glows */}
+  <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+  <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+
+  {/* Section header */}
+  <div className="relative mb-14 max-w-3xl">
+    <div className="mb-4 flex items-center gap-3">
+      <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+
+      <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+        About Me
+      </p>
+    </div>
+
+    <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+      Turning ideas into
+      <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+        digital experiences.
+      </span>
+    </h2>
+
+    <p
+      className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
+        dark ? "text-white/55" : "text-[#766d80]"
+      }`}
+    >
+      A frontend developer and Information Technologies student focused on
+      building modern interfaces, exploring AI-powered experiences, and
+      learning through real-world projects.
+    </p>
+  </div>
+
+  {/* Main About Card */}
+  <div className="relative grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+    {/* Main glass card */}
+    <div
+      className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 sm:p-9 lg:p-10 ${
+        dark
+          ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/25"
+          : "border-[#e8dfe8] bg-white/60 shadow-[0_20px_70px_rgba(124,58,237,0.06)] hover:border-[#a855f7]/30"
+      }`}
+    >
+      {/* Card glow */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#8b5cf6]/10 blur-[90px] transition-transform duration-1000 group-hover:scale-125" />
+
+      <div className="pointer-events-none absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-[#06b6d4]/8 blur-[90px]" />
+
+      {/* Animated top line */}
+      <div className="absolute left-8 right-8 top-0 h-px overflow-hidden">
+        <div className="h-full w-24 animate-[aboutLine_5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_14px_rgba(103,232,249,0.8)]" />
+      </div>
+
+      <div className="relative">
+        <div className="flex items-center justify-between">
+          <span
+            className={`font-mono text-[11px] tracking-[0.2em] ${
+              dark ? "text-white/25" : "text-black/25"
+            }`}
+          >
+            01 / ABOUT
+          </span>
+
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.9)]" />
+            <span
+              className={`text-[10px] font-medium ${
+                dark ? "text-white/35" : "text-black/35"
+              }`}
+            >
+              IN PROGRESS
+            </span>
+          </span>
+        </div>
+
+        <div className="mt-10 max-w-3xl">
+          <p
+            className={`text-xl font-medium leading-9 sm:text-2xl sm:leading-10 ${
+              dark ? "text-white/85" : "text-[#332a3d]"
+            }`}
+          >
+            I&apos;m an Information Technologies student at Azerbaijan State
+            Oil and Industry University and a frontend developer who enjoys
+            turning ideas into{" "}
+            <span className="bg-gradient-to-r from-[#a78bfa] to-[#67e8f9] bg-clip-text text-transparent">
+              clean, interactive web experiences.
+            </span>
           </p>
 
-          <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
-            Building for the web,
-            <span className="block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
-              learning as I go.
-            </span>
-          </h2>
-        </div>
-
-        {/* MAIN INTRO */}
-        <div
-          className={`relative mt-10 overflow-hidden rounded-[28px] border p-7 sm:p-8 lg:p-10 ${dark
-            ? "border-white/10 bg-gradient-to-br from-white/[0.06] via-white/[0.025] to-transparent"
-            : "border-[#e5dce2] bg-gradient-to-br from-white via-[#faf7ff] to-[#f5fbff] shadow-sm"
+          <p
+            className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
+              dark ? "text-white/50" : "text-[#766d80]"
             }`}
+          >
+            My journey combines academic learning with hands-on experience
+            through internships, personal projects, and real-world development.
+            I&apos;m continuously improving my frontend skills while exploring
+            how AI can make modern web applications more useful and engaging.
+          </p>
+        </div>
+
+        {/* Mini stats */}
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {[
+            ["01", "Frontend"],
+            ["02", "AI Engineering"],
+            ["03", "Helpdesk"],
+            ["04", "Learning"],
+          ].map(([number, label], index) => (
+            <div
+              key={label}
+              className={`group/stat relative overflow-hidden rounded-2xl border p-4 transition-all duration-500 hover:-translate-y-1 ${
+                dark
+                  ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/30 hover:bg-white/[0.055]"
+                  : "border-black/5 bg-white/60 hover:border-[#a855f7]/25 hover:bg-white"
+              }`}
+            >
+              <div
+                className={`absolute -right-6 -top-6 h-14 w-14 rounded-full blur-2xl transition-transform duration-500 group-hover/stat:scale-150 ${
+                  index % 2 === 0 ? "bg-[#8b5cf6]/15" : "bg-[#06b6d4]/15"
+                }`}
+              />
+
+              <div className="relative">
+                <p
+                  className={`text-xl font-black ${
+                    index === 1
+                      ? "text-[#67e8f9]"
+                      : index === 2
+                        ? "text-[#f0abfc]"
+                        : "text-[#a78bfa]"
+                  }`}
+                >
+                  {number}
+                </p>
+
+                <p
+                  className={`mt-1 text-[10px] font-medium ${
+                    dark ? "text-white/50" : "text-[#766d80]"
+                  }`}
+                >
+                  {label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Right visual */}
+    <div
+      className={`relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-[32px] border ${
+        dark
+          ? "border-white/10 bg-white/[0.025]"
+          : "border-[#e8dfe8] bg-white/50"
+      }`}
+    >
+      {/* Background glow */}
+      <div className="absolute h-56 w-56 rounded-full bg-[#7c3aed]/15 blur-[90px]" />
+      <div className="absolute -right-10 top-10 h-40 w-40 rounded-full bg-[#06b6d4]/15 blur-[70px]" />
+
+      {/* Rotating rings */}
+      <div className="absolute h-[310px] w-[310px] animate-[spin_55s_linear_infinite] rounded-full border border-[#8b5cf6]/10">
+        <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
+      </div>
+
+      <div className="absolute h-[230px] w-[230px] animate-[spin_42s_linear_infinite_reverse] rounded-full border border-[#06b6d4]/10" />
+
+      {/* Profile glass object */}
+      <div className="relative w-[250px] animate-[aboutFloat_6s_ease-in-out_infinite]">
+        {/* Glow behind card */}
+        <div className="absolute -inset-6 rounded-[30px] bg-gradient-to-br from-[#7c3aed]/20 via-transparent to-[#06b6d4]/15 blur-2xl" />
+
+        <div
+          className={`relative overflow-hidden rounded-[26px] border backdrop-blur-2xl ${
+            dark
+              ? "border-white/10 bg-[#0b0818]/75 shadow-[0_0_70px_rgba(124,58,237,0.15)]"
+              : "border-white/80 bg-white/75 shadow-[0_0_70px_rgba(124,58,237,0.10)]"
+          }`}
         >
-          {/* Decorative elements */}
-          <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-3xl" />
+          {/* Top gradient */}
+          <div className="h-1 w-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9]" />
 
-          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-[#06b6d4]/10 blur-3xl" />
+          <div className="p-6">
+            {/* Terminal dots */}
+            <div className="mb-6 flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#f0abfc]" />
+              <span className="h-2 w-2 rounded-full bg-[#a78bfa]" />
+              <span className="h-2 w-2 rounded-full bg-[#67e8f9]" />
 
-          <div className="relative grid gap-8 lg:grid-cols-[1fr_0.65fr] lg:items-center">
-            {/* TEXT */}
-            <div>
-              <p
-                className={`text-lg leading-8 sm:text-xl sm:leading-9 ${dark ? "text-white/70" : "text-[#51485b]"
-                  }`}
+              <span
+                className={`ml-auto font-mono text-[9px] ${
+                  dark ? "text-white/20" : "text-black/20"
+                }`}
               >
-                I&apos;m an Information Technologies student at Azerbaijan State
-                Oil and Industry University and a frontend developer passionate
-                about building modern digital experiences.
-              </p>
-
-              <p
-                className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/65" : "text-[#766d80]"
-                  }`}
-              >
-                My journey combines academic learning with hands-on experience
-                through internships, personal projects, and real-world development.
-                I enjoy transforming ideas into responsive, functional interfaces
-                and continuously improving the way I build for the web.
-              </p>
+                developer.ts
+              </span>
             </div>
 
-            {/* QUICK INFO */}
-            <div className="grid grid-cols-2 gap-3">
-              <div
-                className={`rounded-2xl border p-4 ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-[#e5dce2] bg-white"
-                  }`}
-              >
-                <p className="text-2xl font-black text-[#a78bfa]">01</p>
+            {/* Code-style identity */}
+            <div className="font-mono text-xs leading-7">
+              <div className={dark ? "text-white/25" : "text-black/25"}>
+                01
+              </div>
 
-                <p
-                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
-                    }`}
+              <div className="pl-4">
+                <span className="text-[#c084fc]">const</span>{" "}
+                <span className={dark ? "text-white" : "text-[#211b35]"}>
+                  passion
+                </span>{" "}
+                <span className="text-[#67e8f9]">=</span>
+              </div>
+
+              <div className="pl-8">
+                <span className="text-[#f0abfc]">
+                  &quot;build + learn&quot;
+                </span>
+              </div>
+
+              <div className="mt-3 pl-4">
+                <span className="text-[#c084fc]">const</span>{" "}
+                <span className={dark ? "text-white" : "text-[#211b35]"}>
+                  stack
+                </span>{" "}
+                <span className="text-[#67e8f9]">=</span>
+              </div>
+
+              <div className="pl-8 text-[#a5f3fc]">
+                [&quot;React&quot;, &quot;Next.js&quot;]
+              </div>
+            </div>
+
+            {/* Progress line */}
+            <div className="mt-7">
+              <div className="mb-2 flex items-center justify-between">
+                <span
+                  className={`text-[9px] uppercase tracking-[0.18em] ${
+                    dark ? "text-white/30" : "text-black/30"
+                  }`}
                 >
-                  Frontend
-                </p>
+                  continuous learning
+                </span>
+
+                <span className="text-[9px] text-[#67e8f9]">∞</span>
               </div>
 
               <div
-                className={`rounded-2xl border p-4 ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-[#e5dce2] bg-white"
-                  }`}
+                className={`h-1 overflow-hidden rounded-full ${
+                  dark ? "bg-white/10" : "bg-black/5"
+                }`}
               >
-                <p className="text-2xl font-black text-[#67e8f9]">02</p>
-
-                <p
-                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
-                    }`}
-                >
-                  AI Engineering
-                </p>
-              </div>
-
-              <div
-                className={`rounded-2xl border p-4 ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-[#e5dce2] bg-white"
-                  }`}
-              >
-                <p className="text-2xl font-black text-[#c084fc]">03</p>
-
-                <p
-                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
-                    }`}
-                >
-                  Helpdesk
-                </p>
-              </div>
-
-              <div
-                className={`rounded-2xl border p-4 ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-[#e5dce2] bg-white"
-                  }`}
-              >
-                <p className="text-2xl font-black text-[#a78bfa]">04</p>
-
-                <p
-                  className={`mt-1 text-xs font-medium ${dark ? "text-white/70" : "text-[#51485b]"
-                    }`}
-                >
-                  Continuous Learning
-                </p>
+                <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.6)]" />
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* THREE FEATURE CARDS */}
-        <div className="mt-5 grid gap-5 md:grid-cols-3">
-          {/* FRONTEND */}
-          <div
-            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-              ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
-              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
-              }`}
-          >
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#8b5cf6]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
+      {/* Floating labels */}
+      <div
+        className={`absolute left-5 top-8 rounded-xl border px-3 py-2 backdrop-blur-xl ${
+          dark
+            ? "border-white/10 bg-white/[0.04]"
+            : "border-white/80 bg-white/60"
+        }`}
+      >
+        <span className="text-[9px] font-bold tracking-[0.15em] text-[#a78bfa]">
+          FRONTEND
+        </span>
+      </div>
 
-            <div className="relative">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
-                FOCUS
-              </span>
+      <div
+        className={`absolute bottom-8 right-5 rounded-xl border px-3 py-2 backdrop-blur-xl ${
+          dark
+            ? "border-white/10 bg-white/[0.04]"
+            : "border-white/80 bg-white/60"
+        }`}
+      >
+        <span className="text-[9px] font-bold tracking-[0.15em] text-[#67e8f9]">
+          AI × WEB
+        </span>
+      </div>
+    </div>
+  </div>
 
-              <h3
-                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
-                  }`}
-              >
-                Frontend Development
-              </h3>
+  {/* Feature cards */}
+  <div className="mt-6 grid gap-5 md:grid-cols-3">
+    {/* Frontend */}
+    <div
+      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
+        dark
+          ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
+          : "border-[#e5dce2] bg-white/60 hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
+      }`}
+    >
+      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
 
-              <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
-                  }`}
-              >
-                Building responsive interfaces with JavaScript, React, Next.js,
-                TypeScript, Tailwind CSS, and modern web technologies.
-              </p>
-            </div>
-          </div>
+      <div className="relative">
+        <div className="mb-5 flex items-center justify-between">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
+            01
+          </span>
 
-          {/* AI */}
-          <div
-            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-              ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
-              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
-              }`}
-          >
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#06b6d4]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
-
-            <div className="relative">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#06b6d4]">
-                EXPLORING
-              </span>
-
-              <h3
-                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
-                  }`}
-              >
-                AI Engineering
-              </h3>
-
-              <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
-                  }`}
-              >
-                Exploring AI integration in frontend applications and building
-                practical AI-powered web experiences.
-              </p>
-            </div>
-          </div>
-
-          {/* HELPDESK */}
-          <div
-            className={`group relative overflow-hidden rounded-[24px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-              ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
-              : "border-[#e5dce2] bg-white shadow-sm hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
-              }`}
-          >
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#f0abfc]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
-
-            <div className="relative">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
-                FOCUS
-              </span>
-
-              <h3
-                className={`mt-3 text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
-                  }`}
-              >
-                Helpdesk
-              </h3>
-
-              <p
-                className={`mt-2 text-xs leading-6 ${dark ? "text-white/60" : "text-[#766d80]"
-                  }`}
-              >
-                Supporting users with technical issues, troubleshooting problems,
-                resolving software and hardware-related issues, and providing
-                effective technical assistance.
-              </p>
-            </div>
-          </div>
+          <span className="text-xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12">
+            ◇
+          </span>
         </div>
-      </section>
 
+        <h3
+          className={`text-lg font-black ${
+            dark ? "text-white" : "text-[#211b35]"
+          }`}
+        >
+          Frontend Development
+        </h3>
+
+        <p
+          className={`mt-3 text-xs leading-6 ${
+            dark ? "text-white/50" : "text-[#766d80]"
+          }`}
+        >
+          Building responsive interfaces with React, Next.js, JavaScript,
+          Tailwind CSS, and modern web technologies.
+        </p>
+      </div>
+    </div>
+
+    {/* AI */}
+    <div
+      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
+        dark
+          ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
+          : "border-[#e5dce2] bg-white/60 hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
+      }`}
+    >
+      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#06b6d4]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+
+      <div className="relative">
+        <div className="mb-5 flex items-center justify-between">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-[#67e8f9]">
+            02
+          </span>
+
+          <span className="text-xl text-[#67e8f9] transition-transform duration-500 group-hover:rotate-12">
+            ✦
+          </span>
+        </div>
+
+        <h3
+          className={`text-lg font-black ${
+            dark ? "text-white" : "text-[#211b35]"
+          }`}
+        >
+          AI Engineering
+        </h3>
+
+        <p
+          className={`mt-3 text-xs leading-6 ${
+            dark ? "text-white/50" : "text-[#766d80]"
+          }`}
+        >
+          Exploring AI integration in frontend applications and creating
+          practical AI-powered web experiences.
+        </p>
+      </div>
+    </div>
+
+    {/* Helpdesk */}
+    <div
+      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
+        dark
+          ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
+          : "border-[#e5dce2] bg-white/60 hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
+      }`}
+    >
+      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#f0abfc]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+
+      <div className="relative">
+        <div className="mb-5 flex items-center justify-between">
+          <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
+            03
+          </span>
+
+          <span className="text-xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12">
+            ◌
+          </span>
+        </div>
+
+        <h3
+          className={`text-lg font-black ${
+            dark ? "text-white" : "text-[#211b35]"
+          }`}
+        >
+          Helpdesk
+        </h3>
+
+        <p
+          className={`mt-3 text-xs leading-6 ${
+            dark ? "text-white/50" : "text-[#766d80]"
+          }`}
+        >
+          Troubleshooting technical issues, supporting users, and developing
+          practical problem-solving skills.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* SKILLS */}
       <section
         id="skills"
