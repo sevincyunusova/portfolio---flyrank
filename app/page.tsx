@@ -1479,386 +1479,425 @@ export default function Home() {
   </div>
 </section>
 
-{/* TECHNOLOGIES */}
 <section
   id="technologies"
-  className={`relative scroll-mt-24 overflow-hidden transition-colors duration-700 ${
+  className={`relative overflow-hidden py-20 ${
     dark ? "bg-[#0a0718]" : "bg-[#fcf9ff]"
   }`}
 >
-  {/* BACKGROUND ATMOSPHERE */}
-  <div className="pointer-events-none absolute inset-0 overflow-hidden">
-    {/* Moving grid */}
+  {/* =========================
+      BACKGROUND GRID
+  ========================== */}
+  <div
+    className={`pointer-events-none absolute inset-0 opacity-30 ${
+      dark
+        ? "bg-[linear-gradient(rgba(139,92,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.07)_1px,transparent_1px)]"
+        : "bg-[linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)]"
+    } bg-[size:48px_48px] animate-[techGrid_18s_linear_infinite]`}
+  />
+
+  {/* =========================
+      AMBIENT GLOWS
+  ========================== */}
+
+  <div
+    className={`pointer-events-none absolute left-[3%] top-[12%] h-[340px] w-[340px] rounded-full blur-[120px] ${
+      dark ? "bg-[#7c3aed]/18" : "bg-[#a855f7]/12"
+    } animate-[techOrbOne_14s_ease-in-out_infinite]`}
+  />
+
+  <div
+    className={`pointer-events-none absolute right-[0%] top-[32%] h-[320px] w-[320px] rounded-full blur-[120px] ${
+      dark ? "bg-[#06b6d4]/16" : "bg-[#67e8f9]/12"
+    } animate-[techOrbTwo_17s_ease-in-out_infinite]`}
+  />
+
+  <div
+    className={`pointer-events-none absolute bottom-[0%] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full blur-[120px] ${
+      dark ? "bg-[#c084fc]/12" : "bg-[#c084fc]/10"
+    } animate-[techOrbThree_15s_ease-in-out_infinite]`}
+  />
+
+  {/* =========================
+      LARGE ORBIT SYSTEM
+  ========================== */}
+
+  <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 lg:block">
+    {/* Outer static orbit */}
     <div
-      className={`absolute inset-0 opacity-[0.18] ${
-        dark ? "bg-[linear-gradient(rgba(167,139,250,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.08)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)]"
-      } bg-[size:55px_55px] animate-[techGrid_25s_linear_infinite]`}
+      className={`absolute inset-0 rounded-full border ${
+        dark ? "border-[#8b5cf6]/25" : "border-[#8b5cf6]/18"
+      }`}
     />
 
-    {/* Purple orb */}
-    <div className="absolute -left-32 top-20 h-[420px] w-[420px] animate-[techOrbOne_12s_ease-in-out_infinite] rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+    {/* Outer rotating glow */}
+    <div className="absolute inset-[-1px] animate-[techOrbitOne_58s_linear_infinite] rounded-full border border-transparent border-t-[#8b5cf6]/60 border-r-[#c084fc]/20">
+      <div className="absolute left-1/2 top-[-9px] h-[18px] w-[18px] -translate-x-1/2 rounded-full bg-[#c084fc] shadow-[0_0_18px_6px_rgba(192,132,252,0.45)]" />
+    </div>
 
-    {/* Cyan orb */}
-    <div className="absolute -right-32 top-1/3 h-[430px] w-[430px] animate-[techOrbTwo_15s_ease-in-out_infinite] rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+    {/* Outer orbit cyan particle */}
+    <div className="absolute inset-[-1px] animate-[techOrbitOne_38s_linear_infinite_reverse] rounded-full">
+      <div className="absolute right-[9%] top-[17%] h-3.5 w-3.5 rounded-full bg-[#67e8f9] shadow-[0_0_24px_8px_rgba(103,232,249,0.35)]" />
+    </div>
 
-    {/* Pink orb */}
-    <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 animate-[techOrbThree_10s_ease-in-out_infinite] rounded-full bg-[#f0abfc]/5 blur-[120px]" />
+    {/* Middle orbit */}
+    <div
+      className={`absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+        dark ? "border-[#06b6d4]/22" : "border-[#06b6d4]/16"
+      }`}
+    />
 
-    {/* Floating particles */}
-    <span className="absolute left-[12%] top-[18%] h-1 w-1 animate-[techParticle_5s_ease-in-out_infinite] rounded-full bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,1)]" />
+    {/* Middle rotating orbit */}
+    <div className="absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_46s_linear_infinite] rounded-full border border-transparent border-b-[#06b6d4]/55 border-l-[#67e8f9]/20">
+      <div className="absolute bottom-[-7px] left-1/2 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_22px_7px_rgba(103,232,249,0.4)]" />
+    </div>
 
-    <span className="absolute right-[18%] top-[30%] h-1.5 w-1.5 animate-[techParticle_7s_ease-in-out_infinite_reverse] rounded-full bg-[#c084fc] shadow-[0_0_14px_rgba(192,132,252,1)]" />
+    {/* Middle purple particle */}
+    <div className="absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_31s_linear_infinite_reverse] rounded-full">
+      <div className="absolute left-[7%] top-[18%] h-3 w-3 rounded-full bg-[#a78bfa] shadow-[0_0_20px_7px_rgba(167,139,250,0.35)]" />
+    </div>
 
-    <span className="absolute left-[25%] bottom-[20%] h-1 w-1 animate-[techParticle_6s_ease-in-out_infinite] rounded-full bg-[#f0abfc] shadow-[0_0_12px_rgba(240,171,252,1)]" />
+    {/* Inner orbit */}
+    <div
+      className={`absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+        dark ? "border-[#c084fc]/18" : "border-[#c084fc]/14"
+      }`}
+    />
 
-    <span className="absolute right-[30%] bottom-[15%] h-1 w-1 animate-[techParticle_8s_ease-in-out_infinite_reverse] rounded-full bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,1)]" />
+    {/* Inner rotating glow */}
+    <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitOne_27s_linear_infinite] rounded-full border border-transparent border-t-[#c084fc]/50">
+      <div className="absolute right-[-6px] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_20px_7px_rgba(192,132,252,0.4)]" />
+    </div>
+
+    {/* Soft orbit glow */}
+    <div className="absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#8b5cf6]/5 blur-[2px]" />
+
+    {/* Orbit center glow */}
+    <div
+      className={`absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px] ${
+        dark ? "bg-[#7c3aed]/10" : "bg-[#8b5cf6]/8"
+      }`}
+    />
   </div>
 
-  <div className="relative mx-auto max-w-7xl px-6 py-32">
-    {/* HEADER */}
-    <div className="relative mx-auto max-w-3xl text-center">
-      <div className="mb-5 flex items-center justify-center gap-3">
-        <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8b5cf6]" />
+  {/* =========================
+      FLOATING PARTICLES
+  ========================== */}
 
-        <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#a78bfa]">
-          My Stack
-        </p>
+  <div className="pointer-events-none absolute left-[8%] top-[22%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_5s_ease-in-out_infinite]" />
 
-        <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#67e8f9]" />
+  <div className="pointer-events-none absolute right-[12%] top-[18%] h-2.5 w-2.5 rounded-full bg-[#c084fc] shadow-[0_0_20px_6px_rgba(192,132,252,0.4)] animate-[techParticle_6s_ease-in-out_infinite_1s]" />
+
+  <div className="pointer-events-none absolute bottom-[18%] left-[12%] h-2 w-2 rounded-full bg-[#a78bfa] shadow-[0_0_18px_5px_rgba(167,139,250,0.4)] animate-[techParticle_5.5s_ease-in-out_infinite_0.5s]" />
+
+  <div className="pointer-events-none absolute bottom-[15%] right-[9%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_6.5s_ease-in-out_infinite_1.5s]" />
+
+  {/* =========================
+      CONTENT
+  ========================== */}
+
+  <div className="relative z-10 mx-auto max-w-6xl px-6">
+    {/* Header */}
+    <div className="mb-10 max-w-2xl">
+      <div className="mb-3 flex items-center gap-3">
+        <span
+          className={`h-px w-9 ${
+            dark ? "bg-[#8b5cf6]" : "bg-[#7c3aed]"
+          }`}
+        />
+
+        <span
+          className={`text-[11px] font-semibold uppercase tracking-[0.28em] ${
+            dark ? "text-[#a78bfa]" : "text-[#7c3aed]"
+          }`}
+        >
+          Technologies
+        </span>
       </div>
 
-      <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-        Technologies I
-        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#f0abfc] to-[#67e8f9] bg-clip-text text-transparent">
-          work with.
+      <h2
+        className={`text-3xl font-bold tracking-tight sm:text-4xl ${
+          dark ? "text-white" : "text-[#171717]"
+        }`}
+      >
+        Tools I use to
+        <span
+          className={`block ${
+            dark ? "text-[#c084fc]" : "text-[#7c3aed]"
+          }`}
+        >
+          build & solve.
         </span>
       </h2>
 
       <p
-        className={`mx-auto mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
-          dark ? "text-white/45" : "text-[#766d80]"
+        className={`mt-3 max-w-xl text-sm leading-6 ${
+          dark ? "text-white/50" : "text-black/50"
         }`}
       >
-        The tools, technologies, and practical skills I use while building,
-        designing, learning, and solving real-world problems.
+        A visual overview of the technologies, development tools and
+        technical skills I am currently building with.
       </p>
     </div>
 
-    {/* TECH CARDS */}
-    <div className="relative mt-16 grid gap-6 md:grid-cols-2">
+    {/* Cards */}
+    <div className="grid gap-4 md:grid-cols-2">
       {/* FRONTEND */}
       <div
-        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
           dark
-            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#8b5cf6]/40 hover:bg-white/[0.055]"
-            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#a855f7]/40 hover:shadow-[0_30px_80px_rgba(124,58,237,0.12)]"
+            ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(139,92,246,0.12)]"
+            : "border-black/8 bg-white/55 hover:border-[#8b5cf6]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(139,92,246,0.10)]"
         }`}
       >
-        {/* Card glow */}
-        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#7c3aed]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#7c3aed]/20" />
+        {/* Hover glow */}
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#8b5cf6]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        {/* Animated border light */}
-        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#a78bfa] to-transparent shadow-[0_0_12px_#a78bfa]" />
+        {/* Moving light */}
+        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite] group-hover:h-[2px]" />
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#a78bfa]">
-                01 / FRONTEND
-              </span>
+        <div className="relative z-10 mb-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a78bfa]">
+            01
+          </span>
 
-              <h3
-                className={`mt-3 text-2xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
-              >
-                Frontend Development
-              </h3>
-            </div>
+          <h3
+            className={`mt-1 text-base font-semibold ${
+              dark ? "text-white" : "text-[#171717]"
+            }`}
+          >
+            Frontend Development
+          </h3>
+        </div>
 
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8b5cf6]/25 bg-[#8b5cf6]/10 text-lg text-[#c4b5fd] transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(139,92,246,0.25)]">
-              &lt;/&gt;
-            </div>
-          </div>
-
-          <div className="mt-9 space-y-5">
-            {[
-              ["HTML5", 100],
-              ["CSS3", 100],
-              ["JavaScript", 100],
-              ["Tailwind CSS", 90],
-              ["React", 60],
-              ["Next.js", 55],
-              ["Bootstrap", 85],
-              ["TypeScript", 45],
-            ].map(([name, level]) => (
-              <div key={name} className="group/item">
-                <div className="mb-2.5 flex items-center justify-between">
-                  <span
-                    className={`text-xs font-semibold ${
-                      dark ? "text-white/75" : "text-[#51485c]"
-                    }`}
-                  >
-                    {name}
-                  </span>
-                </div>
-
-                <div
-                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
+        <div className="relative z-10 space-y-3">
+          {[
+            ["HTML5", 100],
+            ["CSS3", 100],
+            ["JavaScript", 100],
+            ["Tailwind", 90],
+            ["React", 60],
+            ["Next.js", 55],
+            ["Bootstrap", 85],
+            ["TypeScript", 45],
+          ].map(([name, level]) => (
+            <div key={name as string}>
+              <div className="mb-1">
+                <span
+                  className={`text-[10px] font-medium ${
+                    dark ? "text-white/65" : "text-black/60"
                   }`}
                 >
-                  <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
-                    style={{ width: `${level}%` }}
-                  >
-                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
-                  </div>
+                  {name as string}
+                </span>
+              </div>
+
+              <div
+                className={`relative h-[2px] overflow-hidden rounded-full ${
+                  dark ? "bg-white/8" : "bg-black/8"
+                }`}
+              >
+                <div
+                  className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#67e8f9] transition-all duration-500 group-hover:brightness-125"
+                  style={{ width: `${level}%` }}
+                >
+                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* PROGRAMMING */}
       <div
-        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
           dark
-            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#06b6d4]/40 hover:bg-white/[0.055]"
-            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#06b6d4]/40 hover:shadow-[0_30px_80px_rgba(6,182,212,0.12)]"
+            ? "border-white/8 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(6,182,212,0.12)]"
+            : "border-black/8 bg-white/55 hover:border-[#06b6d4]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(6,182,212,0.10)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#06b6d4]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#06b6d4]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_6s_ease-in-out_infinite_reverse] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_12px_#67e8f9]" />
+        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_1s] group-hover:h-[2px]" />
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#06b6d4]">
-                02 / CODE
-              </span>
+        <div className="relative z-10 mb-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#06b6d4]">
+            02
+          </span>
 
-              <h3
-                className={`mt-3 text-2xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
-              >
-                Programming & APIs
-              </h3>
-            </div>
+          <h3
+            className={`mt-1 text-base font-semibold ${
+              dark ? "text-white" : "text-[#171717]"
+            }`}
+          >
+            Programming & APIs
+          </h3>
+        </div>
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#06b6d4]/25 bg-[#06b6d4]/10 text-lg text-[#67e8f9] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.25)]">
-              {"{ }"}
-            </div>
-          </div>
-
-          <div className="mt-9 space-y-5">
-            {[
-              ["C++", 95],
-              ["C#", 80],
-              ["Python", 75],
-              ["REST API", 75],
-              ["JSON", 85],
-              ["Git", 90],
-              ["GitHub", 90],
-            ].map(([name, level]) => (
-              <div key={name} className="group/item">
-                <div className="mb-2.5 flex items-center justify-between">
-                  <span
-                    className={`text-xs font-semibold ${
-                      dark ? "text-white/75" : "text-[#51485c]"
-                    }`}
-                  >
-                    {name}
-                  </span>
-                </div>
-
-                <div
-                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
+        <div className="relative z-10 space-y-3">
+          {[
+            ["C++", 95],
+            ["C#", 80],
+            ["Python", 75],
+            ["REST API", 75],
+            ["JSON", 85],
+            ["Git", 90],
+            ["GitHub", 90],
+          ].map(([name, level]) => (
+            <div key={name as string}>
+              <div className="mb-1">
+                <span
+                  className={`text-[10px] font-medium ${
+                    dark ? "text-white/65" : "text-black/60"
                   }`}
                 >
-                  <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#0891b2] via-[#06b6d4] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
-                    style={{ width: `${level}%` }}
-                  >
-                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
-                  </div>
+                  {name as string}
+                </span>
+              </div>
+
+              <div
+                className={`relative h-[2px] overflow-hidden rounded-full ${
+                  dark ? "bg-white/8" : "bg-black/8"
+                }`}
+              >
+                <div
+                  className="relative h-full rounded-full bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-[#a78bfa] transition-all duration-500 group-hover:brightness-125"
+                  style={{ width: `${level}%` }}
+                >
+                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* AI & DESIGN */}
       <div
-        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
           dark
-            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#f0abfc]/40 hover:bg-white/[0.055]"
-            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#f0abfc]/40 hover:shadow-[0_30px_80px_rgba(240,171,252,0.12)]"
+            ? "border-white/8 bg-white/[0.035] hover:border-[#c084fc]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(192,132,252,0.12)]"
+            : "border-black/8 bg-white/55 hover:border-[#c084fc]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(192,132,252,0.10)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#f0abfc]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#c084fc]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_5.5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#f0abfc] to-transparent shadow-[0_0_12px_#f0abfc]" />
+        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite_2s] group-hover:h-[2px]" />
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#f0abfc]">
-                03 / CREATIVE
-              </span>
+        <div className="relative z-10 mb-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c084fc]">
+            03
+          </span>
 
-              <h3
-                className={`mt-3 text-2xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
-              >
-                AI & Design
-              </h3>
-            </div>
+          <h3
+            className={`mt-1 text-base font-semibold ${
+              dark ? "text-white" : "text-[#171717]"
+            }`}
+          >
+            AI & Design
+          </h3>
+        </div>
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#f0abfc]/25 bg-[#f0abfc]/10 text-lg text-[#f0abfc] transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(240,171,252,0.25)]">
-              ✦
-            </div>
-          </div>
-
-          <div className="mt-9 space-y-5">
-            {[
-              ["AI Integration", 65],
-              ["Figma", 45],
-              ["Canva", 90],
-              ["Microsoft Word", 90],
-              ["PowerPoint", 90],
-              ["Excel", 80],
-            ].map(([name, level]) => (
-              <div key={name} className="group/item">
-                <div className="mb-2.5 flex items-center justify-between">
-                  <span
-                    className={`text-xs font-semibold ${
-                      dark ? "text-white/75" : "text-[#51485c]"
-                    }`}
-                  >
-                    {name}
-                  </span>
-                </div>
-
-                <div
-                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
+        <div className="relative z-10 space-y-3">
+          {[
+            ["AI Integration", 65],
+            ["Figma", 45],
+            ["Canva", 90],
+            ["Word", 90],
+            ["PowerPoint", 90],
+            ["Excel", 80],
+          ].map(([name, level]) => (
+            <div key={name as string}>
+              <div className="mb-1">
+                <span
+                  className={`text-[10px] font-medium ${
+                    dark ? "text-white/65" : "text-black/60"
                   }`}
                 >
-                  <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#c026d3] via-[#f0abfc] to-[#c4b5fd] shadow-[0_0_12px_rgba(240,171,252,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(240,171,252,0.9)]"
-                    style={{ width: `${level}%` }}
-                  >
-                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(240,171,252,1)]" />
-                  </div>
+                  {name as string}
+                </span>
+              </div>
+
+              <div
+                className={`relative h-[2px] overflow-hidden rounded-full ${
+                  dark ? "bg-white/8" : "bg-black/8"
+                }`}
+              >
+                <div
+                  className="relative h-full rounded-full bg-gradient-to-r from-[#c084fc] via-[#a78bfa] to-[#67e8f9] transition-all duration-500 group-hover:brightness-125"
+                  style={{ width: `${level}%` }}
+                >
+                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_9px_rgba(192,132,252,0.95)]" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* SUPPORT & WORKFLOW */}
+      {/* SUPPORT */}
       <div
-        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
           dark
-            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#a78bfa]/40 hover:bg-white/[0.055]"
-            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#a78bfa]/40 hover:shadow-[0_30px_80px_rgba(124,58,237,0.12)]"
+            ? "border-white/8 bg-white/[0.035] hover:border-[#67e8f9]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(103,232,249,0.12)]"
+            : "border-black/8 bg-white/55 hover:border-[#67e8f9]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(103,232,249,0.10)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#a78bfa]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#67e8f9]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_6.5s_ease-in-out_infinite_reverse] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_12px_#67e8f9]" />
+        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_3s] group-hover:h-[2px]" />
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#a78bfa]">
-                04 / SUPPORT
-              </span>
+        <div className="relative z-10 mb-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#67e8f9]">
+            04
+          </span>
 
-              <h3
-                className={`mt-3 text-2xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
-              >
-                Support & Workflow
-              </h3>
-            </div>
+          <h3
+            className={`mt-1 text-base font-semibold ${
+              dark ? "text-white" : "text-[#171717]"
+            }`}
+          >
+            Support & Workflow
+          </h3>
+        </div>
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#a78bfa]/25 bg-[#a78bfa]/10 text-lg text-[#c4b5fd] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(167,139,250,0.25)]">
-              ↗
-            </div>
-          </div>
-
-          <div className="mt-9 space-y-5">
-            {[
-              ["Technical Support", 75],
-              ["Troubleshooting", 80],
-              ["Component Design", 75],
-              ["Responsive Design", 90],
-              ["Problem Solving", 85],
-              ["Team Collaboration", 85],
-            ].map(([name, level]) => (
-              <div key={name} className="group/item">
-                <div className="mb-2.5 flex items-center justify-between">
-                  <span
-                    className={`text-xs font-semibold ${
-                      dark ? "text-white/75" : "text-[#51485c]"
-                    }`}
-                  >
-                    {name}
-                  </span>
-                </div>
-
-                <div
-                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
+        <div className="relative z-10 space-y-3">
+          {[
+            ["Technical Support", 75],
+            ["Troubleshooting", 80],
+            ["Component Design", 75],
+            ["Responsive Design", 90],
+            ["Problem Solving", 85],
+            ["Team Collaboration", 85],
+          ].map(([name, level]) => (
+            <div key={name as string}>
+              <div className="mb-1">
+                <span
+                  className={`text-[10px] font-medium ${
+                    dark ? "text-white/65" : "text-black/60"
                   }`}
                 >
-                  <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_12px_rgba(167,139,250,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
-                    style={{ width: `${level}%` }}
-                  >
-                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
-                  </div>
+                  {name as string}
+                </span>
+              </div>
+
+              <div
+                className={`relative h-[2px] overflow-hidden rounded-full ${
+                  dark ? "bg-white/8" : "bg-black/8"
+                }`}
+              >
+                <div
+                  className="relative h-full rounded-full bg-gradient-to-r from-[#67e8f9] via-[#06b6d4] to-[#8b5cf6] transition-all duration-500 group-hover:brightness-125"
+                  style={{ width: `${level}%` }}
+                >
+                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-
-    {/* BOTTOM STATEMENT */}
-    <div className="relative mt-16 flex items-center gap-4">
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
-
-      <div
-        className={`flex items-center gap-2 rounded-full border px-5 py-2.5 backdrop-blur-xl ${
-          dark
-            ? "border-white/10 bg-white/[0.035]"
-            : "border-[#e5dce2] bg-white/60"
-        }`}
-      >
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,1)]" />
-
-        <span
-          className={`text-[10px] font-bold uppercase tracking-[0.25em] ${
-            dark ? "text-white/35" : "text-[#9b8fa3]"
-          }`}
-        >
-          Always learning · Always building
-        </span>
-      </div>
-
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
     </div>
   </div>
 </section>
