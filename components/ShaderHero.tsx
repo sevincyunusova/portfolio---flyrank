@@ -3,61 +3,82 @@
 import { useEffect, useRef, useState } from "react";
 
 type ShaderHeroProps = {
-  dark: boolean;
-  /** Two accent hues (0..1 on the HSV wheel) used across glows, strands and orbs. */
-  accent?: { primary: number; secondary: number };
-  /** How many floating orbs to scatter across the hero. */
-  orbCount?: number;
+    dark: boolean;
+
+    /**
+     * Two accent hues (0..1 on the HSV wheel).
+     * I use these same colors for the shader and floating orbs.
+     */
+    accent?: {
+        primary: number;
+        secondary: number;
+    };
+
+    /**
+     * Number of floating orbs shown above the shader.
+     */
+    orbCount?: number;
 };
 
 type Orb = {
-  el: HTMLDivElement;
-  size: number;
-  hue: number;
-  baseXPct: number;
-  baseYPct: number;
-  ampX: number;
-  ampY: number;
-  freq: number;
-  phase: number;
-  x: number;
-  y: number;
-  held: boolean;
-  pointerId: number | null;
+    el: HTMLDivElement;
+    size: number;
+    hue: number;
+    baseXPct: number;
+    baseYPct: number;
+    ampX: number;
+    ampY: number;
+    freq: number;
+    phase: number;
+    x: number;
+    y: number;
+    held: boolean;
+    pointerId: number | null;
 };
 
 export default function ShaderHero({
-  dark,
-  accent = { primary: 0.58, secondary: 0.82 },
-  orbCount = 16,
+    dark,
+    accent = {
+        primary: 0.58,
+        secondary: 0.82,
+    },
+    orbCount = 16,
 }: ShaderHeroProps) {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const orbLayerRef = useRef<HTMLDivElement | null>(null);
-  const [ready, setReady] = useState(false);
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const orbLayerRef = useRef<HTMLDivElement | null>(null);
 
-  /* ================================================================
-   * WEBGL BACKGROUND + WAVE
-   * ================================================================ */
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
+    const [ready, setReady] = useState(false);
 
-    if (!canvas || !container) return;
+    /* ================================================================
+     * WEBGL FULLSCREEN SHADER
+     * ================================================================ */
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const container = containerRef.current;
 
-    const gl = canvas.getContext("webgl", {
-      alpha: true,
-      antialias: true,
-      premultipliedAlpha: true,
-    });
+        if (!canvas || !container) return;
 
-    if (!gl) return;
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
 
-    const vertexShaderSource = `
+        const gl = canvas.getContext("webgl", {
+            alpha: true,
+            antialias: true,
+            premultipliedAlpha: true,
+        });
+
+        if (!gl) return;
+
+        /*
+         * Vertex shader:
+         * It creates one fullscreen rectangle.
+         * The fragment shader then decides what color
+         * every pixel of this rectangle should have.
+         */
+        const vertexShaderSource = `
       attribute vec2 a_position;
 
       void main() {
@@ -65,7 +86,16 @@ export default function ShaderHero({
       }
     `;
 
-    const fragmentShaderSource = `
+        /*
+         * Fragment shader:
+         *
+         * u_time       -> controls animation
+         * u_resolution -> tells the shader the canvas size
+         * u_dark       -> switches between dark/light palette
+         * u_intro      -> controls the initial fade-in
+         * u_hueA/B     -> custom purple/cyan accent colors
+         */
+        const fragmentShaderSource = `
       precision highp float;
 
       uniform float u_time;
@@ -75,6 +105,11 @@ export default function ShaderHero({
       uniform float u_hueA;
       uniform float u_hueB;
 
+      /*
+       * Converts HSV color values to RGB.
+       * This makes it easier to control the shader
+       * colors by hue instead of hardcoding RGB values.
+       */
       vec3 hsv2rgb(vec3 c) {
         vec3 rgb = clamp(
           abs(mod(c.x * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0,
@@ -85,12 +120,20 @@ export default function ShaderHero({
         return c.z * mix(vec3(1.0), rgb, c.y);
       }
 
+      /*
+       * Small pseudo-random function used for subtle grain.
+       */
       float hash(vec2 p) {
         return fract(
           sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123
         );
       }
 
+      /*
+       * Creates one flowing wave/strand.
+       * Several sine waves are combined to make the movement
+       * less predictable than a single sine wave.
+       */
       float strand(
         vec2 p,
         float t,
@@ -140,28 +183,36 @@ export default function ShaderHero({
 
       void main() {
         /*
-         * Fullscreen coordinate system.
-         *
-         * X always goes from -1 to 1 across the COMPLETE canvas.
-         * We do not compress the horizontal area, so the shader
-         * visually reaches both left and right edges.
+         * Convert the current pixel position into 0..1 UV coordinates.
+         * This uses the complete canvas, so the shader reaches both edges.
          */
         vec2 uv = gl_FragCoord.xy / u_resolution;
 
+        /*
+         * Convert UV coordinates to -1..1.
+         * This gives us a centered coordinate system.
+         */
         vec2 p = uv * 2.0 - 1.0;
 
+        /*
+         * Correct the horizontal aspect ratio so the waves
+         * keep natural proportions on wide screens.
+         */
         float aspect =
           u_resolution.x / u_resolution.y;
 
-        /*
-         * Keep the vertical proportions natural while allowing
-         * the shader to use the complete horizontal space.
-         */
         vec2 shapeP = p;
         shapeP.x *= aspect;
 
+        /*
+         * Time is the main animation input.
+         * In reduced-motion mode JavaScript keeps this value static.
+         */
         float t = u_time;
 
+        /*
+         * Base colors for dark and light mode.
+         */
         vec3 baseDark =
           vec3(0.047, 0.051, 0.068);
 
@@ -173,6 +224,11 @@ export default function ShaderHero({
 
         vec3 color = base;
 
+        /*
+         * Create the two custom accent colors.
+         * The portfolio uses a purple/cyan visual identity,
+         * so the shader follows the same palette.
+         */
         vec3 hueColorA =
           hsv2rgb(
             vec3(
@@ -195,11 +251,10 @@ export default function ShaderHero({
           mix(0.55, 1.0, u_dark);
 
         /*
-         * These glows are deliberately positioned at the edges
-         * and corners so the shader does not leave empty visual
-         * margins on the left and right.
+         * Three large ambient glows.
+         * They are placed toward the edges so the fullscreen
+         * background does not look empty on wide screens.
          */
-
         vec2 glow1 =
           vec2(
             -0.95,
@@ -267,13 +322,10 @@ export default function ShaderHero({
           glowScale;
 
         /*
-         * Three flowing strands.
-         *
-         * They use shapeP so their proportions remain natural
-         * on wide screens, but they are allowed to continue
-         * all the way across the viewport.
+         * Three different flowing strands.
+         * Each one has a different baseline, frequency,
+         * speed and phase, creating a layered aurora effect.
          */
-
         float s0 =
           strand(
             shapeP,
@@ -323,7 +375,8 @@ export default function ShaderHero({
           0.70;
 
         /*
-         * Very subtle grain.
+         * Very subtle animated grain.
+         * It prevents the gradient from looking too flat.
          */
         float grain =
           (
@@ -336,6 +389,9 @@ export default function ShaderHero({
 
         color += grain;
 
+        /*
+         * Intro controls the shader opacity during the first frames.
+         */
         color *= u_intro;
 
         gl_FragColor =
@@ -343,444 +399,479 @@ export default function ShaderHero({
       }
     `;
 
-    const createShader = (
-      type: number,
-      source: string
-    ) => {
-      const shader = gl.createShader(type);
+        const createShader = (
+            type: number,
+            source: string
+        ) => {
+            const shader = gl.createShader(type);
 
-      if (!shader) return null;
+            if (!shader) return null;
 
-      gl.shaderSource(shader, source);
-      gl.compileShader(shader);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
 
-      if (
-        !gl.getShaderParameter(
-          shader,
-          gl.COMPILE_STATUS
-        )
-      ) {
-        console.error(
-          gl.getShaderInfoLog(shader)
+            if (
+                !gl.getShaderParameter(
+                    shader,
+                    gl.COMPILE_STATUS
+                )
+            ) {
+                console.error(
+                    gl.getShaderInfoLog(shader)
+                );
+
+                gl.deleteShader(shader);
+                return null;
+            }
+
+            return shader;
+        };
+
+        const vertexShader = createShader(
+            gl.VERTEX_SHADER,
+            vertexShaderSource
         );
 
-        gl.deleteShader(shader);
-        return null;
-      }
+        const fragmentShader = createShader(
+            gl.FRAGMENT_SHADER,
+            fragmentShaderSource
+        );
 
-      return shader;
-    };
-
-    const vertexShader = createShader(
-      gl.VERTEX_SHADER,
-      vertexShaderSource
-    );
-
-    const fragmentShader = createShader(
-      gl.FRAGMENT_SHADER,
-      fragmentShaderSource
-    );
-
-    if (!vertexShader || !fragmentShader) {
-      return;
-    }
-
-    const program = gl.createProgram();
-
-    if (!program) return;
-
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-
-    gl.linkProgram(program);
-
-    if (
-      !gl.getProgramParameter(
-        program,
-        gl.LINK_STATUS
-      )
-    ) {
-      console.error(
-        gl.getProgramInfoLog(program)
-      );
-
-      return;
-    }
-
-    gl.useProgram(program);
-
-    const positionLocation =
-      gl.getAttribLocation(
-        program,
-        "a_position"
-      );
-
-    const timeLocation =
-      gl.getUniformLocation(
-        program,
-        "u_time"
-      );
-
-    const resolutionLocation =
-      gl.getUniformLocation(
-        program,
-        "u_resolution"
-      );
-
-    const darkLocation =
-      gl.getUniformLocation(
-        program,
-        "u_dark"
-      );
-
-    const introLocation =
-      gl.getUniformLocation(
-        program,
-        "u_intro"
-      );
-
-    const hueALocation =
-      gl.getUniformLocation(
-        program,
-        "u_hueA"
-      );
-
-    const hueBLocation =
-      gl.getUniformLocation(
-        program,
-        "u_hueB"
-      );
-
-    const buffer = gl.createBuffer();
-
-    gl.bindBuffer(
-      gl.ARRAY_BUFFER,
-      buffer
-    );
-
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([
-        -1,
-        -1,
-        1,
-        -1,
-        -1,
-        1,
-        -1,
-        1,
-        1,
-        -1,
-        1,
-        1,
-      ]),
-      gl.STATIC_DRAW
-    );
-
-    gl.enableVertexAttribArray(
-      positionLocation
-    );
-
-    gl.vertexAttribPointer(
-      positionLocation,
-      2,
-      gl.FLOAT,
-      false,
-      0,
-      0
-    );
-
-    const resize = () => {
-      const dpr = Math.min(
-        window.devicePixelRatio || 1,
-        2
-      );
-
-      const width = Math.floor(
-        canvas.clientWidth * dpr
-      );
-
-      const height = Math.floor(
-        canvas.clientHeight * dpr
-      );
-
-      if (
-        canvas.width !== width ||
-        canvas.height !== height
-      ) {
-        canvas.width = width;
-        canvas.height = height;
-      }
-
-      gl.viewport(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
-    };
-
-    resize();
-
-    const resizeObserver =
-      new ResizeObserver(resize);
-
-    resizeObserver.observe(container);
-
-    let isVisible = true;
-
-    const intersectionObserver =
-      new IntersectionObserver(
-        (entries) => {
-          isVisible =
-            entries[0]?.isIntersecting ?? true;
-        },
-        {
-          threshold: 0,
+        if (!vertexShader || !fragmentShader) {
+            return;
         }
-      );
 
-    intersectionObserver.observe(
-      container
-    );
+        const program = gl.createProgram();
 
-    const handleVisibilityChange = () => {
-      isVisible =
-        isVisible &&
-        document.visibilityState === "visible";
-    };
+        if (!program) return;
 
-    document.addEventListener(
-      "visibilitychange",
-      handleVisibilityChange
-    );
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
 
-    let animationFrame = 0;
+        if (
+            !gl.getProgramParameter(
+                program,
+                gl.LINK_STATUS
+            )
+        ) {
+            console.error(
+                gl.getProgramInfoLog(program)
+            );
 
-    const startTime =
-      performance.now();
+            return;
+        }
 
-    let introProgress =
-      reducedMotion ? 1 : 0;
+        gl.useProgram(program);
 
-    const render = (now: number) => {
-      animationFrame =
-        requestAnimationFrame(render);
+        const positionLocation =
+            gl.getAttribLocation(
+                program,
+                "a_position"
+            );
 
-      if (!isVisible) return;
+        const timeLocation =
+            gl.getUniformLocation(
+                program,
+                "u_time"
+            );
 
-      const elapsed =
-        (now - startTime) / 1000;
+        const resolutionLocation =
+            gl.getUniformLocation(
+                program,
+                "u_resolution"
+            );
 
-      if (!reducedMotion) {
-        introProgress = Math.min(
-          1,
-          introProgress + 0.012
+        const darkLocation =
+            gl.getUniformLocation(
+                program,
+                "u_dark"
+            );
+
+        const introLocation =
+            gl.getUniformLocation(
+                program,
+                "u_intro"
+            );
+
+        const hueALocation =
+            gl.getUniformLocation(
+                program,
+                "u_hueA"
+            );
+
+        const hueBLocation =
+            gl.getUniformLocation(
+                program,
+                "u_hueB"
+            );
+
+        /*
+         * Two triangles create one fullscreen rectangle.
+         */
+        const buffer = gl.createBuffer();
+
+        gl.bindBuffer(
+            gl.ARRAY_BUFFER,
+            buffer
         );
-      }
 
-      gl.useProgram(program);
+        gl.bufferData(
+            gl.ARRAY_BUFFER,
+            new Float32Array([
+                -1,
+                -1,
+                1,
+                -1,
+                -1,
+                1,
+                -1,
+                1,
+                1,
+                -1,
+                1,
+                1,
+            ]),
+            gl.STATIC_DRAW
+        );
 
-      gl.uniform1f(
-        timeLocation,
-        elapsed
-      );
+        gl.enableVertexAttribArray(
+            positionLocation
+        );
 
-      gl.uniform2f(
-        resolutionLocation,
-        canvas.width,
-        canvas.height
-      );
+        gl.vertexAttribPointer(
+            positionLocation,
+            2,
+            gl.FLOAT,
+            false,
+            0,
+            0
+        );
 
-      gl.uniform1f(
-        darkLocation,
-        dark ? 1 : 0
-      );
+        /*
+         * Resize the WebGL canvas.
+         *
+         * DPR is capped at 2 to avoid unnecessarily expensive
+         * rendering on high-density displays.
+         */
+        const resize = () => {
+            const dpr = Math.min(
+                window.devicePixelRatio || 1,
+                2
+            );
 
-      gl.uniform1f(
-        introLocation,
-        introProgress
-      );
+            const width = Math.floor(
+                canvas.clientWidth * dpr
+            );
 
-      gl.uniform1f(
-        hueALocation,
-        accent.primary
-      );
+            const height = Math.floor(
+                canvas.clientHeight * dpr
+            );
 
-      gl.uniform1f(
-        hueBLocation,
-        accent.secondary
-      );
+            if (
+                canvas.width !== width ||
+                canvas.height !== height
+            ) {
+                canvas.width = width;
+                canvas.height = height;
+            }
 
-      gl.drawArrays(
-        gl.TRIANGLES,
-        0,
-        6
-      );
-    };
+            gl.viewport(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+        };
 
-    animationFrame =
-      requestAnimationFrame(render);
+        resize();
 
-    setReady(true);
+        const resizeObserver =
+            new ResizeObserver(resize);
 
-    return () => {
-      cancelAnimationFrame(
-        animationFrame
-      );
+        resizeObserver.observe(container);
 
-      document.removeEventListener(
-        "visibilitychange",
-        handleVisibilityChange
-      );
+        /*
+         * The shader should render only when the hero
+         * is actually visible on the page.
+         */
+        let isIntersecting = true;
+        let pageVisible =
+            document.visibilityState === "visible";
 
-      resizeObserver.disconnect();
-      intersectionObserver.disconnect();
+        const intersectionObserver =
+            new IntersectionObserver(
+                (entries) => {
+                    isIntersecting =
+                        entries[0]?.isIntersecting ?? true;
+                },
+                {
+                    threshold: 0,
+                }
+            );
 
-      gl.deleteBuffer(buffer);
-      gl.deleteProgram(program);
-      gl.deleteShader(vertexShader);
-      gl.deleteShader(fragmentShader);
-    };
-  }, [
-    dark,
-    accent.primary,
-    accent.secondary,
-  ]);
+        intersectionObserver.observe(container);
 
-  /* ================================================================
-   * FLOATING ORBS
-   * ================================================================ */
-  useEffect(() => {
-    const container =
-      containerRef.current;
+        /*
+         * Pause rendering when the browser tab becomes hidden.
+         * When the user returns, rendering can continue normally.
+         */
+        const handleVisibilityChange = () => {
+            pageVisible =
+                document.visibilityState === "visible";
+        };
 
-    const layer =
-      orbLayerRef.current;
+        document.addEventListener(
+            "visibilitychange",
+            handleVisibilityChange
+        );
 
-    if (!container || !layer) return;
+        let animationFrame = 0;
 
-    const reducedMotion =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+        const startTime =
+            performance.now();
 
-    layer.innerHTML = "";
+        /*
+         * Reduced-motion users get a static shader frame.
+         */
+        let introProgress =
+            reducedMotion ? 1 : 0;
 
-    const orbs: Orb[] = [];
+        const render = (now: number) => {
+            animationFrame =
+                requestAnimationFrame(render);
 
-    const width =
-      container.clientWidth || 1;
+            if (!isIntersecting || !pageVisible) {
+                return;
+            }
 
-    const height =
-      container.clientHeight || 1;
+            /*
+             * In reduced-motion mode the shader time stays at 0,
+             * so the background becomes a static frame.
+             */
+            const elapsed = reducedMotion
+                ? 0
+                : (now - startTime) / 1000;
 
-    const aspect =
-      width / Math.max(height, 1);
+            if (!reducedMotion) {
+                introProgress = Math.min(
+                    1,
+                    introProgress + 0.012
+                );
+            }
 
-    const cols = Math.max(
-      3,
-      Math.round(
-        Math.sqrt(
-          orbCount * aspect
-        )
-      )
-    );
+            gl.useProgram(program);
 
-    const rows = Math.max(
-      2,
-      Math.ceil(
-        orbCount / cols
-      )
-    );
+            gl.uniform1f(
+                timeLocation,
+                elapsed
+            );
 
-    const cellW = 100 / cols;
-    const cellH = 100 / rows;
+            gl.uniform2f(
+                resolutionLocation,
+                canvas.width,
+                canvas.height
+            );
 
-    for (
-      let i = 0;
-      i < orbCount;
-      i++
-    ) {
-      const col = i % cols;
-      const row = Math.floor(
-        i / cols
-      );
+            gl.uniform1f(
+                darkLocation,
+                dark ? 1 : 0
+            );
 
-      const jitterX =
-        (Math.random() - 0.5) *
-        cellW *
-        0.7;
+            gl.uniform1f(
+                introLocation,
+                introProgress
+            );
 
-      const jitterY =
-        (Math.random() - 0.5) *
-        cellH *
-        0.7;
+            gl.uniform1f(
+                hueALocation,
+                accent.primary
+            );
 
-      const sizeRoll =
-        Math.random();
+            gl.uniform1f(
+                hueBLocation,
+                accent.secondary
+            );
 
-      const size =
-        sizeRoll > 0.85
-          ? 58 +
-            Math.random() * 34
-          : sizeRoll > 0.5
-          ? 30 +
-            Math.random() * 24
-          : 14 +
-            Math.random() * 16;
+            gl.drawArrays(
+                gl.TRIANGLES,
+                0,
+                6
+            );
+        };
 
-      const hue =
-        i % 2 === 0
-          ? accent.primary
-          : accent.secondary;
+        animationFrame =
+            requestAnimationFrame(render);
 
-      const el =
-        document.createElement("div");
+        setReady(true);
 
-      el.style.position =
-        "absolute";
+        return () => {
+            cancelAnimationFrame(
+                animationFrame
+            );
 
-      el.style.width =
-        `${size}px`;
+            document.removeEventListener(
+                "visibilitychange",
+                handleVisibilityChange
+            );
 
-      el.style.height =
-        `${size}px`;
+            resizeObserver.disconnect();
+            intersectionObserver.disconnect();
 
-      el.style.borderRadius =
-        "9999px";
+            gl.deleteBuffer(buffer);
+            gl.deleteProgram(program);
+            gl.deleteShader(vertexShader);
+            gl.deleteShader(fragmentShader);
+        };
+    }, [
+        dark,
+        accent.primary,
+        accent.secondary,
+    ]);
 
-      el.style.left = "0px";
-      el.style.top = "0px";
+    /* ================================================================
+     * FLOATING ORBS
+     * ================================================================ */
 
-      el.style.pointerEvents =
-        "auto";
+    useEffect(() => {
+        const container =
+            containerRef.current;
 
-      el.style.cursor =
-        "grab";
+        const layer =
+            orbLayerRef.current;
 
-      el.style.touchAction =
-        "none";
+        if (!container || !layer) return;
 
-      el.style.willChange =
-        "transform";
+        const reducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
 
-      if (size > 48) {
-        el.style.filter =
-          "blur(1.5px)";
-      }
+        layer.innerHTML = "";
 
-      const lightness =
-        dark ? 63 : 48;
+        const orbs: Orb[] = [];
 
-      const alphaCore =
-        dark ? 0.85 : 0.62;
+        const width =
+            container.clientWidth || 1;
 
-      const edgeAlpha =
-        dark ? 0.05 : 0.02;
+        const height =
+            container.clientHeight || 1;
 
-      el.style.background =
-        `radial-gradient(
+        const aspect =
+            width / Math.max(height, 1);
+
+        const cols = Math.max(
+            3,
+            Math.round(
+                Math.sqrt(
+                    orbCount * aspect
+                )
+            )
+        );
+
+        const rows = Math.max(
+            2,
+            Math.ceil(
+                orbCount / cols
+            )
+        );
+
+        const cellW = 100 / cols;
+        const cellH = 100 / rows;
+
+        for (
+            let i = 0;
+            i < orbCount;
+            i++
+        ) {
+            const col = i % cols;
+
+            const row =
+                Math.floor(i / cols);
+
+            const jitterX =
+                (Math.random() - 0.5) *
+                cellW *
+                0.7;
+
+            const jitterY =
+                (Math.random() - 0.5) *
+                cellH *
+                0.7;
+
+            const sizeRoll =
+                Math.random();
+
+            const size =
+                sizeRoll > 0.85
+                    ? 58 + Math.random() * 34
+                    : sizeRoll > 0.5
+                        ? 30 + Math.random() * 24
+                        : 14 + Math.random() * 16;
+
+            const hue =
+                i % 2 === 0
+                    ? accent.primary
+                    : accent.secondary;
+
+            const el =
+                document.createElement("div");
+
+            el.style.position =
+                "absolute";
+
+            el.style.width =
+                `${size}px`;
+
+            el.style.height =
+                `${size}px`;
+
+            el.style.borderRadius =
+                "9999px";
+
+            el.style.left =
+                "0px";
+
+            el.style.top =
+                "0px";
+
+            /*
+             * Orbs remain interactive for normal-motion users.
+             */
+            el.style.pointerEvents =
+                reducedMotion
+                    ? "none"
+                    : "auto";
+
+            el.style.cursor =
+                reducedMotion
+                    ? "default"
+                    : "grab";
+
+            el.style.touchAction =
+                "none";
+
+            el.style.willChange =
+                reducedMotion
+                    ? "auto"
+                    : "transform";
+
+            if (size > 48) {
+                el.style.filter =
+                    "blur(1.5px)";
+            }
+
+            const lightness =
+                dark ? 63 : 48;
+
+            const alphaCore =
+                dark ? 0.85 : 0.62;
+
+            const edgeAlpha =
+                dark ? 0.05 : 0.02;
+
+            el.style.background =
+                `radial-gradient(
           circle at 34% 32%,
           hsla(
             ${hue * 360},
@@ -796,382 +887,425 @@ export default function ShaderHero({
           ) 72%
         )`;
 
-      el.style.boxShadow =
-        `0 0 ${
-          size *
-          (dark ? 0.55 : 0.35)
-        }px hsla(
+            el.style.boxShadow =
+                `0 0 ${size *
+                (dark ? 0.55 : 0.35)
+                }px hsla(
           ${hue * 360},
           80%,
           ${lightness}%,
           ${dark ? 0.28 : 0.16}
         )`;
 
-      el.style.transition =
-        "box-shadow 0.25s ease";
+            el.style.transition =
+                "box-shadow 0.25s ease";
 
-      layer.appendChild(el);
+            layer.appendChild(el);
 
-      orbs.push({
-        el,
-        size,
-        hue,
+            orbs.push({
+                el,
+                size,
+                hue,
 
-        baseXPct: Math.min(
-          96,
-          Math.max(
-            4,
-            col * cellW +
-              cellW / 2 +
-              jitterX
-          )
-        ),
+                baseXPct: Math.min(
+                    96,
+                    Math.max(
+                        4,
+                        col * cellW +
+                        cellW / 2 +
+                        jitterX
+                    )
+                ),
 
-        baseYPct: Math.min(
-          96,
-          Math.max(
-            4,
-            row * cellH +
-              cellH / 2 +
-              jitterY
-          )
-        ),
+                baseYPct: Math.min(
+                    96,
+                    Math.max(
+                        4,
+                        row * cellH +
+                        cellH / 2 +
+                        jitterY
+                    )
+                ),
 
-        ampX:
-          16 +
-          Math.random() * 30,
+                ampX:
+                    16 +
+                    Math.random() * 30,
 
-        ampY:
-          12 +
-          Math.random() * 24,
+                ampY:
+                    12 +
+                    Math.random() * 24,
 
-        freq:
-          0.14 +
-          Math.random() * 0.22,
+                freq:
+                    0.14 +
+                    Math.random() * 0.22,
 
-        phase:
-          Math.random() *
-          Math.PI *
-          2,
+                phase:
+                    Math.random() *
+                    Math.PI *
+                    2,
 
-        x: 0,
-        y: 0,
+                x: 0,
+                y: 0,
 
-        held: false,
-        pointerId: null,
-      });
-    }
-
-    let pointerX = -9999;
-    let pointerY = -9999;
-    let pointerActive = false;
-
-    const toContainerPoint = (
-      clientX: number,
-      clientY: number
-    ) => {
-      const rect =
-        container.getBoundingClientRect();
-
-      return {
-        x: clientX - rect.left,
-        y: clientY - rect.top,
-      };
-    };
-
-    const handlePointerMove = (
-      event: PointerEvent
-    ) => {
-      const point =
-        toContainerPoint(
-          event.clientX,
-          event.clientY
-        );
-
-      pointerX = point.x;
-      pointerY = point.y;
-      pointerActive = true;
-    };
-
-    const handlePointerUp = (
-      event: PointerEvent
-    ) => {
-      for (const orb of orbs) {
-        if (
-          orb.pointerId ===
-          event.pointerId
-        ) {
-          orb.held = false;
-          orb.pointerId = null;
-          orb.el.style.cursor =
-            "grab";
+                held: false,
+                pointerId: null,
+            });
         }
-      }
-    };
 
-    orbs.forEach((orb) => {
-      orb.el.addEventListener(
-        "pointerdown",
-        (event) => {
-          event.preventDefault();
+        let pointerX = -9999;
+        let pointerY = -9999;
+        let pointerActive = false;
 
-          orb.el.setPointerCapture(
-            event.pointerId
-          );
+        const toContainerPoint = (
+            clientX: number,
+            clientY: number
+        ) => {
+            const rect =
+                container.getBoundingClientRect();
 
-          orb.held = true;
-          orb.pointerId =
-            event.pointerId;
+            return {
+                x:
+                    clientX -
+                    rect.left,
 
-          orb.el.style.cursor =
-            "grabbing";
+                y:
+                    clientY -
+                    rect.top,
+            };
+        };
 
-          const point =
-            toContainerPoint(
-              event.clientX,
-              event.clientY
+        const handlePointerMove = (
+            event: PointerEvent
+        ) => {
+            if (reducedMotion) return;
+
+            const point =
+                toContainerPoint(
+                    event.clientX,
+                    event.clientY
+                );
+
+            pointerX = point.x;
+            pointerY = point.y;
+            pointerActive = true;
+        };
+
+        const handlePointerUp = (
+            event: PointerEvent
+        ) => {
+            for (const orb of orbs) {
+                if (
+                    orb.pointerId ===
+                    event.pointerId
+                ) {
+                    orb.held = false;
+                    orb.pointerId = null;
+
+                    orb.el.style.cursor =
+                        "grab";
+                }
+            }
+        };
+
+        if (!reducedMotion) {
+            orbs.forEach((orb) => {
+                orb.el.addEventListener(
+                    "pointerdown",
+                    (event) => {
+                        event.preventDefault();
+
+                        orb.el.setPointerCapture(
+                            event.pointerId
+                        );
+
+                        orb.held = true;
+
+                        orb.pointerId =
+                            event.pointerId;
+
+                        orb.el.style.cursor =
+                            "grabbing";
+
+                        const point =
+                            toContainerPoint(
+                                event.clientX,
+                                event.clientY
+                            );
+
+                        pointerX = point.x;
+                        pointerY = point.y;
+                        pointerActive = true;
+                    }
+                );
+            });
+
+            window.addEventListener(
+                "pointermove",
+                handlePointerMove,
+                {
+                    passive: true,
+                }
             );
 
-          pointerX = point.x;
-          pointerY = point.y;
-          pointerActive = true;
+            window.addEventListener(
+                "pointerup",
+                handlePointerUp,
+                {
+                    passive: true,
+                }
+            );
+
+            window.addEventListener(
+                "pointercancel",
+                handlePointerUp,
+                {
+                    passive: true,
+                }
+            );
         }
-      );
-    });
 
-    window.addEventListener(
-      "pointermove",
-      handlePointerMove,
-      {
-        passive: true,
-      }
-    );
+        let liveWidth = width;
+        let liveHeight = height;
 
-    window.addEventListener(
-      "pointerup",
-      handlePointerUp,
-      {
-        passive: true,
-      }
-    );
+        const resizeObserver =
+            new ResizeObserver(() => {
+                liveWidth =
+                    container.clientWidth;
 
-    window.addEventListener(
-      "pointercancel",
-      handlePointerUp,
-      {
-        passive: true,
-      }
-    );
+                liveHeight =
+                    container.clientHeight;
+            });
 
-    let liveWidth = width;
-    let liveHeight = height;
+        resizeObserver.observe(
+            container
+        );
 
-    const resizeObserver =
-      new ResizeObserver(() => {
-        liveWidth =
-          container.clientWidth;
+        /*
+         * Pause the orb animation when the hero is outside
+         * the viewport or when the browser tab is hidden.
+         */
+        let isIntersecting = true;
+        let pageVisible =
+            document.visibilityState === "visible";
 
-        liveHeight =
-          container.clientHeight;
-      });
+        const intersectionObserver =
+            new IntersectionObserver(
+                (entries) => {
+                    isIntersecting =
+                        entries[0]?.isIntersecting ??
+                        true;
+                },
+                {
+                    threshold: 0,
+                }
+            );
 
-    resizeObserver.observe(
-      container
-    );
+        intersectionObserver.observe(
+            container
+        );
 
-    let isVisible = true;
+        const handleVisibilityChange = () => {
+            pageVisible =
+                document.visibilityState === "visible";
+        };
 
-    const intersectionObserver =
-      new IntersectionObserver(
-        (entries) => {
-          isVisible =
-            entries[0]?.isIntersecting ??
-            true;
-        },
-        {
-          threshold: 0,
-        }
-      );
+        document.addEventListener(
+            "visibilitychange",
+            handleVisibilityChange
+        );
 
-    intersectionObserver.observe(
-      container
-    );
+        const startTime =
+            performance.now();
 
-    const startTime =
-      performance.now();
+        /*
+         * Set the initial position.
+         */
+        for (const orb of orbs) {
+            orb.x =
+                (orb.baseXPct / 100) *
+                liveWidth;
 
-    for (const orb of orbs) {
-      orb.x =
-        (orb.baseXPct / 100) *
-        liveWidth;
+            orb.y =
+                (orb.baseYPct / 100) *
+                liveHeight;
 
-      orb.y =
-        (orb.baseYPct / 100) *
-        liveHeight;
-
-      orb.el.style.transform =
-        `translate3d(
+            orb.el.style.transform =
+                `translate3d(
           ${orb.x - orb.size / 2}px,
           ${orb.y - orb.size / 2}px,
           0
         )`;
-    }
-
-    let animationFrame = 0;
-
-    const PULL_RADIUS = 150;
-
-    const render = (now: number) => {
-      animationFrame =
-        requestAnimationFrame(render);
-
-      if (!isVisible) return;
-
-      const elapsed =
-        (now - startTime) / 1000;
-
-      for (const orb of orbs) {
-        const idleX =
-          (orb.baseXPct / 100) *
-            liveWidth +
-          Math.sin(
-            elapsed *
-              orb.freq +
-              orb.phase
-          ) *
-            orb.ampX;
-
-        const idleY =
-          (orb.baseYPct / 100) *
-            liveHeight +
-          Math.cos(
-            elapsed *
-              orb.freq *
-              0.85 +
-              orb.phase
-          ) *
-            orb.ampY;
-
-        let targetX = idleX;
-        let targetY = idleY;
-        let spring = 0.045;
-
-        if (orb.held) {
-          targetX = pointerX;
-          targetY = pointerY;
-          spring = 0.35;
-        } else if (
-          !reducedMotion &&
-          pointerActive
-        ) {
-          const dx =
-            pointerX - idleX;
-
-          const dy =
-            pointerY - idleY;
-
-          const dist =
-            Math.sqrt(
-              dx * dx +
-                dy * dy
-            );
-
-          if (
-            dist < PULL_RADIUS
-          ) {
-            const pull =
-              (1 -
-                dist /
-                  PULL_RADIUS) *
-              0.55;
-
-            targetX =
-              idleX +
-              dx * pull;
-
-            targetY =
-              idleY +
-              dy * pull;
-
-            spring = 0.09;
-          }
         }
 
-        orb.x +=
-          (targetX - orb.x) *
-          spring;
+        let animationFrame = 0;
 
-        orb.y +=
-          (targetY - orb.y) *
-          spring;
+        const PULL_RADIUS = 150;
 
-        const scale =
-          orb.held ? 1.12 : 1;
+        const render = (now: number) => {
+            animationFrame =
+                requestAnimationFrame(render);
 
-        orb.el.style.transform =
-          `translate3d(
+            if (
+                reducedMotion ||
+                !isIntersecting ||
+                !pageVisible
+            ) {
+                return;
+            }
+
+            const elapsed =
+                (now - startTime) / 1000;
+
+            for (const orb of orbs) {
+                const idleX =
+                    (orb.baseXPct / 100) *
+                    liveWidth +
+                    Math.sin(
+                        elapsed *
+                        orb.freq +
+                        orb.phase
+                    ) *
+                    orb.ampX;
+
+                const idleY =
+                    (orb.baseYPct / 100) *
+                    liveHeight +
+                    Math.cos(
+                        elapsed *
+                        orb.freq *
+                        0.85 +
+                        orb.phase
+                    ) *
+                    orb.ampY;
+
+                let targetX = idleX;
+                let targetY = idleY;
+
+                let spring = 0.045;
+
+                if (orb.held) {
+                    targetX = pointerX;
+                    targetY = pointerY;
+                    spring = 0.35;
+                } else if (
+                    pointerActive
+                ) {
+                    const dx =
+                        pointerX - idleX;
+
+                    const dy =
+                        pointerY - idleY;
+
+                    const dist =
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+
+                    if (
+                        dist < PULL_RADIUS
+                    ) {
+                        const pull =
+                            (1 -
+                                dist /
+                                PULL_RADIUS) *
+                            0.55;
+
+                        targetX =
+                            idleX +
+                            dx * pull;
+
+                        targetY =
+                            idleY +
+                            dy * pull;
+
+                        spring = 0.09;
+                    }
+                }
+
+                orb.x +=
+                    (targetX - orb.x) *
+                    spring;
+
+                orb.y +=
+                    (targetY - orb.y) *
+                    spring;
+
+                const scale =
+                    orb.held
+                        ? 1.12
+                        : 1;
+
+                orb.el.style.transform =
+                    `translate3d(
             ${orb.x - orb.size / 2}px,
             ${orb.y - orb.size / 2}px,
             0
           ) scale(${scale})`;
-      }
-    };
+            }
+        };
 
-    animationFrame =
-      requestAnimationFrame(render);
+        animationFrame =
+            requestAnimationFrame(render);
 
-    return () => {
-      cancelAnimationFrame(
-        animationFrame
-      );
+        return () => {
+            cancelAnimationFrame(
+                animationFrame
+            );
 
-      window.removeEventListener(
-        "pointermove",
-        handlePointerMove
-      );
+            document.removeEventListener(
+                "visibilitychange",
+                handleVisibilityChange
+            );
 
-      window.removeEventListener(
-        "pointerup",
-        handlePointerUp
-      );
+            if (!reducedMotion) {
+                window.removeEventListener(
+                    "pointermove",
+                    handlePointerMove
+                );
 
-      window.removeEventListener(
-        "pointercancel",
-        handlePointerUp
-      );
+                window.removeEventListener(
+                    "pointerup",
+                    handlePointerUp
+                );
 
-      resizeObserver.disconnect();
-      intersectionObserver.disconnect();
+                window.removeEventListener(
+                    "pointercancel",
+                    handlePointerUp
+                );
+            }
 
-      layer.innerHTML = "";
-    };
-  }, [
-    dark,
-    accent.primary,
-    accent.secondary,
-    orbCount,
-  ]);
+            resizeObserver.disconnect();
+            intersectionObserver.disconnect();
 
-  return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 h-full w-full overflow-hidden"
-    >
-      <canvas
-        ref={canvasRef}
-        className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-700 ${
-          ready
-            ? "opacity-100"
-            : "opacity-0"
-        }`}
-        aria-hidden="true"
-      />
+            layer.innerHTML = "";
+        };
+    }, [
+        dark,
+        accent.primary,
+        accent.secondary,
+        orbCount,
+    ]);
 
-      <div
-        ref={orbLayerRef}
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        aria-hidden="true"
-      />
-    </div>
-  );
+    return (
+        <div
+            ref={containerRef}
+            className="absolute inset-0 h-full w-full overflow-hidden"
+        >
+            <canvas
+                ref={canvasRef}
+                className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-700 ${ready
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
+                aria-hidden="true"
+            />
+
+            <div
+                ref={orbLayerRef}
+                className="pointer-events-none absolute inset-0 h-full w-full"
+                aria-hidden="true"
+            />
+        </div>
+    );
 }
