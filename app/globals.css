@@ -51,3 +51,73 @@ body {
     transform: translateX(140%);
   }
 }
+
+@keyframes techGrid {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(55px, 55px, 0);
+  }
+}
+
+@keyframes techOrbOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(100px, 50px, 0) scale(1.15);
+  }
+}
+
+@keyframes techOrbTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-80px, -40px, 0) scale(1.12);
+  }
+}
+
+@keyframes techOrbThree {
+  0%,
+  100% {
+    transform: translate3d(-50%, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-50%, -40px, 0) scale(1.12);
+  }
+}
+
+@keyframes techParticle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate3d(20px, -30px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes techLine {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  50% {
+    transform: translateX(420%);
+  }
+
+  100% {
+    transform: translateX(-140%);
+  }
+}

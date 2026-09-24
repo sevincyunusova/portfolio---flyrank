@@ -1483,79 +1483,109 @@ export default function Home() {
 <section
   id="technologies"
   className={`relative scroll-mt-24 overflow-hidden transition-colors duration-700 ${
-    dark ? "bg-[#0c091d]" : "bg-[#fcf8ff]"
+    dark ? "bg-[#0a0718]" : "bg-[#fcf9ff]"
   }`}
 >
-  {/* Ambient glows */}
-  <div className="pointer-events-none absolute left-1/4 top-0 h-72 w-72 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
-  <div className="pointer-events-none absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+  {/* BACKGROUND ATMOSPHERE */}
+  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    {/* Moving grid */}
+    <div
+      className={`absolute inset-0 opacity-[0.18] ${
+        dark ? "bg-[linear-gradient(rgba(167,139,250,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.08)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(124,58,237,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.05)_1px,transparent_1px)]"
+      } bg-[size:55px_55px] animate-[techGrid_25s_linear_infinite]`}
+    />
 
-  <div className="relative mx-auto max-w-7xl px-6 py-28">
+    {/* Purple orb */}
+    <div className="absolute -left-32 top-20 h-[420px] w-[420px] animate-[techOrbOne_12s_ease-in-out_infinite] rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+
+    {/* Cyan orb */}
+    <div className="absolute -right-32 top-1/3 h-[430px] w-[430px] animate-[techOrbTwo_15s_ease-in-out_infinite] rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+
+    {/* Pink orb */}
+    <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 animate-[techOrbThree_10s_ease-in-out_infinite] rounded-full bg-[#f0abfc]/5 blur-[120px]" />
+
+    {/* Floating particles */}
+    <span className="absolute left-[12%] top-[18%] h-1 w-1 animate-[techParticle_5s_ease-in-out_infinite] rounded-full bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,1)]" />
+
+    <span className="absolute right-[18%] top-[30%] h-1.5 w-1.5 animate-[techParticle_7s_ease-in-out_infinite_reverse] rounded-full bg-[#c084fc] shadow-[0_0_14px_rgba(192,132,252,1)]" />
+
+    <span className="absolute left-[25%] bottom-[20%] h-1 w-1 animate-[techParticle_6s_ease-in-out_infinite] rounded-full bg-[#f0abfc] shadow-[0_0_12px_rgba(240,171,252,1)]" />
+
+    <span className="absolute right-[30%] bottom-[15%] h-1 w-1 animate-[techParticle_8s_ease-in-out_infinite_reverse] rounded-full bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,1)]" />
+  </div>
+
+  <div className="relative mx-auto max-w-7xl px-6 py-32">
     {/* HEADER */}
-    <div className="max-w-3xl">
-      <div className="mb-4 flex items-center gap-3">
-        <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+    <div className="relative mx-auto max-w-3xl text-center">
+      <div className="mb-5 flex items-center justify-center gap-3">
+        <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#8b5cf6]" />
 
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
-          Technologies
+        <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#a78bfa]">
+          My Stack
         </p>
+
+        <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#67e8f9]" />
       </div>
 
       <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
         Technologies I
-        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#f0abfc] to-[#67e8f9] bg-clip-text text-transparent">
           work with.
         </span>
       </h2>
 
       <p
-        className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
-          dark ? "text-white/50" : "text-[#766d80]"
+        className={`mx-auto mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
+          dark ? "text-white/45" : "text-[#766d80]"
         }`}
       >
-        A visual overview of the technologies and tools I have been working
-        with across development, design, AI, and technical support.
+        The tools, technologies, and practical skills I use while building,
+        designing, learning, and solving real-world problems.
       </p>
     </div>
 
-    {/* TECHNOLOGY GROUPS */}
-    <div className="mt-14 grid gap-5 md:grid-cols-2">
+    {/* TECH CARDS */}
+    <div className="relative mt-16 grid gap-6 md:grid-cols-2">
       {/* FRONTEND */}
       <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
           dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/35"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/35 hover:shadow-[0_25px_70px_rgba(124,58,237,0.08)]"
+            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#8b5cf6]/40 hover:bg-white/[0.055]"
+            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#a855f7]/40 hover:shadow-[0_30px_80px_rgba(124,58,237,0.12)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/15" />
+        {/* Card glow */}
+        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#7c3aed]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#7c3aed]/20" />
+
+        {/* Animated border light */}
+        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#a78bfa] to-transparent shadow-[0_0_12px_#a78bfa]" />
 
         <div className="relative">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                01
+              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#a78bfa]">
+                01 / FRONTEND
               </span>
 
               <h3
-                className={`mt-2 text-xl font-black ${
+                className={`mt-3 text-2xl font-black ${
                   dark ? "text-white" : "text-[#211b35]"
                 }`}
               >
-                Frontend
+                Frontend Development
               </h3>
             </div>
 
-            <span className="text-2xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
-              ◇
-            </span>
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8b5cf6]/25 bg-[#8b5cf6]/10 text-lg text-[#c4b5fd] transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(139,92,246,0.25)]">
+              &lt;/&gt;
+            </div>
           </div>
 
-          <div className="mt-8 space-y-5">
+          <div className="mt-9 space-y-5">
             {[
               ["HTML5", 100],
-              ["CSS3", 95],
-              ["JavaScript", 85],
+              ["CSS3", 100],
+              ["JavaScript", 100],
               ["Tailwind CSS", 90],
               ["React", 60],
               ["Next.js", 55],
@@ -1563,10 +1593,10 @@ export default function Home() {
               ["TypeScript", 45],
             ].map(([name, level]) => (
               <div key={name} className="group/item">
-                <div className="mb-2 flex items-center justify-between">
+                <div className="mb-2.5 flex items-center justify-between">
                   <span
                     className={`text-xs font-semibold ${
-                      dark ? "text-white/70" : "text-[#51485c]"
+                      dark ? "text-white/75" : "text-[#51485c]"
                     }`}
                   >
                     {name}
@@ -1574,15 +1604,15 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
                   }`}
                 >
                   <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
                     style={{ width: `${level}%` }}
                   >
-                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#e0faff] shadow-[0_0_8px_rgba(103,232,249,1)]" />
+                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
                   </div>
                 </div>
               </div>
@@ -1593,23 +1623,25 @@ export default function Home() {
 
       {/* PROGRAMMING */}
       <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
           dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/35"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/35 hover:shadow-[0_25px_70px_rgba(6,182,212,0.08)]"
+            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#06b6d4]/40 hover:bg-white/[0.055]"
+            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#06b6d4]/40 hover:shadow-[0_30px_80px_rgba(6,182,212,0.12)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/15" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#06b6d4]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
+
+        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_6s_ease-in-out_infinite_reverse] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_12px_#67e8f9]" />
 
         <div className="relative">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
-                02
+              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#06b6d4]">
+                02 / CODE
               </span>
 
               <h3
-                className={`mt-2 text-xl font-black ${
+                className={`mt-3 text-2xl font-black ${
                   dark ? "text-white" : "text-[#211b35]"
                 }`}
               >
@@ -1617,26 +1649,26 @@ export default function Home() {
               </h3>
             </div>
 
-            <span className="text-2xl text-[#67e8f9] transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#06b6d4]/25 bg-[#06b6d4]/10 text-lg text-[#67e8f9] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.25)]">
               {"{ }"}
-            </span>
+            </div>
           </div>
 
-          <div className="mt-8 space-y-5">
+          <div className="mt-9 space-y-5">
             {[
-              ["C++", 70],
-              ["C#", 60],
-              ["Python", 65],
+              ["C++", 95],
+              ["C#", 80],
+              ["Python", 75],
               ["REST API", 75],
               ["JSON", 85],
               ["Git", 90],
               ["GitHub", 90],
             ].map(([name, level]) => (
               <div key={name} className="group/item">
-                <div className="mb-2 flex items-center justify-between">
+                <div className="mb-2.5 flex items-center justify-between">
                   <span
                     className={`text-xs font-semibold ${
-                      dark ? "text-white/70" : "text-[#51485c]"
+                      dark ? "text-white/75" : "text-[#51485c]"
                     }`}
                   >
                     {name}
@@ -1644,15 +1676,15 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
                   }`}
                 >
                   <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#0891b2] via-[#06b6d4] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#0891b2] via-[#06b6d4] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
                     style={{ width: `${level}%` }}
                   >
-                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#e0faff] shadow-[0_0_8px_rgba(103,232,249,1)]" />
+                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
                   </div>
                 </div>
               </div>
@@ -1663,23 +1695,25 @@ export default function Home() {
 
       {/* AI & DESIGN */}
       <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
           dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/35"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/35 hover:shadow-[0_25px_70px_rgba(240,171,252,0.08)]"
+            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#f0abfc]/40 hover:bg-white/[0.055]"
+            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#f0abfc]/40 hover:shadow-[0_30px_80px_rgba(240,171,252,0.12)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/15" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#f0abfc]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
+
+        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_5.5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#f0abfc] to-transparent shadow-[0_0_12px_#f0abfc]" />
 
         <div className="relative">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
-                03
+              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#f0abfc]">
+                03 / CREATIVE
               </span>
 
               <h3
-                className={`mt-2 text-xl font-black ${
+                className={`mt-3 text-2xl font-black ${
                   dark ? "text-white" : "text-[#211b35]"
                 }`}
               >
@@ -1687,25 +1721,25 @@ export default function Home() {
               </h3>
             </div>
 
-            <span className="text-2xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#f0abfc]/25 bg-[#f0abfc]/10 text-lg text-[#f0abfc] transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(240,171,252,0.25)]">
               ✦
-            </span>
+            </div>
           </div>
 
-          <div className="mt-8 space-y-5">
+          <div className="mt-9 space-y-5">
             {[
               ["AI Integration", 65],
               ["Figma", 45],
-              ["Canva", 75],
+              ["Canva", 90],
               ["Microsoft Word", 90],
               ["PowerPoint", 90],
               ["Excel", 80],
             ].map(([name, level]) => (
               <div key={name} className="group/item">
-                <div className="mb-2 flex items-center justify-between">
+                <div className="mb-2.5 flex items-center justify-between">
                   <span
                     className={`text-xs font-semibold ${
-                      dark ? "text-white/70" : "text-[#51485c]"
+                      dark ? "text-white/75" : "text-[#51485c]"
                     }`}
                   >
                     {name}
@@ -1713,15 +1747,15 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
                   }`}
                 >
                   <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#c026d3] via-[#f0abfc] to-[#c4b5fd] shadow-[0_0_10px_rgba(240,171,252,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(240,171,252,0.8)]"
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#c026d3] via-[#f0abfc] to-[#c4b5fd] shadow-[0_0_12px_rgba(240,171,252,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(240,171,252,0.9)]"
                     style={{ width: `${level}%` }}
                   >
-                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#fff2ff] shadow-[0_0_8px_rgba(240,171,252,1)]" />
+                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(240,171,252,1)]" />
                   </div>
                 </div>
               </div>
@@ -1732,23 +1766,25 @@ export default function Home() {
 
       {/* SUPPORT & WORKFLOW */}
       <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
+        className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
           dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/35"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/35 hover:shadow-[0_25px_70px_rgba(124,58,237,0.08)]"
+            ? "border-white/10 bg-white/[0.035] backdrop-blur-xl hover:border-[#a78bfa]/40 hover:bg-white/[0.055]"
+            : "border-[#e5dce2] bg-white/70 backdrop-blur-xl hover:border-[#a78bfa]/40 hover:shadow-[0_30px_80px_rgba(124,58,237,0.12)]"
         }`}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[80px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/15" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#a78bfa]/10 blur-[90px] transition-all duration-1000 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
+
+        <div className="absolute left-0 top-0 h-px w-32 animate-[techLine_6.5s_ease-in-out_infinite_reverse] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_12px_#67e8f9]" />
 
         <div className="relative">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                04
+              <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-[#a78bfa]">
+                04 / SUPPORT
               </span>
 
               <h3
-                className={`mt-2 text-xl font-black ${
+                className={`mt-3 text-2xl font-black ${
                   dark ? "text-white" : "text-[#211b35]"
                 }`}
               >
@@ -1756,12 +1792,12 @@ export default function Home() {
               </h3>
             </div>
 
-            <span className="text-2xl text-[#c4b5fd] transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#a78bfa]/25 bg-[#a78bfa]/10 text-lg text-[#c4b5fd] transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(167,139,250,0.25)]">
               ↗
-            </span>
+            </div>
           </div>
 
-          <div className="mt-8 space-y-5">
+          <div className="mt-9 space-y-5">
             {[
               ["Technical Support", 75],
               ["Troubleshooting", 80],
@@ -1771,10 +1807,10 @@ export default function Home() {
               ["Team Collaboration", 85],
             ].map(([name, level]) => (
               <div key={name} className="group/item">
-                <div className="mb-2 flex items-center justify-between">
+                <div className="mb-2.5 flex items-center justify-between">
                   <span
                     className={`text-xs font-semibold ${
-                      dark ? "text-white/70" : "text-[#51485c]"
+                      dark ? "text-white/75" : "text-[#51485c]"
                     }`}
                   >
                     {name}
@@ -1782,15 +1818,15 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`relative h-[3px] w-full overflow-hidden rounded-full ${
-                    dark ? "bg-white/10" : "bg-black/[0.07]"
+                  className={`relative h-[4px] w-full overflow-hidden rounded-full ${
+                    dark ? "bg-white/[0.08]" : "bg-black/[0.06]"
                   }`}
                 >
                   <div
-                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_10px_rgba(167,139,250,0.45)] transition-all duration-1000 group-hover/item:shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                    className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#a78bfa] to-[#67e8f9] shadow-[0_0_12px_rgba(167,139,250,0.5)] transition-all duration-1000 group-hover/item:shadow-[0_0_20px_rgba(103,232,249,0.9)]"
                     style={{ width: `${level}%` }}
                   >
-                    <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#f5f3ff] shadow-[0_0_8px_rgba(167,139,250,1)]" />
+                    <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(103,232,249,1)]" />
                   </div>
                 </div>
               </div>
@@ -1800,17 +1836,27 @@ export default function Home() {
       </div>
     </div>
 
-    {/* BOTTOM NOTE */}
-    <div className="mt-12 flex items-center gap-4">
+    {/* BOTTOM STATEMENT */}
+    <div className="relative mt-16 flex items-center gap-4">
       <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
 
-      <span
-        className={`text-center text-[10px] font-bold uppercase tracking-[0.25em] ${
-          dark ? "text-white/30" : "text-[#a397a7]"
+      <div
+        className={`flex items-center gap-2 rounded-full border px-5 py-2.5 backdrop-blur-xl ${
+          dark
+            ? "border-white/10 bg-white/[0.035]"
+            : "border-[#e5dce2] bg-white/60"
         }`}
       >
-        Progress, not perfection
-      </span>
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,1)]" />
+
+        <span
+          className={`text-[10px] font-bold uppercase tracking-[0.25em] ${
+            dark ? "text-white/35" : "text-[#9b8fa3]"
+          }`}
+        >
+          Always learning · Always building
+        </span>
+      </div>
 
       <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
     </div>
