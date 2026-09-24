@@ -752,8 +752,8 @@ export default function Home() {
           {/* Main glass card */}
           <div
             className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 sm:p-9 lg:p-10 ${dark
-                ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/25"
-                : "border-[#e8dfe8] bg-white/60 shadow-[0_20px_70px_rgba(124,58,237,0.06)] hover:border-[#a855f7]/30"
+              ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/25"
+              : "border-[#e8dfe8] bg-white/60 shadow-[0_20px_70px_rgba(124,58,237,0.06)] hover:border-[#a855f7]/30"
               }`}
           >
             {/* Card glow */}
@@ -821,8 +821,8 @@ export default function Home() {
                   <div
                     key={label}
                     className={`group/stat relative overflow-hidden rounded-2xl border p-4 transition-all duration-500 hover:-translate-y-1 ${dark
-                        ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/30 hover:bg-white/[0.055]"
-                        : "border-black/5 bg-white/60 hover:border-[#a855f7]/25 hover:bg-white"
+                      ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/30 hover:bg-white/[0.055]"
+                      : "border-black/5 bg-white/60 hover:border-[#a855f7]/25 hover:bg-white"
                       }`}
                   >
                     <div
@@ -833,10 +833,10 @@ export default function Home() {
                     <div className="relative">
                       <p
                         className={`text-xl font-black ${index === 1
-                            ? "text-[#67e8f9]"
-                            : index === 2
-                              ? "text-[#f0abfc]"
-                              : "text-[#a78bfa]"
+                          ? "text-[#67e8f9]"
+                          : index === 2
+                            ? "text-[#f0abfc]"
+                            : "text-[#a78bfa]"
                           }`}
                       >
                         {number}
@@ -858,8 +858,8 @@ export default function Home() {
           {/* Right visual */}
           <div
             className={`relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-[32px] border ${dark
-                ? "border-white/10 bg-white/[0.025]"
-                : "border-[#e8dfe8] bg-white/50"
+              ? "border-white/10 bg-white/[0.025]"
+              : "border-[#e8dfe8] bg-white/50"
               }`}
           >
             {/* Background glow */}
@@ -880,8 +880,8 @@ export default function Home() {
 
               <div
                 className={`relative overflow-hidden rounded-[26px] border backdrop-blur-2xl ${dark
-                    ? "border-white/10 bg-[#0b0818]/75 shadow-[0_0_70px_rgba(124,58,237,0.15)]"
-                    : "border-white/80 bg-white/75 shadow-[0_0_70px_rgba(124,58,237,0.10)]"
+                  ? "border-white/10 bg-[#0b0818]/75 shadow-[0_0_70px_rgba(124,58,237,0.15)]"
+                  : "border-white/80 bg-white/75 shadow-[0_0_70px_rgba(124,58,237,0.10)]"
                   }`}
               >
                 {/* Top gradient */}
@@ -962,8 +962,8 @@ export default function Home() {
             {/* Floating labels */}
             <div
               className={`absolute left-5 top-8 rounded-xl border px-3 py-2 backdrop-blur-xl ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-white/80 bg-white/60"
+                ? "border-white/10 bg-white/[0.04]"
+                : "border-white/80 bg-white/60"
                 }`}
             >
               <span className="text-[9px] font-bold tracking-[0.15em] text-[#a78bfa]">
@@ -973,8 +973,8 @@ export default function Home() {
 
             <div
               className={`absolute bottom-8 right-5 rounded-xl border px-3 py-2 backdrop-blur-xl ${dark
-                  ? "border-white/10 bg-white/[0.04]"
-                  : "border-white/80 bg-white/60"
+                ? "border-white/10 bg-white/[0.04]"
+                : "border-white/80 bg-white/60"
                 }`}
             >
               <span className="text-[9px] font-bold tracking-[0.15em] text-[#67e8f9]">
@@ -989,8 +989,8 @@ export default function Home() {
           {/* Frontend */}
           <div
             className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-                ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
-                : "border-[#e5dce2] bg-white/60 hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
+              ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
+              : "border-[#e5dce2] bg-white/60 hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
               }`}
           >
             <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
@@ -1026,8 +1026,8 @@ export default function Home() {
           {/* AI */}
           <div
             className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-                ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
-                : "border-[#e5dce2] bg-white/60 hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
+              ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
+              : "border-[#e5dce2] bg-white/60 hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
               }`}
           >
             <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#06b6d4]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
@@ -1063,8 +1063,8 @@ export default function Home() {
           {/* Helpdesk */}
           <div
             className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
-                ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
-                : "border-[#e5dce2] bg-white/60 hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
+              ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
+              : "border-[#e5dce2] bg-white/60 hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
               }`}
           >
             <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#f0abfc]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
@@ -1103,8 +1103,8 @@ export default function Home() {
       <section
         id="skills"
         className={`relative scroll-mt-24 overflow-hidden border-y transition-colors duration-700 ${dark
-            ? "border-white/10 bg-[#100d25]"
-            : "border-[#e8ddd2] bg-[#f8f1ff]"
+          ? "border-white/10 bg-[#100d25]"
+          : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
       >
         {/* Ambient background glows */}
@@ -1143,8 +1143,8 @@ export default function Home() {
             {/* FRONTEND */}
             <div
               className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/20" />
@@ -1168,8 +1168,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                        : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+                      ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                      : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
                       }`}
                   >
                     &lt;/&gt;
@@ -1199,8 +1199,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
                         }`}
                       style={{
                         animationDelay: `${index * 40}ms`,
@@ -1216,8 +1216,8 @@ export default function Home() {
             {/* PROGRAMMING */}
             <div
               className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/40 hover:shadow-[0_25px_70px_rgba(6,182,212,0.10)]"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/40 hover:shadow-[0_25px_70px_rgba(6,182,212,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
@@ -1241,8 +1241,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
-                        : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
+                      ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                      : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
                       }`}
                   >
                     {"{ }"}
@@ -1270,8 +1270,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
                         }`}
                     >
                       {skill}
@@ -1284,8 +1284,8 @@ export default function Home() {
             {/* AI & DESIGN */}
             <div
               className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/40 hover:shadow-[0_25px_70px_rgba(240,171,252,0.10)]"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/40 hover:shadow-[0_25px_70px_rgba(240,171,252,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
@@ -1309,8 +1309,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
-                        : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
+                      ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
+                      : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
                       }`}
                   >
                     ✦
@@ -1335,8 +1335,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
-                          : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
+                        : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
                         }`}
                     >
                       {skill}
@@ -1349,8 +1349,8 @@ export default function Home() {
             {/* WORKFLOW */}
             <div
               className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
-                  ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
-                  : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+                ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
+                : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
@@ -1374,8 +1374,8 @@ export default function Home() {
 
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
-                        ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
-                        : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
+                      ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
+                      : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
                       }`}
                   >
                     ↗
@@ -1402,8 +1402,8 @@ export default function Home() {
                     <span
                       key={skill}
                       className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
-                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                        : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
                         }`}
                     >
                       {skill}
@@ -1438,8 +1438,8 @@ export default function Home() {
         {/* BACKGROUND GRID */}
         <div
           className={`pointer-events-none absolute inset-0 opacity-30 ${dark
-              ? "bg-[linear-gradient(rgba(139,92,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.07)_1px,transparent_1px)]"
-              : "bg-[linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)]"
+            ? "bg-[linear-gradient(rgba(139,92,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.07)_1px,transparent_1px)]"
+            : "bg-[linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)]"
             } bg-[size:48px_48px] animate-[techGrid_18s_linear_infinite]`}
         />
 
@@ -1556,8 +1556,8 @@ export default function Home() {
             {/* FRONTEND */}
             <div
               className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(139,92,246,0.15)]"
-                  : "border-black/8 bg-white/55 hover:border-[#8b5cf6]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(139,92,246,0.10)]"
+                ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(139,92,246,0.15)]"
+                : "border-black/8 bg-white/55 hover:border-[#8b5cf6]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(139,92,246,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#8b5cf6]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
@@ -1617,8 +1617,8 @@ export default function Home() {
             {/* PROGRAMMING */}
             <div
               className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/8 bg-white/[0.035] hover:border-[#06b6d4]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(6,182,212,0.15)]"
-                  : "border-black/8 bg-white/55 hover:border-[#06b6d4]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(6,182,212,0.10)]"
+                ? "border-white/8 bg-white/[0.035] hover:border-[#06b6d4]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(6,182,212,0.15)]"
+                : "border-black/8 bg-white/55 hover:border-[#06b6d4]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(6,182,212,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#06b6d4]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
@@ -1677,8 +1677,8 @@ export default function Home() {
             {/* AI & DESIGN */}
             <div
               className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/8 bg-white/[0.035] hover:border-[#c084fc]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(192,132,252,0.15)]"
-                  : "border-black/8 bg-white/55 hover:border-[#c084fc]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(192,132,252,0.10)]"
+                ? "border-white/8 bg-white/[0.035] hover:border-[#c084fc]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(192,132,252,0.15)]"
+                : "border-black/8 bg-white/55 hover:border-[#c084fc]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(192,132,252,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#c084fc]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
@@ -1736,8 +1736,8 @@ export default function Home() {
             {/* SUPPORT & WORKFLOW */}
             <div
               className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
-                  ? "border-white/8 bg-white/[0.035] hover:border-[#67e8f9]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(103,232,249,0.15)]"
-                  : "border-black/8 bg-white/55 hover:border-[#67e8f9]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(103,232,249,0.10)]"
+                ? "border-white/8 bg-white/[0.035] hover:border-[#67e8f9]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(103,232,249,0.15)]"
+                : "border-black/8 bg-white/55 hover:border-[#67e8f9]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(103,232,249,0.10)]"
                 }`}
             >
               <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#67e8f9]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
@@ -1794,298 +1794,358 @@ export default function Home() {
           </div>
         </div>
       </section>
-     
-     <section
-  id="projects"
-  className={`relative overflow-hidden scroll-mt-24 py-24 ${
-    dark ? "bg-[#090718]" : "bg-[#fcf9ff]"
-  }`}
->
-  {/* PROJECTS BACKGROUND */}
 
-  {/* Soft moving glow */}
-  <div
-    className={`pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full blur-[120px] ${
-      dark ? "bg-[#7c3aed]/12" : "bg-[#a855f7]/10"
-    }`}
-    style={{
-      animation: "techOrbOne 12s ease-in-out infinite",
-    }}
-  />
+      <section
+        id="projects"
+        className={`relative overflow-hidden scroll-mt-24 py-24 ${dark ? "bg-[#090718]" : "bg-[#fcf9ff]"
+          }`}
+      >
+        {/* PROJECTS BACKGROUND */}
 
-  <div
-    className={`pointer-events-none absolute -right-40 bottom-10 h-[420px] w-[420px] rounded-full blur-[120px] ${
-      dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/10"
-    }`}
-    style={{
-      animation: "techOrbTwo 15s ease-in-out infinite",
-    }}
-  />
+        {/* Soft moving glow */}
+        <div
+          className={`pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full blur-[120px] ${dark ? "bg-[#7c3aed]/12" : "bg-[#a855f7]/10"
+            }`}
+          style={{
+            animation: "techOrbOne 12s ease-in-out infinite",
+          }}
+        />
 
-  {/* Large decorative orbit */}
-  <div
-    className={`pointer-events-none absolute left-1/2 top-[55%] h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
-      dark ? "border-[#8b5cf6]/[0.07]" : "border-[#a855f7]/[0.08]"
-    }`}
-    style={{
-      animation: "techOrbitOne 60s linear infinite",
-    }}
-  >
-    <div
-      className={`absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full ${
-        dark
-          ? "bg-[#67e8f9] shadow-[0_0_20px_rgba(103,232,249,0.9)]"
-          : "bg-[#06b6d4] shadow-[0_0_20px_rgba(6,182,212,0.45)]"
-      }`}
-    />
-  </div>
+        <div
+          className={`pointer-events-none absolute -right-40 bottom-10 h-[420px] w-[420px] rounded-full blur-[120px] ${dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/10"
+            }`}
+          style={{
+            animation: "techOrbTwo 15s ease-in-out infinite",
+          }}
+        />
 
-  {/* Second orbit */}
-  <div
-    className={`pointer-events-none absolute left-1/2 top-[55%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
-      dark ? "border-[#06b6d4]/[0.06]" : "border-[#06b6d4]/[0.07]"
-    }`}
-    style={{
-      animation: "techOrbitTwo 42s linear infinite",
-    }}
-  >
-    <div
-      className={`absolute bottom-8 right-10 h-2 w-2 rounded-full ${
-        dark
-          ? "bg-[#c084fc] shadow-[0_0_18px_rgba(192,132,252,0.9)]"
-          : "bg-[#a855f7] shadow-[0_0_18px_rgba(168,85,247,0.4)]"
-      }`}
-    />
-  </div>
-
-  {/* Small floating particles */}
-  <div
-    className={`pointer-events-none absolute left-[12%] top-[30%] h-1.5 w-1.5 rounded-full ${
-      dark
-        ? "bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.9)]"
-        : "bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.35)]"
-    }`}
-    style={{
-      animation: "techParticle 5s ease-in-out infinite",
-    }}
-  />
-
-  <div
-    className={`pointer-events-none absolute right-[15%] top-[22%] h-1.5 w-1.5 rounded-full ${
-      dark
-        ? "bg-[#c084fc] shadow-[0_0_12px_rgba(192,132,252,0.9)]"
-        : "bg-[#a855f7] shadow-[0_0_12px_rgba(168,85,247,0.35)]"
-    }`}
-    style={{
-      animation: "techParticle 6s ease-in-out infinite 1s",
-    }}
-  />
-
-  <div
-    className={`pointer-events-none absolute bottom-[18%] left-[28%] h-1 w-1 rounded-full ${
-      dark
-        ? "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.9)]"
-        : "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.35)]"
-    }`}
-    style={{
-      animation: "techParticle 7s ease-in-out infinite 2s",
-    }}
-  />
-
-  {/* Content */}
-  <div className="relative z-10 mx-auto max-w-7xl px-6">
-    {/* Header */}
-    <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-      <div>
-        <div className="mb-4 flex items-center gap-3">
-          <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4]" />
-
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#a78bfa]">
-            My Projects
-          </p>
+        {/* Large decorative orbit */}
+        <div
+          className={`pointer-events-none absolute left-1/2 top-[55%] h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#8b5cf6]/[0.07]" : "border-[#a855f7]/[0.08]"
+            }`}
+          style={{
+            animation: "techOrbitOne 60s linear infinite",
+          }}
+        >
+          <div
+            className={`absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full ${dark
+              ? "bg-[#67e8f9] shadow-[0_0_20px_rgba(103,232,249,0.9)]"
+              : "bg-[#06b6d4] shadow-[0_0_20px_rgba(6,182,212,0.45)]"
+              }`}
+          />
         </div>
 
-        <h2
-          className={`text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl ${
-            dark ? "text-white" : "text-[#211b35]"
-          }`}
-        >
-          A selection of{" "}
-          <span className="bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
-            my work.
-          </span>
-        </h2>
-      </div>
-
-      <p
-        className={`max-w-md text-sm leading-7 transition-colors duration-700 ${
-          dark ? "text-white/55" : "text-[#766d80]"
-        }`}
-      >
-        A collection of frontend projects built while learning,
-        experimenting, and working with modern web technologies.
-      </p>
-    </div>
-
-    {/* Projects */}
-    <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project, index) => (
-        <article
-          key={project.title}
-          className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[30px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${
-            dark
-              ? "border-white/[0.09] bg-white/[0.035] backdrop-blur-xl hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_25px_70px_rgba(124,58,237,0.18)]"
-              : "border-[#e6ddd3] bg-white/75 shadow-sm backdrop-blur-xl hover:border-[#a855f7]/45 hover:shadow-[0_25px_70px_rgba(168,85,247,0.14)]"
-          }`}
-        >
-          {/* Card glow */}
-          <div
-            className={`absolute -right-20 -top-20 h-48 w-48 rounded-full blur-[70px] transition-all duration-700 group-hover:scale-150 ${
-              index % 2 === 0
-                ? dark
-                  ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
-                  : "bg-[#a855f7]/10 group-hover:bg-[#a855f7]/15"
-                : dark
-                  ? "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
-                  : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/15"
+        {/* Second orbit */}
+        <div
+          className={`pointer-events-none absolute left-1/2 top-[55%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#06b6d4]/[0.06]" : "border-[#06b6d4]/[0.07]"
             }`}
-          />
-
-          {/* Bottom glow */}
+          style={{
+            animation: "techOrbitTwo 42s linear infinite",
+          }}
+        >
           <div
-            className={`absolute -bottom-24 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full blur-[70px] opacity-0 transition-opacity duration-700 group-hover:opacity-100 ${
-              index % 2 === 0
-                ? "bg-[#7c3aed]/20"
-                : "bg-[#06b6d4]/20"
-            }`}
+            className={`absolute bottom-8 right-10 h-2 w-2 rounded-full ${dark
+              ? "bg-[#c084fc] shadow-[0_0_18px_rgba(192,132,252,0.9)]"
+              : "bg-[#a855f7] shadow-[0_0_18px_rgba(168,85,247,0.4)]"
+              }`}
           />
+        </div>
 
-          {/* Existing moving shine — kept and enhanced */}
-          <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent transition-transform duration-[1200ms] ease-out group-hover:translate-x-full" />
+        {/* Small floating particles */}
+        <div
+          className={`pointer-events-none absolute left-[12%] top-[30%] h-1.5 w-1.5 rounded-full ${dark
+            ? "bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.9)]"
+            : "bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.35)]"
+            }`}
+          style={{
+            animation: "techParticle 5s ease-in-out infinite",
+          }}
+        />
 
-          {/* Thin animated top line */}
-          <div className="pointer-events-none absolute left-0 top-0 h-px w-full overflow-hidden">
-            <div
-              className={`h-full w-1/3 bg-gradient-to-r from-transparent ${
-                index % 2 === 0
-                  ? "via-[#a78bfa] to-transparent"
-                  : "via-[#67e8f9] to-transparent"
-              }`}
-              style={{
-                animation: `techLine ${
-                  4 + index * 0.6
-                }s ease-in-out infinite`,
-              }}
-            />
-          </div>
+        <div
+          className={`pointer-events-none absolute right-[15%] top-[22%] h-1.5 w-1.5 rounded-full ${dark
+            ? "bg-[#c084fc] shadow-[0_0_12px_rgba(192,132,252,0.9)]"
+            : "bg-[#a855f7] shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+            }`}
+          style={{
+            animation: "techParticle 6s ease-in-out infinite 1s",
+          }}
+        />
 
-          {/* Top row */}
-          <div className="relative flex items-center justify-between">
-            <span
-              className={`text-sm font-bold tracking-wider ${
-                dark ? "text-white/35" : "text-[#c7bcc9]"
-              }`}
-            >
-              {project.number}
-            </span>
+        <div
+          className={`pointer-events-none absolute bottom-[18%] left-[28%] h-1 w-1 rounded-full ${dark
+            ? "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.9)]"
+            : "bg-[#8b5cf6] shadow-[0_0_10px_rgba(139,92,246,0.35)]"
+            }`}
+          style={{
+            animation: "techParticle 7s ease-in-out infinite 2s",
+          }}
+        />
 
-            <span
-              className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] ${
-                dark
-                  ? "border-white/10 bg-white/[0.025] text-white/50"
-                  : "border-[#e5dce2] bg-white/70 text-[#8b7f8c]"
-              }`}
-            >
-              Project
-            </span>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          {/* Header */}
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4]" />
 
-          {/* Main content */}
-          <div className="relative mt-10 flex-1">
-            <h3
-              className={`text-2xl font-black tracking-tight transition-all duration-300 ${
-                dark
-                  ? "text-white group-hover:text-[#d8ccff]"
-                  : "text-[#211b35] group-hover:text-[#7c3aed]"
-              }`}
-            >
-              {project.title}
-            </h3>
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#a78bfa]">
+                  My Projects
+                </p>
+              </div>
+
+              <h2
+                className={`text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
+              >
+                A selection of{" "}
+                <span className="bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+                  my work.
+                </span>
+              </h2>
+            </div>
 
             <p
-              className={`mt-4 text-sm leading-7 ${
-                dark ? "text-white/60" : "text-[#6d6572]"
-              }`}
+              className={`max-w-md text-sm leading-7 transition-colors duration-700 ${dark ? "text-white/55" : "text-[#766d80]"
+                }`}
             >
-              {project.description}
+              A collection of frontend projects built while learning,
+              experimenting, and working with modern web technologies.
             </p>
+          </div>
 
-            {/* Tech tags */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.tech.map((technology) => (
-                <span
-                  key={technology}
-                  className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 ${
-                    dark
-                      ? "border-[#8b5cf6]/10 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                      : "border-[#e9d5ff] bg-[#f3e8ff] text-[#7c3aed]"
+          {/* Projects */}
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <article
+                key={project.title}
+                className={`group relative flex min-h-[390px] flex-col overflow-hidden rounded-[30px] border p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.015] ${dark
+                  ? "border-white/[0.09] bg-white/[0.035] backdrop-blur-xl hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_25px_70px_rgba(124,58,237,0.18)]"
+                  : "border-[#e6ddd3] bg-white/75 shadow-sm backdrop-blur-xl hover:border-[#a855f7]/45 hover:shadow-[0_25px_70px_rgba(168,85,247,0.14)]"
                   }`}
-                >
-                  {technology}
-                </span>
-              ))}
-            </div>
+              >
+                {/* Card glow */}
+                <div
+                  className={`absolute -right-20 -top-20 h-48 w-48 rounded-full blur-[70px] transition-all duration-700 group-hover:scale-150 ${index % 2 === 0
+                    ? dark
+                      ? "bg-[#8b5cf6]/10 group-hover:bg-[#8b5cf6]/20"
+                      : "bg-[#a855f7]/10 group-hover:bg-[#a855f7]/15"
+                    : dark
+                      ? "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/20"
+                      : "bg-[#06b6d4]/10 group-hover:bg-[#06b6d4]/15"
+                    }`}
+                />
+
+                {/* Bottom glow */}
+                <div
+                  className={`absolute -bottom-24 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full blur-[70px] opacity-0 transition-opacity duration-700 group-hover:opacity-100 ${index % 2 === 0
+                    ? "bg-[#7c3aed]/20"
+                    : "bg-[#06b6d4]/20"
+                    }`}
+                />
+
+                {/* Existing moving shine — kept and enhanced */}
+                <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent transition-transform duration-[1200ms] ease-out group-hover:translate-x-full" />
+
+                {/* Thin animated top line */}
+                <div className="pointer-events-none absolute left-0 top-0 h-px w-full overflow-hidden">
+                  <div
+                    className={`h-full w-1/3 bg-gradient-to-r from-transparent ${index % 2 === 0
+                      ? "via-[#a78bfa] to-transparent"
+                      : "via-[#67e8f9] to-transparent"
+                      }`}
+                    style={{
+                      animation: `techLine ${4 + index * 0.6
+                        }s ease-in-out infinite`,
+                    }}
+                  />
+                </div>
+
+                {/* Top row */}
+                <div className="relative flex items-center justify-between">
+                  <span
+                    className={`text-sm font-bold tracking-wider ${dark ? "text-white/35" : "text-[#c7bcc9]"
+                      }`}
+                  >
+                    {project.number}
+                  </span>
+
+                  <span
+                    className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] ${dark
+                      ? "border-white/10 bg-white/[0.025] text-white/50"
+                      : "border-[#e5dce2] bg-white/70 text-[#8b7f8c]"
+                      }`}
+                  >
+                    Project
+                  </span>
+                </div>
+
+                {/* Main content */}
+                <div className="relative mt-10 flex-1">
+                  <h3
+                    className={`text-2xl font-black tracking-tight transition-all duration-300 ${dark
+                      ? "text-white group-hover:text-[#d8ccff]"
+                      : "text-[#211b35] group-hover:text-[#7c3aed]"
+                      }`}
+                  >
+                    {project.title}
+                  </h3>
+
+                  <p
+                    className={`mt-4 text-sm leading-7 ${dark ? "text-white/60" : "text-[#6d6572]"
+                      }`}
+                  >
+                    {project.description}
+                  </p>
+
+                  {/* Tech tags */}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tech.map((technology) => (
+                      <span
+                        key={technology}
+                        className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 group-hover:-translate-y-0.5 ${dark
+                          ? "border-[#8b5cf6]/10 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                          : "border-[#e9d5ff] bg-[#f3e8ff] text-[#7c3aed]"
+                          }`}
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom buttons */}
+                <div className="relative mt-8 flex gap-3">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title} live demo`}
+                    className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(139,92,246,0.35)]"
+                  >
+                    Live Demo ↗
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title} GitHub repository`}
+                    className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${dark
+                      ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
+                      : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
+                      }`}
+                  >
+                    GitHub ↗
+                  </a>
+                </div>
+
+                {/* Corner accent */}
+                <div
+                  className={`absolute bottom-0 right-0 h-16 w-16 rounded-tl-[40px] opacity-0 transition-all duration-500 group-hover:opacity-100 ${index % 2 === 0
+                    ? "bg-gradient-to-tl from-[#7c3aed]/10"
+                    : "bg-gradient-to-tl from-[#06b6d4]/10"
+                    }`}
+                />
+              </article>
+            ))}
           </div>
-
-          {/* Bottom buttons */}
-          <div className="relative mt-8 flex gap-3">
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${project.title} live demo`}
-              className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(139,92,246,0.35)]"
-            >
-              Live Demo ↗
-            </a>
-
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${project.title} GitHub repository`}
-              className={`rounded-full border px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:-translate-y-1 ${
-                dark
-                  ? "border-white/10 text-white/60 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
-                  : "border-[#ded5dc] text-[#5d5361] hover:border-[#a855f7] hover:text-[#7c3aed]"
-              }`}
-            >
-              GitHub ↗
-            </a>
-          </div>
-
-          {/* Corner accent */}
-          <div
-            className={`absolute bottom-0 right-0 h-16 w-16 rounded-tl-[40px] opacity-0 transition-all duration-500 group-hover:opacity-100 ${
-              index % 2 === 0
-                ? "bg-gradient-to-tl from-[#7c3aed]/10"
-                : "bg-gradient-to-tl from-[#06b6d4]/10"
-            }`}
-          />
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
       {/* EXPERIENCE */}
-      <section
+      \<section
         id="experience"
-        className={`scroll-mt-24 border-y transition-colors duration-700 ${dark
-          ? "border-white/10 bg-[#100d25]"
-          : "border-[#e8ddd2] bg-[#f8f1ff]"
+        className={`relative scroll-mt-24 overflow-hidden border-y transition-colors duration-700 ${dark
+            ? "border-white/10 bg-[#100d25]"
+            : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
       >
-        <div className="mx-auto max-w-6xl px-6 py-28">
+        {/* BACKGROUND ORBITS */}
+
+        <div
+          className={`pointer-events-none absolute left-1/2 top-1/2 h-[850px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#8b5cf6]/[0.07]" : "border-[#a855f7]/[0.08]"
+            }`}
+          style={{
+            animation: "techOrbitOne 65s linear infinite",
+          }}
+        >
+          <div
+            className={`absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full ${dark
+                ? "bg-[#8b5cf6] shadow-[0_0_18px_rgba(139,92,246,0.8)]"
+                : "bg-[#a855f7] shadow-[0_0_18px_rgba(168,85,247,0.35)]"
+              }`}
+          />
+        </div>
+
+        <div
+          className={`pointer-events-none absolute left-1/2 top-1/2 h-[590px] w-[590px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#06b6d4]/[0.055]" : "border-[#06b6d4]/[0.07]"
+            }`}
+          style={{
+            animation: "techOrbitTwo 48s linear infinite",
+          }}
+        >
+          <div
+            className={`absolute bottom-8 right-12 h-2 w-2 rounded-full ${dark
+                ? "bg-[#67e8f9] shadow-[0_0_16px_rgba(103,232,249,0.8)]"
+                : "bg-[#06b6d4] shadow-[0_0_16px_rgba(6,182,212,0.3)]"
+              }`}
+          />
+        </div>
+
+        {/* Soft ambient glows */}
+
+        <div
+          className={`pointer-events-none absolute -left-40 top-20 h-[360px] w-[360px] rounded-full blur-[120px] ${dark ? "bg-[#7c3aed]/10" : "bg-[#a855f7]/8"
+            }`}
+          style={{
+            animation: "techOrbOne 14s ease-in-out infinite",
+          }}
+        />
+
+        <div
+          className={`pointer-events-none absolute -right-40 bottom-10 h-[380px] w-[380px] rounded-full blur-[120px] ${dark ? "bg-[#06b6d4]/8" : "bg-[#67e8f9]/8"
+            }`}
+          style={{
+            animation: "techOrbTwo 17s ease-in-out infinite",
+          }}
+        />
+
+        {/* Small floating points */}
+
+        <div
+          className={`pointer-events-none absolute left-[10%] top-[28%] h-1.5 w-1.5 rounded-full ${dark
+              ? "bg-[#a78bfa] shadow-[0_0_12px_rgba(167,139,250,0.8)]"
+              : "bg-[#8b5cf6] shadow-[0_0_12px_rgba(139,92,246,0.3)]"
+            }`}
+          style={{
+            animation: "techParticle 6s ease-in-out infinite",
+          }}
+        />
+
+        <div
+          className={`pointer-events-none absolute right-[12%] top-[18%] h-1.5 w-1.5 rounded-full ${dark
+              ? "bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.8)]"
+              : "bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.3)]"
+            }`}
+          style={{
+            animation: "techParticle 7s ease-in-out infinite 1s",
+          }}
+        />
+
+        <div
+          className={`pointer-events-none absolute bottom-[18%] right-[25%] h-1 w-1 rounded-full ${dark
+              ? "bg-[#f0abfc] shadow-[0_0_10px_rgba(240,171,252,0.8)]"
+              : "bg-[#a855f7] shadow-[0_0_10px_rgba(168,85,247,0.3)]"
+            }`}
+          style={{
+            animation: "techParticle 8s ease-in-out infinite 2s",
+          }}
+        />
+
+        {/* CONTENT */}
+
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-28">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
               Experience
@@ -2094,20 +2154,21 @@ export default function Home() {
             <h2 className="mt-4 text-4xl font-black sm:text-5xl">
               My current journey.
             </h2>
+
             <p
               className={`mt-5 text-base leading-7 ${dark ? "text-white/60" : "text-[#766d80]"
                 }`}
             >
-              A timeline of my education, internships, projects, and
-              leadership experience.
+              A timeline of my education, internships, projects, and leadership
+              experience.
             </p>
           </div>
 
           <div className="relative mt-16">
             <div
               className={`absolute bottom-0 left-[11px] top-0 w-px md:left-[15px] ${dark
-                ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
-                : "bg-gradient-to-b from-[#8b5cf6]/60 via-[#06b6d4]/40 to-transparent"
+                  ? "bg-gradient-to-b from-[#8b5cf6]/70 via-[#06b6d4]/40 to-transparent"
+                  : "bg-gradient-to-b from-[#8b5cf6]/60 via-[#06b6d4]/40 to-transparent"
                 }`}
             />
 
@@ -2129,9 +2190,7 @@ export default function Home() {
                       className="absolute left-0 top-8 flex h-6 w-6 items-center justify-center rounded-full border-2 md:h-8 md:w-8"
                       style={{
                         borderColor: `${accentColor}66`,
-                        backgroundColor: dark
-                          ? "#100d25"
-                          : "#f8f1ff",
+                        backgroundColor: dark ? "#100d25" : "#f8f1ff",
                         boxShadow: `0 0 20px ${accentColor}22`,
                       }}
                     >
@@ -2146,8 +2205,8 @@ export default function Home() {
 
                     <div
                       className={`relative overflow-hidden rounded-[24px] border p-7 transition-all duration-500 hover:-translate-y-1 ${dark
-                        ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
-                        : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
+                          ? "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-purple-950/20"
+                          : "border-[#e5dce2] bg-white hover:border-[#c9b6d8] hover:shadow-xl hover:shadow-purple-200/30"
                         }`}
                     >
                       <div
@@ -2162,8 +2221,8 @@ export default function Home() {
                           <div className="flex flex-wrap items-center gap-3">
                             <h3
                               className={`text-2xl font-black transition-colors duration-300 ${dark
-                                ? "text-white group-hover:text-[#c4b5fd]"
-                                : "text-[#211b35] group-hover:text-[#7c3aed]"
+                                  ? "text-white group-hover:text-[#c4b5fd]"
+                                  : "text-[#211b35] group-hover:text-[#7c3aed]"
                                 }`}
                             >
                               {experience.company}
@@ -2171,8 +2230,8 @@ export default function Home() {
 
                             <span
                               className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${dark
-                                ? "border-white/10 bg-white/[0.04] text-white/60"
-                                : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
+                                  ? "border-white/10 bg-white/[0.04] text-white/60"
+                                  : "border-[#e5dce2] bg-[#faf7fc] text-[#8b7f8c]"
                                 }`}
                             >
                               {experience.type}
@@ -2216,7 +2275,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CONTACT */}
       <section
         id="contact"
