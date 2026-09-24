@@ -33,6 +33,7 @@ const skills = [
 
 const projects = [
   {
+    number: "01",
     title: "StudyPilot",
     description:
       "An AI-powered study planner that helps students organize tasks, generate personalized study plans, and stay on track with their goals.",
@@ -41,6 +42,7 @@ const projects = [
     github: "https://github.com/sevincyunusova/studypilot",
   },
   {
+    number: "02",
     title: "CineVault",
     description:
       "A movie discovery application with search, genre filtering, favorites, and movie data powered by an external movie API.",
@@ -49,6 +51,7 @@ const projects = [
     github: "https://github.com/sevincyunusova/CineVault",
   },
   {
+    number: "03",
     title: "SwiftMove",
     description:
       "A modern responsive frontend project focused on clean UI, responsive layouts, and interactive components.",
@@ -57,6 +60,7 @@ const projects = [
     github: "https://github.com/sevincyunusova/swiftmove-site",
   },
   {
+    number: "04",
     title: "Fruitables",
     description:
       "A responsive frontend e-commerce style website built with a focus on layout, reusable UI patterns, and responsive design.",
@@ -65,6 +69,7 @@ const projects = [
     github: "https://github.com/sevincyunusova/fruitables-site",
   },
   {
+    number: "05",
     title: "Furni",
     description:
       "A modern furniture website concept with a responsive interface and clean product-focused layout.",
@@ -73,6 +78,7 @@ const projects = [
     github: "https://github.com/sevincyunusova/furni-site",
   },
   {
+    number: "06",
     title: "RestOrder",
     description:
       "A restaurant ordering interface designed with a responsive frontend and user-friendly navigation.",
@@ -81,7 +87,6 @@ const projects = [
     github: "https://github.com/sevincyunusova/restorder",
   },
 ]
-
 const navItems = ["About", "Skills", "Projects", "Experience", "Contact"]
 
 const experiences = [
