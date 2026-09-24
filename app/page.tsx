@@ -230,15 +230,15 @@ export default function Home() {
   return (
     <main
       className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
-          ? "bg-[#090718] text-white"
-          : "bg-[#fffaf5] text-[#211b35]"
+        ? "bg-[#090718] text-white"
+        : "bg-[#fffaf5] text-[#211b35]"
         }`}
     >
       {/* NAVBAR */}
       <nav
         className={`fixed left-1/2 top-4 z-50 w-[calc(100%-32px)] max-w-6xl -translate-x-1/2 rounded-2xl border backdrop-blur-2xl transition-all duration-300 ${dark
-            ? "border-white/10 bg-[#090718]/55 shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
-            : "border-white/70 bg-white/55 shadow-[0_8px_40px_rgba(124,58,237,0.10)]"
+          ? "border-white/10 bg-[#090718]/55 shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
+          : "border-white/70 bg-white/55 shadow-[0_8px_40px_rgba(124,58,237,0.10)]"
           }`}
       >
         {/* Purple / cyan ambient glow */}
@@ -266,8 +266,8 @@ export default function Home() {
           {/* Navigation */}
           <div
             className={`hidden items-center gap-1 rounded-xl border px-1.5 py-1.5 md:flex ${dark
-                ? "border-white/5 bg-white/[0.03]"
-                : "border-black/5 bg-black/[0.02]"
+              ? "border-white/5 bg-white/[0.03]"
+              : "border-black/5 bg-black/[0.02]"
               }`}
           >
             {[
@@ -282,8 +282,8 @@ export default function Home() {
                 key={href}
                 href={href}
                 className={`group relative rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 ${dark
-                    ? "text-white/60 hover:bg-white/[0.06] hover:text-white"
-                    : "text-black/55 hover:bg-black/[0.04] hover:text-black"
+                  ? "text-white/60 hover:bg-white/[0.06] hover:text-white"
+                  : "text-black/55 hover:bg-black/[0.04] hover:text-black"
                   }`}
               >
                 {label}
@@ -302,8 +302,8 @@ export default function Home() {
               onClick={toggleDark}
               aria-label="Toggle theme"
               className={`group relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border transition-all duration-300 ${dark
-                  ? "border-white/10 bg-white/[0.04] text-white/70 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-white"
-                  : "border-black/10 bg-black/[0.03] text-black/60 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-black"
+                ? "border-white/10 bg-white/[0.04] text-white/70 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-white"
+                : "border-black/10 bg-black/[0.03] text-black/60 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-black"
                 }`}
             >
               <span className="text-sm transition-transform duration-300 group-hover:rotate-12">
@@ -319,8 +319,8 @@ export default function Home() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Open navigation menu"
               className={`flex h-9 w-9 items-center justify-center rounded-xl border md:hidden ${dark
-                  ? "border-white/10 bg-white/[0.04] text-white"
-                  : "border-black/10 bg-black/[0.03] text-black"
+                ? "border-white/10 bg-white/[0.04] text-white"
+                : "border-black/10 bg-black/[0.03] text-black"
                 }`}
             >
               <div className="flex flex-col gap-1">
@@ -351,8 +351,8 @@ export default function Home() {
                 href={href}
                 onClick={() => setMenuOpen(false)}
                 className={`block rounded-xl px-4 py-3 text-sm transition-colors ${dark
-                    ? "text-white/65 hover:bg-white/[0.05] hover:text-white"
-                    : "text-black/60 hover:bg-black/[0.04] hover:text-black"
+                  ? "text-white/65 hover:bg-white/[0.05] hover:text-white"
+                  : "text-black/60 hover:bg-black/[0.04] hover:text-black"
                   }`}
               >
                 {label}
@@ -712,1195 +712,1088 @@ export default function Home() {
 
       {/* ABOUT */}
       {/* ABOUT */}
-<section
-  id="about"
-  className="relative mx-auto max-w-7xl scroll-mt-24 overflow-hidden px-6 py-28"
->
-  {/* Ambient background glows */}
-  <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
-  <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+      <section
+        id="about"
+        className="relative mx-auto max-w-7xl scroll-mt-24 overflow-hidden px-6 py-28"
+      >
+        {/* Ambient background glows */}
+        <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
 
-  {/* Section header */}
-  <div className="relative mb-14 max-w-3xl">
-    <div className="mb-4 flex items-center gap-3">
-      <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+        {/* Section header */}
+        <div className="relative mb-14 max-w-3xl">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
 
-      <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
-        About Me
-      </p>
-    </div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+              About Me
+            </p>
+          </div>
 
-    <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-      Turning ideas into
-      <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
-        digital experiences.
-      </span>
-    </h2>
+          <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            Turning ideas into
+            <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+              digital experiences.
+            </span>
+          </h2>
 
-    <p
-      className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
-        dark ? "text-white/55" : "text-[#766d80]"
-      }`}
-    >
-      A frontend developer and Information Technologies student focused on
-      building modern interfaces, exploring AI-powered experiences, and
-      learning through real-world projects.
-    </p>
-  </div>
-
-  {/* Main About Card */}
-  <div className="relative grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
-    {/* Main glass card */}
-    <div
-      className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 sm:p-9 lg:p-10 ${
-        dark
-          ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/25"
-          : "border-[#e8dfe8] bg-white/60 shadow-[0_20px_70px_rgba(124,58,237,0.06)] hover:border-[#a855f7]/30"
-      }`}
-    >
-      {/* Card glow */}
-      <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#8b5cf6]/10 blur-[90px] transition-transform duration-1000 group-hover:scale-125" />
-
-      <div className="pointer-events-none absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-[#06b6d4]/8 blur-[90px]" />
-
-      {/* Animated top line */}
-      <div className="absolute left-8 right-8 top-0 h-px overflow-hidden">
-        <div className="h-full w-24 animate-[aboutLine_5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_14px_rgba(103,232,249,0.8)]" />
-      </div>
-
-      <div className="relative">
-        <div className="flex items-center justify-between">
-          <span
-            className={`font-mono text-[11px] tracking-[0.2em] ${
-              dark ? "text-white/25" : "text-black/25"
-            }`}
-          >
-            01 / ABOUT
-          </span>
-
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.9)]" />
-            <span
-              className={`text-[10px] font-medium ${
-                dark ? "text-white/35" : "text-black/35"
+          <p
+            className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/55" : "text-[#766d80]"
               }`}
-            >
-              IN PROGRESS
-            </span>
-          </span>
-        </div>
-
-        <div className="mt-10 max-w-3xl">
-          <p
-            className={`text-xl font-medium leading-9 sm:text-2xl sm:leading-10 ${
-              dark ? "text-white/85" : "text-[#332a3d]"
-            }`}
           >
-            I&apos;m an Information Technologies student at Azerbaijan State
-            Oil and Industry University and a frontend developer who enjoys
-            turning ideas into{" "}
-            <span className="bg-gradient-to-r from-[#a78bfa] to-[#67e8f9] bg-clip-text text-transparent">
-              clean, interactive web experiences.
-            </span>
-          </p>
-
-          <p
-            className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
-              dark ? "text-white/50" : "text-[#766d80]"
-            }`}
-          >
-            My journey combines academic learning with hands-on experience
-            through internships, personal projects, and real-world development.
-            I&apos;m continuously improving my frontend skills while exploring
-            how AI can make modern web applications more useful and engaging.
+            A frontend developer and Information Technologies student focused on
+            building modern interfaces, exploring AI-powered experiences, and
+            learning through real-world projects.
           </p>
         </div>
 
-        {/* Mini stats */}
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {[
-            ["01", "Frontend"],
-            ["02", "AI Engineering"],
-            ["03", "Helpdesk"],
-            ["04", "Learning"],
-          ].map(([number, label], index) => (
-            <div
-              key={label}
-              className={`group/stat relative overflow-hidden rounded-2xl border p-4 transition-all duration-500 hover:-translate-y-1 ${
-                dark
-                  ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/30 hover:bg-white/[0.055]"
-                  : "border-black/5 bg-white/60 hover:border-[#a855f7]/25 hover:bg-white"
+        {/* Main About Card */}
+        <div className="relative grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+          {/* Main glass card */}
+          <div
+            className={`group relative overflow-hidden rounded-[32px] border p-7 transition-all duration-700 sm:p-9 lg:p-10 ${dark
+                ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/25"
+                : "border-[#e8dfe8] bg-white/60 shadow-[0_20px_70px_rgba(124,58,237,0.06)] hover:border-[#a855f7]/30"
               }`}
-            >
-              <div
-                className={`absolute -right-6 -top-6 h-14 w-14 rounded-full blur-2xl transition-transform duration-500 group-hover/stat:scale-150 ${
-                  index % 2 === 0 ? "bg-[#8b5cf6]/15" : "bg-[#06b6d4]/15"
-                }`}
-              />
+          >
+            {/* Card glow */}
+            <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#8b5cf6]/10 blur-[90px] transition-transform duration-1000 group-hover:scale-125" />
 
-              <div className="relative">
-                <p
-                  className={`text-xl font-black ${
-                    index === 1
-                      ? "text-[#67e8f9]"
-                      : index === 2
-                        ? "text-[#f0abfc]"
-                        : "text-[#a78bfa]"
-                  }`}
-                >
-                  {number}
-                </p>
+            <div className="pointer-events-none absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-[#06b6d4]/8 blur-[90px]" />
 
-                <p
-                  className={`mt-1 text-[10px] font-medium ${
-                    dark ? "text-white/50" : "text-[#766d80]"
-                  }`}
-                >
-                  {label}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* Right visual */}
-    <div
-      className={`relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-[32px] border ${
-        dark
-          ? "border-white/10 bg-white/[0.025]"
-          : "border-[#e8dfe8] bg-white/50"
-      }`}
-    >
-      {/* Background glow */}
-      <div className="absolute h-56 w-56 rounded-full bg-[#7c3aed]/15 blur-[90px]" />
-      <div className="absolute -right-10 top-10 h-40 w-40 rounded-full bg-[#06b6d4]/15 blur-[70px]" />
-
-      {/* Rotating rings */}
-      <div className="absolute h-[310px] w-[310px] animate-[spin_55s_linear_infinite] rounded-full border border-[#8b5cf6]/10">
-        <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
-      </div>
-
-      <div className="absolute h-[230px] w-[230px] animate-[spin_42s_linear_infinite_reverse] rounded-full border border-[#06b6d4]/10" />
-
-      {/* Profile glass object */}
-      <div className="relative w-[250px] animate-[aboutFloat_6s_ease-in-out_infinite]">
-        {/* Glow behind card */}
-        <div className="absolute -inset-6 rounded-[30px] bg-gradient-to-br from-[#7c3aed]/20 via-transparent to-[#06b6d4]/15 blur-2xl" />
-
-        <div
-          className={`relative overflow-hidden rounded-[26px] border backdrop-blur-2xl ${
-            dark
-              ? "border-white/10 bg-[#0b0818]/75 shadow-[0_0_70px_rgba(124,58,237,0.15)]"
-              : "border-white/80 bg-white/75 shadow-[0_0_70px_rgba(124,58,237,0.10)]"
-          }`}
-        >
-          {/* Top gradient */}
-          <div className="h-1 w-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9]" />
-
-          <div className="p-6">
-            {/* Terminal dots */}
-            <div className="mb-6 flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#f0abfc]" />
-              <span className="h-2 w-2 rounded-full bg-[#a78bfa]" />
-              <span className="h-2 w-2 rounded-full bg-[#67e8f9]" />
-
-              <span
-                className={`ml-auto font-mono text-[9px] ${
-                  dark ? "text-white/20" : "text-black/20"
-                }`}
-              >
-                developer.ts
-              </span>
+            {/* Animated top line */}
+            <div className="absolute left-8 right-8 top-0 h-px overflow-hidden">
+              <div className="h-full w-24 animate-[aboutLine_5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent shadow-[0_0_14px_rgba(103,232,249,0.8)]" />
             </div>
 
-            {/* Code-style identity */}
-            <div className="font-mono text-xs leading-7">
-              <div className={dark ? "text-white/25" : "text-black/25"}>
-                01
-              </div>
-
-              <div className="pl-4">
-                <span className="text-[#c084fc]">const</span>{" "}
-                <span className={dark ? "text-white" : "text-[#211b35]"}>
-                  passion
-                </span>{" "}
-                <span className="text-[#67e8f9]">=</span>
-              </div>
-
-              <div className="pl-8">
-                <span className="text-[#f0abfc]">
-                  &quot;build + learn&quot;
-                </span>
-              </div>
-
-              <div className="mt-3 pl-4">
-                <span className="text-[#c084fc]">const</span>{" "}
-                <span className={dark ? "text-white" : "text-[#211b35]"}>
-                  stack
-                </span>{" "}
-                <span className="text-[#67e8f9]">=</span>
-              </div>
-
-              <div className="pl-8 text-[#a5f3fc]">
-                [&quot;React&quot;, &quot;Next.js&quot;]
-              </div>
-            </div>
-
-            {/* Progress line */}
-            <div className="mt-7">
-              <div className="mb-2 flex items-center justify-between">
+            <div className="relative">
+              <div className="flex items-center justify-between">
                 <span
-                  className={`text-[9px] uppercase tracking-[0.18em] ${
-                    dark ? "text-white/30" : "text-black/30"
-                  }`}
+                  className={`font-mono text-[11px] tracking-[0.2em] ${dark ? "text-white/25" : "text-black/25"
+                    }`}
                 >
-                  continuous learning
+                  01 / ABOUT
                 </span>
 
-                <span className="text-[9px] text-[#67e8f9]">∞</span>
+                <span className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.9)]" />
+                  <span
+                    className={`text-[10px] font-medium ${dark ? "text-white/35" : "text-black/35"
+                      }`}
+                  >
+                    IN PROGRESS
+                  </span>
+                </span>
               </div>
 
-              <div
-                className={`h-1 overflow-hidden rounded-full ${
-                  dark ? "bg-white/10" : "bg-black/5"
-                }`}
-              >
-                <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.6)]" />
+              <div className="mt-10 max-w-3xl">
+                <p
+                  className={`text-xl font-medium leading-9 sm:text-2xl sm:leading-10 ${dark ? "text-white/85" : "text-[#332a3d]"
+                    }`}
+                >
+                  I&apos;m an Information Technologies student at Azerbaijan State
+                  Oil and Industry University and a frontend developer who enjoys
+                  turning ideas into{" "}
+                  <span className="bg-gradient-to-r from-[#a78bfa] to-[#67e8f9] bg-clip-text text-transparent">
+                    clean, interactive web experiences.
+                  </span>
+                </p>
+
+                <p
+                  className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/50" : "text-[#766d80]"
+                    }`}
+                >
+                  My journey combines academic learning with hands-on experience
+                  through internships, personal projects, and real-world development.
+                  I&apos;m continuously improving my frontend skills while exploring
+                  how AI can make modern web applications more useful and engaging.
+                </p>
+              </div>
+
+              {/* Mini stats */}
+              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  ["01", "Frontend"],
+                  ["02", "AI Engineering"],
+                  ["03", "Helpdesk"],
+                  ["04", "Learning"],
+                ].map(([number, label], index) => (
+                  <div
+                    key={label}
+                    className={`group/stat relative overflow-hidden rounded-2xl border p-4 transition-all duration-500 hover:-translate-y-1 ${dark
+                        ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/30 hover:bg-white/[0.055]"
+                        : "border-black/5 bg-white/60 hover:border-[#a855f7]/25 hover:bg-white"
+                      }`}
+                  >
+                    <div
+                      className={`absolute -right-6 -top-6 h-14 w-14 rounded-full blur-2xl transition-transform duration-500 group-hover/stat:scale-150 ${index % 2 === 0 ? "bg-[#8b5cf6]/15" : "bg-[#06b6d4]/15"
+                        }`}
+                    />
+
+                    <div className="relative">
+                      <p
+                        className={`text-xl font-black ${index === 1
+                            ? "text-[#67e8f9]"
+                            : index === 2
+                              ? "text-[#f0abfc]"
+                              : "text-[#a78bfa]"
+                          }`}
+                      >
+                        {number}
+                      </p>
+
+                      <p
+                        className={`mt-1 text-[10px] font-medium ${dark ? "text-white/50" : "text-[#766d80]"
+                          }`}
+                      >
+                        {label}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Floating labels */}
-      <div
-        className={`absolute left-5 top-8 rounded-xl border px-3 py-2 backdrop-blur-xl ${
-          dark
-            ? "border-white/10 bg-white/[0.04]"
-            : "border-white/80 bg-white/60"
-        }`}
-      >
-        <span className="text-[9px] font-bold tracking-[0.15em] text-[#a78bfa]">
-          FRONTEND
-        </span>
-      </div>
+          {/* Right visual */}
+          <div
+            className={`relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-[32px] border ${dark
+                ? "border-white/10 bg-white/[0.025]"
+                : "border-[#e8dfe8] bg-white/50"
+              }`}
+          >
+            {/* Background glow */}
+            <div className="absolute h-56 w-56 rounded-full bg-[#7c3aed]/15 blur-[90px]" />
+            <div className="absolute -right-10 top-10 h-40 w-40 rounded-full bg-[#06b6d4]/15 blur-[70px]" />
 
-      <div
-        className={`absolute bottom-8 right-5 rounded-xl border px-3 py-2 backdrop-blur-xl ${
-          dark
-            ? "border-white/10 bg-white/[0.04]"
-            : "border-white/80 bg-white/60"
-        }`}
-      >
-        <span className="text-[9px] font-bold tracking-[0.15em] text-[#67e8f9]">
-          AI × WEB
-        </span>
-      </div>
-    </div>
-  </div>
+            {/* Rotating rings */}
+            <div className="absolute h-[310px] w-[310px] animate-[spin_55s_linear_infinite] rounded-full border border-[#8b5cf6]/10">
+              <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
+            </div>
 
-  {/* Feature cards */}
-  <div className="mt-6 grid gap-5 md:grid-cols-3">
-    {/* Frontend */}
-    <div
-      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
-        dark
-          ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
-          : "border-[#e5dce2] bg-white/60 hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
-      }`}
-    >
-      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+            <div className="absolute h-[230px] w-[230px] animate-[spin_42s_linear_infinite_reverse] rounded-full border border-[#06b6d4]/10" />
 
-      <div className="relative">
-        <div className="mb-5 flex items-center justify-between">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
-            01
-          </span>
+            {/* Profile glass object */}
+            <div className="relative w-[250px] animate-[aboutFloat_6s_ease-in-out_infinite]">
+              {/* Glow behind card */}
+              <div className="absolute -inset-6 rounded-[30px] bg-gradient-to-br from-[#7c3aed]/20 via-transparent to-[#06b6d4]/15 blur-2xl" />
 
-          <span className="text-xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12">
-            ◇
-          </span>
-        </div>
+              <div
+                className={`relative overflow-hidden rounded-[26px] border backdrop-blur-2xl ${dark
+                    ? "border-white/10 bg-[#0b0818]/75 shadow-[0_0_70px_rgba(124,58,237,0.15)]"
+                    : "border-white/80 bg-white/75 shadow-[0_0_70px_rgba(124,58,237,0.10)]"
+                  }`}
+              >
+                {/* Top gradient */}
+                <div className="h-1 w-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9]" />
 
-        <h3
-          className={`text-lg font-black ${
-            dark ? "text-white" : "text-[#211b35]"
-          }`}
-        >
-          Frontend Development
-        </h3>
+                <div className="p-6">
+                  {/* Terminal dots */}
+                  <div className="mb-6 flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-[#f0abfc]" />
+                    <span className="h-2 w-2 rounded-full bg-[#a78bfa]" />
+                    <span className="h-2 w-2 rounded-full bg-[#67e8f9]" />
 
-        <p
-          className={`mt-3 text-xs leading-6 ${
-            dark ? "text-white/50" : "text-[#766d80]"
-          }`}
-        >
-          Building responsive interfaces with React, Next.js, JavaScript,
-          Tailwind CSS, and modern web technologies.
-        </p>
-      </div>
-    </div>
+                    <span
+                      className={`ml-auto font-mono text-[9px] ${dark ? "text-white/20" : "text-black/20"
+                        }`}
+                    >
+                      developer.ts
+                    </span>
+                  </div>
 
-    {/* AI */}
-    <div
-      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
-        dark
-          ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
-          : "border-[#e5dce2] bg-white/60 hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
-      }`}
-    >
-      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#06b6d4]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+                  {/* Code-style identity */}
+                  <div className="font-mono text-xs leading-7">
+                    <div className={dark ? "text-white/25" : "text-black/25"}>
+                      01
+                    </div>
 
-      <div className="relative">
-        <div className="mb-5 flex items-center justify-between">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#67e8f9]">
-            02
-          </span>
+                    <div className="pl-4">
+                      <span className="text-[#c084fc]">const</span>{" "}
+                      <span className={dark ? "text-white" : "text-[#211b35]"}>
+                        passion
+                      </span>{" "}
+                      <span className="text-[#67e8f9]">=</span>
+                    </div>
 
-          <span className="text-xl text-[#67e8f9] transition-transform duration-500 group-hover:rotate-12">
-            ✦
-          </span>
-        </div>
+                    <div className="pl-8">
+                      <span className="text-[#f0abfc]">
+                        &quot;build + learn&quot;
+                      </span>
+                    </div>
 
-        <h3
-          className={`text-lg font-black ${
-            dark ? "text-white" : "text-[#211b35]"
-          }`}
-        >
-          AI Engineering
-        </h3>
+                    <div className="mt-3 pl-4">
+                      <span className="text-[#c084fc]">const</span>{" "}
+                      <span className={dark ? "text-white" : "text-[#211b35]"}>
+                        stack
+                      </span>{" "}
+                      <span className="text-[#67e8f9]">=</span>
+                    </div>
 
-        <p
-          className={`mt-3 text-xs leading-6 ${
-            dark ? "text-white/50" : "text-[#766d80]"
-          }`}
-        >
-          Exploring AI integration in frontend applications and creating
-          practical AI-powered web experiences.
-        </p>
-      </div>
-    </div>
+                    <div className="pl-8 text-[#a5f3fc]">
+                      [&quot;React&quot;, &quot;Next.js&quot;]
+                    </div>
+                  </div>
 
-    {/* Helpdesk */}
-    <div
-      className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${
-        dark
-          ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
-          : "border-[#e5dce2] bg-white/60 hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
-      }`}
-    >
-      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#f0abfc]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+                  {/* Progress line */}
+                  <div className="mt-7">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span
+                        className={`text-[9px] uppercase tracking-[0.18em] ${dark ? "text-white/30" : "text-black/30"
+                          }`}
+                      >
+                        continuous learning
+                      </span>
 
-      <div className="relative">
-        <div className="mb-5 flex items-center justify-between">
-          <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
-            03
-          </span>
+                      <span className="text-[9px] text-[#67e8f9]">∞</span>
+                    </div>
 
-          <span className="text-xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12">
-            ◌
-          </span>
-        </div>
+                    <div
+                      className={`h-1 overflow-hidden rounded-full ${dark ? "bg-white/10" : "bg-black/5"
+                        }`}
+                    >
+                      <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.6)]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <h3
-          className={`text-lg font-black ${
-            dark ? "text-white" : "text-[#211b35]"
-          }`}
-        >
-          Helpdesk
-        </h3>
-
-        <p
-          className={`mt-3 text-xs leading-6 ${
-            dark ? "text-white/50" : "text-[#766d80]"
-          }`}
-        >
-          Troubleshooting technical issues, supporting users, and developing
-          practical problem-solving skills.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-      {/* SKILLS */}
-      {/* SKILLS */}
-<section
-  id="skills"
-  className={`relative scroll-mt-24 overflow-hidden border-y transition-colors duration-700 ${
-    dark
-      ? "border-white/10 bg-[#100d25]"
-      : "border-[#e8ddd2] bg-[#f8f1ff]"
-  }`}
->
-  {/* Ambient background glows */}
-  <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
-  <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
-
-  <div className="relative mx-auto max-w-7xl px-6 py-28">
-    {/* HEADER */}
-    <div className="relative max-w-3xl">
-      <div className="mb-4 flex items-center gap-3">
-        <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
-
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
-          Skills & Toolkit
-        </p>
-      </div>
-
-      <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-        Tools behind
-        <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
-          what I build.
-        </span>
-      </h2>
-
-      <p
-        className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${
-          dark ? "text-white/50" : "text-[#766d80]"
-        }`}
-      >
-        A growing toolkit shaped by frontend development, programming,
-        AI integration, and real-world digital workflows.
-      </p>
-    </div>
-
-    {/* SKILL CARDS */}
-    <div className="mt-14 grid gap-5 md:grid-cols-2">
-      {/* FRONTEND */}
-      <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
-          dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/20" />
-
-        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
-
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                01 / FRONTEND
+            {/* Floating labels */}
+            <div
+              className={`absolute left-5 top-8 rounded-xl border px-3 py-2 backdrop-blur-xl ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-white/80 bg-white/60"
+                }`}
+            >
+              <span className="text-[9px] font-bold tracking-[0.15em] text-[#a78bfa]">
+                FRONTEND
               </span>
+            </div>
+
+            <div
+              className={`absolute bottom-8 right-5 rounded-xl border px-3 py-2 backdrop-blur-xl ${dark
+                  ? "border-white/10 bg-white/[0.04]"
+                  : "border-white/80 bg-white/60"
+                }`}
+            >
+              <span className="text-[9px] font-bold tracking-[0.15em] text-[#67e8f9]">
+                AI × WEB
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature cards */}
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          {/* Frontend */}
+          <div
+            className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+                ? "border-white/10 bg-white/[0.025] hover:border-[#8b5cf6]/40 hover:bg-[#8b5cf6]/5"
+                : "border-[#e5dce2] bg-white/60 hover:border-[#a855f7]/40 hover:bg-[#faf5ff]"
+              }`}
+          >
+            <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#8b5cf6]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
+
+            <div className="relative">
+              <div className="mb-5 flex items-center justify-between">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
+                  01
+                </span>
+
+                <span className="text-xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12">
+                  ◇
+                </span>
+              </div>
 
               <h3
-                className={`mt-3 text-xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
+                className={`text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
               >
                 Frontend Development
               </h3>
-            </div>
 
-            <div
-              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${
-                dark
-                  ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
-                  : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
-              }`}
-            >
-              &lt;/&gt;
-            </div>
-          </div>
-
-          <p
-            className={`mt-5 max-w-xl text-xs leading-6 ${
-              dark ? "text-white/45" : "text-[#766d80]"
-            }`}
-          >
-            Building responsive, interactive interfaces with modern frontend
-            technologies and component-based architecture.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-2.5">
-            {[
-              "HTML5",
-              "CSS3",
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Tailwind CSS",
-              "Bootstrap",
-              "Responsive Design",
-            ].map((skill, index) => (
-              <span
-                key={skill}
-                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
-                  dark
-                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
-                }`}
-                style={{
-                  animationDelay: `${index * 40}ms`,
-                }}
+              <p
+                className={`mt-3 text-xs leading-6 ${dark ? "text-white/50" : "text-[#766d80]"
+                  }`}
               >
-                {skill}
-              </span>
-            ))}
+                Building responsive interfaces with React, Next.js, JavaScript,
+                Tailwind CSS, and modern web technologies.
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* PROGRAMMING */}
-      <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
-          dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/40 hover:shadow-[0_25px_70px_rgba(6,182,212,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
+          {/* AI */}
+          <div
+            className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+                ? "border-white/10 bg-white/[0.025] hover:border-[#06b6d4]/40 hover:bg-[#06b6d4]/5"
+                : "border-[#e5dce2] bg-white/60 hover:border-[#06b6d4]/40 hover:bg-[#f0fdff]"
+              }`}
+          >
+            <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#06b6d4]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
 
-        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
+            <div className="relative">
+              <div className="mb-5 flex items-center justify-between">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#67e8f9]">
+                  02
+                </span>
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
-                02 / PROGRAMMING
-              </span>
+                <span className="text-xl text-[#67e8f9] transition-transform duration-500 group-hover:rotate-12">
+                  ✦
+                </span>
+              </div>
 
               <h3
-                className={`mt-3 text-xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
+                className={`text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
               >
-                Programming & APIs
+                AI Engineering
               </h3>
-            </div>
 
-            <div
-              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${
-                dark
-                  ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
-                  : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
-              }`}
-            >
-              {"{ }"}
-            </div>
-          </div>
-
-          <p
-            className={`mt-5 max-w-xl text-xs leading-6 ${
-              dark ? "text-white/45" : "text-[#766d80]"
-            }`}
-          >
-            Working with programming languages, APIs, data formats, version
-            control, and application communication.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-2.5">
-            {[
-              "C++",
-              "C#",
-              "Python",
-              "REST API",
-              "JSON",
-              "Git",
-              "GitHub",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
-                  dark
-                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
-                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
-                }`}
+              <p
+                className={`mt-3 text-xs leading-6 ${dark ? "text-white/50" : "text-[#766d80]"
+                  }`}
               >
-                {skill}
-              </span>
-            ))}
+                Exploring AI integration in frontend applications and creating
+                practical AI-powered web experiences.
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* AI & DESIGN */}
-      <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
-          dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/40 hover:shadow-[0_25px_70px_rgba(240,171,252,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
+          {/* Helpdesk */}
+          <div
+            className={`group relative overflow-hidden rounded-[26px] border p-6 transition-all duration-500 hover:-translate-y-2 ${dark
+                ? "border-white/10 bg-white/[0.025] hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/5"
+                : "border-[#e5dce2] bg-white/60 hover:border-[#f0abfc]/40 hover:bg-[#fff7ff]"
+              }`}
+          >
+            <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#f0abfc]/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
 
-        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#f0abfc] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
+            <div className="relative">
+              <div className="mb-5 flex items-center justify-between">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
+                  03
+                </span>
 
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
-                03 / AI + DESIGN
-              </span>
+                <span className="text-xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12">
+                  ◌
+                </span>
+              </div>
 
               <h3
-                className={`mt-3 text-xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
+                className={`text-lg font-black ${dark ? "text-white" : "text-[#211b35]"
+                  }`}
               >
-                AI & Design
+                Helpdesk
               </h3>
-            </div>
 
-            <div
-              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${
-                dark
-                  ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
-                  : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
-              }`}
-            >
-              ✦
-            </div>
-          </div>
-
-          <p
-            className={`mt-5 max-w-xl text-xs leading-6 ${
-              dark ? "text-white/45" : "text-[#766d80]"
-            }`}
-          >
-            Exploring AI-powered interfaces while combining development with
-            visual design and productivity tools.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-2.5">
-            {[
-              "AI Integration",
-              "Figma",
-              "Canva",
-              "Microsoft Office",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
-                  dark
-                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
-                    : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
-                }`}
+              <p
+                className={`mt-3 text-xs leading-6 ${dark ? "text-white/50" : "text-[#766d80]"
+                  }`}
               >
-                {skill}
-              </span>
-            ))}
+                Troubleshooting technical issues, supporting users, and developing
+                practical problem-solving skills.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* WORKFLOW */}
-      <div
-        className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${
-          dark
-            ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
-            : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
-
-        <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#8b5cf6] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
-
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <div>
-              <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                04 / WORKFLOW
-              </span>
-
-              <h3
-                className={`mt-3 text-xl font-black ${
-                  dark ? "text-white" : "text-[#211b35]"
-                }`}
-              >
-                Workflow
-              </h3>
-            </div>
-
-            <div
-              className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${
-                dark
-                  ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
-                  : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
-              }`}
-            >
-              ↗
-            </div>
-          </div>
-
-          <p
-            className={`mt-5 max-w-xl text-xs leading-6 ${
-              dark ? "text-white/45" : "text-[#766d80]"
-            }`}
-          >
-            Organizing projects with version control, reusable components,
-            responsive layouts, APIs, and iterative development.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-2.5">
-            {[
-              "Git",
-              "GitHub",
-              "Responsive Design",
-              "REST API",
-              "JSON",
-              "Component Design",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${
-                  dark
-                    ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
-                    : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
-                }`}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* BOTTOM LINE */}
-    <div className="mt-12 flex items-center gap-4">
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
-
-      <span
-        className={`text-[10px] font-bold uppercase tracking-[0.25em] ${
-          dark ? "text-white/30" : "text-[#a397a7]"
-        }`}
-      >
-        Always learning · Always building
-      </span>
-
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
-    </div>
-  </div>
-</section>
-
-<section
-  id="technologies"
-  className={`relative overflow-hidden py-20 ${
-    dark ? "bg-[#0a0718]" : "bg-[#fcf9ff]"
-  }`}
->
-  {/* =========================
-      BACKGROUND GRID
-  ========================== */}
-  <div
-    className={`pointer-events-none absolute inset-0 opacity-30 ${
-      dark
-        ? "bg-[linear-gradient(rgba(139,92,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.07)_1px,transparent_1px)]"
-        : "bg-[linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)]"
-    } bg-[size:48px_48px] animate-[techGrid_18s_linear_infinite]`}
-  />
-
-  {/* =========================
-      AMBIENT GLOWS
-  ========================== */}
-
-  <div
-    className={`pointer-events-none absolute left-[3%] top-[12%] h-[340px] w-[340px] rounded-full blur-[120px] ${
-      dark ? "bg-[#7c3aed]/18" : "bg-[#a855f7]/12"
-    } animate-[techOrbOne_14s_ease-in-out_infinite]`}
-  />
-
-  <div
-    className={`pointer-events-none absolute right-[0%] top-[32%] h-[320px] w-[320px] rounded-full blur-[120px] ${
-      dark ? "bg-[#06b6d4]/16" : "bg-[#67e8f9]/12"
-    } animate-[techOrbTwo_17s_ease-in-out_infinite]`}
-  />
-
-  <div
-    className={`pointer-events-none absolute bottom-[0%] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full blur-[120px] ${
-      dark ? "bg-[#c084fc]/12" : "bg-[#c084fc]/10"
-    } animate-[techOrbThree_15s_ease-in-out_infinite]`}
-  />
-
-  {/* =========================
-      LARGE ORBIT SYSTEM
-  ========================== */}
-
-  <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 lg:block">
-    {/* Outer static orbit */}
-    <div
-      className={`absolute inset-0 rounded-full border ${
-        dark ? "border-[#8b5cf6]/25" : "border-[#8b5cf6]/18"
-      }`}
-    />
-
-    {/* Outer rotating glow */}
-    <div className="absolute inset-[-1px] animate-[techOrbitOne_58s_linear_infinite] rounded-full border border-transparent border-t-[#8b5cf6]/60 border-r-[#c084fc]/20">
-      <div className="absolute left-1/2 top-[-9px] h-[18px] w-[18px] -translate-x-1/2 rounded-full bg-[#c084fc] shadow-[0_0_18px_6px_rgba(192,132,252,0.45)]" />
-    </div>
-
-    {/* Outer orbit cyan particle */}
-    <div className="absolute inset-[-1px] animate-[techOrbitOne_38s_linear_infinite_reverse] rounded-full">
-      <div className="absolute right-[9%] top-[17%] h-3.5 w-3.5 rounded-full bg-[#67e8f9] shadow-[0_0_24px_8px_rgba(103,232,249,0.35)]" />
-    </div>
-
-    {/* Middle orbit */}
-    <div
-      className={`absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
-        dark ? "border-[#06b6d4]/22" : "border-[#06b6d4]/16"
-      }`}
-    />
-
-    {/* Middle rotating orbit */}
-    <div className="absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_46s_linear_infinite] rounded-full border border-transparent border-b-[#06b6d4]/55 border-l-[#67e8f9]/20">
-      <div className="absolute bottom-[-7px] left-1/2 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_22px_7px_rgba(103,232,249,0.4)]" />
-    </div>
-
-    {/* Middle purple particle */}
-    <div className="absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_31s_linear_infinite_reverse] rounded-full">
-      <div className="absolute left-[7%] top-[18%] h-3 w-3 rounded-full bg-[#a78bfa] shadow-[0_0_20px_7px_rgba(167,139,250,0.35)]" />
-    </div>
-
-    {/* Inner orbit */}
-    <div
-      className={`absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
-        dark ? "border-[#c084fc]/18" : "border-[#c084fc]/14"
-      }`}
-    />
-
-    {/* Inner rotating glow */}
-    <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitOne_27s_linear_infinite] rounded-full border border-transparent border-t-[#c084fc]/50">
-      <div className="absolute right-[-6px] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_20px_7px_rgba(192,132,252,0.4)]" />
-    </div>
-
-    {/* Soft orbit glow */}
-    <div className="absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#8b5cf6]/5 blur-[2px]" />
-
-    {/* Orbit center glow */}
-    <div
-      className={`absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px] ${
-        dark ? "bg-[#7c3aed]/10" : "bg-[#8b5cf6]/8"
-      }`}
-    />
-  </div>
-
-  {/* =========================
-      FLOATING PARTICLES
-  ========================== */}
-
-  <div className="pointer-events-none absolute left-[8%] top-[22%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_5s_ease-in-out_infinite]" />
-
-  <div className="pointer-events-none absolute right-[12%] top-[18%] h-2.5 w-2.5 rounded-full bg-[#c084fc] shadow-[0_0_20px_6px_rgba(192,132,252,0.4)] animate-[techParticle_6s_ease-in-out_infinite_1s]" />
-
-  <div className="pointer-events-none absolute bottom-[18%] left-[12%] h-2 w-2 rounded-full bg-[#a78bfa] shadow-[0_0_18px_5px_rgba(167,139,250,0.4)] animate-[techParticle_5.5s_ease-in-out_infinite_0.5s]" />
-
-  <div className="pointer-events-none absolute bottom-[15%] right-[9%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_6.5s_ease-in-out_infinite_1.5s]" />
-
-  {/* =========================
-      CONTENT
-  ========================== */}
-
-  <div className="relative z-10 mx-auto max-w-6xl px-6">
-    {/* Header */}
-    <div className="mb-10 max-w-2xl">
-      <div className="mb-3 flex items-center gap-3">
-        <span
-          className={`h-px w-9 ${
-            dark ? "bg-[#8b5cf6]" : "bg-[#7c3aed]"
+      </section>
+      {/* SKILLS */}
+      {/* SKILLS */}
+      <section
+        id="skills"
+        className={`relative scroll-mt-24 overflow-hidden border-y transition-colors duration-700 ${dark
+            ? "border-white/10 bg-[#100d25]"
+            : "border-[#e8ddd2] bg-[#f8f1ff]"
           }`}
+      >
+        {/* Ambient background glows */}
+        <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#06b6d4]/10 blur-[130px]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-28">
+          {/* HEADER */}
+          <div className="relative max-w-3xl">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-10 bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9]" />
+
+              <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#a78bfa]">
+                Skills & Toolkit
+              </p>
+            </div>
+
+            <h2 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              Tools behind
+              <span className="mt-2 block bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+                what I build.
+              </span>
+            </h2>
+
+            <p
+              className={`mt-6 max-w-2xl text-sm leading-7 sm:text-base ${dark ? "text-white/50" : "text-[#766d80]"
+                }`}
+            >
+              A growing toolkit shaped by frontend development, programming,
+              AI integration, and real-world digital workflows.
+            </p>
+          </div>
+
+          {/* SKILL CARDS */}
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            {/* FRONTEND */}
+            <div
+              className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.05]"
+                  : "border-[#e5dce2] bg-white/70 hover:border-[#a855f7]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#8b5cf6]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#8b5cf6]/20" />
+
+              <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#7c3aed] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
+
+              <div className="relative">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                      01 / FRONTEND
+                    </span>
+
+                    <h3
+                      className={`mt-3 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
+                        }`}
+                    >
+                      Frontend Development
+                    </h3>
+                  </div>
+
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
+                        ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                        : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+                      }`}
+                  >
+                    &lt;/&gt;
+                  </div>
+                </div>
+
+                <p
+                  className={`mt-5 max-w-xl text-xs leading-6 ${dark ? "text-white/45" : "text-[#766d80]"
+                    }`}
+                >
+                  Building responsive, interactive interfaces with modern frontend
+                  technologies and component-based architecture.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {[
+                    "HTML5",
+                    "CSS3",
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Tailwind CSS",
+                    "Bootstrap",
+                    "Responsive Design",
+                  ].map((skill, index) => (
+                    <span
+                      key={skill}
+                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
+                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#a78bfa]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        }`}
+                      style={{
+                        animationDelay: `${index * 40}ms`,
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* PROGRAMMING */}
+            <div
+              className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.05]"
+                  : "border-[#e5dce2] bg-white/70 hover:border-[#06b6d4]/40 hover:shadow-[0_25px_70px_rgba(6,182,212,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#06b6d4]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#06b6d4]/20" />
+
+              <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
+
+              <div className="relative">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
+                      02 / PROGRAMMING
+                    </span>
+
+                    <h3
+                      className={`mt-3 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
+                        }`}
+                    >
+                      Programming & APIs
+                    </h3>
+                  </div>
+
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
+                        ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                        : "border-[#06b6d4]/20 bg-[#ecfeff] text-[#0891b2]"
+                      }`}
+                  >
+                    {"{ }"}
+                  </div>
+                </div>
+
+                <p
+                  className={`mt-5 max-w-xl text-xs leading-6 ${dark ? "text-white/45" : "text-[#766d80]"
+                    }`}
+                >
+                  Working with programming languages, APIs, data formats, version
+                  control, and application communication.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {[
+                    "C++",
+                    "C#",
+                    "Python",
+                    "REST API",
+                    "JSON",
+                    "Git",
+                    "GitHub",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
+                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#67e8f9]/40 hover:bg-[#06b6d4]/10 hover:text-[#67e8f9]"
+                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#06b6d4]/40 hover:bg-[#ecfeff] hover:text-[#0891b2]"
+                        }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* AI & DESIGN */}
+            <div
+              className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.035] hover:border-[#f0abfc]/40 hover:bg-white/[0.05]"
+                  : "border-[#e5dce2] bg-white/70 hover:border-[#f0abfc]/40 hover:shadow-[0_25px_70px_rgba(240,171,252,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#f0abfc]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#f0abfc]/20" />
+
+              <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#f0abfc] via-[#c084fc] to-transparent transition-all duration-700 group-hover:w-full" />
+
+              <div className="relative">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
+                      03 / AI + DESIGN
+                    </span>
+
+                    <h3
+                      className={`mt-3 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
+                        }`}
+                    >
+                      AI & Design
+                    </h3>
+                  </div>
+
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 ${dark
+                        ? "border-[#f0abfc]/20 bg-[#f0abfc]/10 text-[#f0abfc]"
+                        : "border-[#f0abfc]/30 bg-[#fff5ff] text-[#c026d3]"
+                      }`}
+                  >
+                    ✦
+                  </div>
+                </div>
+
+                <p
+                  className={`mt-5 max-w-xl text-xs leading-6 ${dark ? "text-white/45" : "text-[#766d80]"
+                    }`}
+                >
+                  Exploring AI-powered interfaces while combining development with
+                  visual design and productivity tools.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {[
+                    "AI Integration",
+                    "Figma",
+                    "Canva",
+                    "Microsoft Office",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
+                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#f0abfc]/40 hover:bg-[#f0abfc]/10 hover:text-[#f0abfc]"
+                          : "border-[#e5dce2] bg-[#fffafe] text-[#625a70] hover:border-[#f0abfc]/40 hover:bg-[#fff0ff] hover:text-[#c026d3]"
+                        }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* WORKFLOW */}
+            <div
+              className={`group relative overflow-hidden rounded-[30px] border p-7 transition-all duration-700 hover:-translate-y-2 ${dark
+                  ? "border-white/10 bg-white/[0.035] hover:border-[#a78bfa]/40 hover:bg-white/[0.05]"
+                  : "border-[#e5dce2] bg-white/70 hover:border-[#a78bfa]/40 hover:shadow-[0_25px_70px_rgba(124,58,237,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#a78bfa]/10 blur-[70px] transition-all duration-700 group-hover:scale-150 group-hover:bg-[#a78bfa]/20" />
+
+              <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#8b5cf6] via-[#67e8f9] to-transparent transition-all duration-700 group-hover:w-full" />
+
+              <div className="relative">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
+                      04 / WORKFLOW
+                    </span>
+
+                    <h3
+                      className={`mt-3 text-xl font-black ${dark ? "text-white" : "text-[#211b35]"
+                        }`}
+                    >
+                      Workflow
+                    </h3>
+                  </div>
+
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 ${dark
+                        ? "border-[#a78bfa]/20 bg-[#a78bfa]/10 text-[#c4b5fd]"
+                        : "border-[#a78bfa]/20 bg-[#f5f0ff] text-[#7c3aed]"
+                      }`}
+                  >
+                    ↗
+                  </div>
+                </div>
+
+                <p
+                  className={`mt-5 max-w-xl text-xs leading-6 ${dark ? "text-white/45" : "text-[#766d80]"
+                    }`}
+                >
+                  Organizing projects with version control, reusable components,
+                  responsive layouts, APIs, and iterative development.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {[
+                    "Git",
+                    "GitHub",
+                    "Responsive Design",
+                    "REST API",
+                    "JSON",
+                    "Component Design",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className={`cursor-default rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 ${dark
+                          ? "border-white/10 bg-white/[0.035] text-white/60 hover:border-[#c4b5fd]/40 hover:bg-[#8b5cf6]/10 hover:text-[#c4b5fd]"
+                          : "border-[#e5dce2] bg-[#faf8fc] text-[#625a70] hover:border-[#a855f7]/40 hover:bg-[#f3e8ff] hover:text-[#7c3aed]"
+                        }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* BOTTOM LINE */}
+          <div className="mt-12 flex items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+
+            <span
+              className={`text-[10px] font-bold uppercase tracking-[0.25em] ${dark ? "text-white/30" : "text-[#a397a7]"
+                }`}
+            >
+              Always learning · Always building
+            </span>
+
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="technologies"
+        className={`relative overflow-hidden py-10 ${dark ? "bg-[#0a0718]" : "bg-[#fcf9ff]"
+          }`}
+      >
+        {/* BACKGROUND GRID */}
+        <div
+          className={`pointer-events-none absolute inset-0 opacity-30 ${dark
+              ? "bg-[linear-gradient(rgba(139,92,246,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.07)_1px,transparent_1px)]"
+              : "bg-[linear-gradient(rgba(124,58,237,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,0.06)_1px,transparent_1px)]"
+            } bg-[size:48px_48px] animate-[techGrid_18s_linear_infinite]`}
         />
 
-        <span
-          className={`text-[11px] font-semibold uppercase tracking-[0.28em] ${
-            dark ? "text-[#a78bfa]" : "text-[#7c3aed]"
-          }`}
-        >
-          Technologies
-        </span>
-      </div>
+        {/* AMBIENT GLOWS */}
+        <div
+          className={`pointer-events-none absolute left-[3%] top-[10%] h-[300px] w-[300px] rounded-full blur-[110px] ${dark ? "bg-[#7c3aed]/18" : "bg-[#a855f7]/12"
+            } animate-[techOrbOne_14s_ease-in-out_infinite]`}
+        />
 
-      <h2
-        className={`text-3xl font-bold tracking-tight sm:text-4xl ${
-          dark ? "text-white" : "text-[#171717]"
-        }`}
-      >
-        Tools I use to
-        <span
-          className={`block ${
-            dark ? "text-[#c084fc]" : "text-[#7c3aed]"
-          }`}
-        >
-          build & solve.
-        </span>
-      </h2>
+        <div
+          className={`pointer-events-none absolute right-[0%] top-[32%] h-[280px] w-[280px] rounded-full blur-[110px] ${dark ? "bg-[#06b6d4]/15" : "bg-[#67e8f9]/12"
+            } animate-[techOrbTwo_17s_ease-in-out_infinite]`}
+        />
 
-      <p
-        className={`mt-3 max-w-xl text-sm leading-6 ${
-          dark ? "text-white/50" : "text-black/50"
-        }`}
-      >
-        A visual overview of the technologies, development tools and
-        technical skills I am currently building with.
-      </p>
-    </div>
+        <div
+          className={`pointer-events-none absolute bottom-[0%] left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full blur-[110px] ${dark ? "bg-[#c084fc]/12" : "bg-[#c084fc]/10"
+            } animate-[techOrbThree_15s_ease-in-out_infinite]`}
+        />
 
-    {/* Cards */}
-    <div className="grid gap-4 md:grid-cols-2">
-      {/* FRONTEND */}
-      <div
-        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
-          dark
-            ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(139,92,246,0.12)]"
-            : "border-black/8 bg-white/55 hover:border-[#8b5cf6]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(139,92,246,0.10)]"
-        }`}
-      >
-        {/* Hover glow */}
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#8b5cf6]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
+        {/* LARGE ORBITS */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 lg:block">
+          {/* Outer orbit */}
+          <div
+            className={`absolute inset-0 rounded-full border ${dark ? "border-[#8b5cf6]/25" : "border-[#8b5cf6]/18"
+              }`}
+          />
 
-        {/* Moving light */}
-        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite] group-hover:h-[2px]" />
+          <div className="absolute inset-0 animate-[techOrbitOne_58s_linear_infinite] rounded-full border border-transparent border-t-[#8b5cf6]/65 border-r-[#c084fc]/20">
+            <div className="absolute left-1/2 top-[-9px] h-[18px] w-[18px] -translate-x-1/2 rounded-full bg-[#c084fc] shadow-[0_0_20px_7px_rgba(192,132,252,0.45)]" />
+          </div>
 
-        <div className="relative z-10 mb-4">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a78bfa]">
-            01
-          </span>
+          <div className="absolute inset-0 animate-[techOrbitOne_38s_linear_infinite_reverse] rounded-full">
+            <div className="absolute right-[9%] top-[17%] h-4 w-4 rounded-full bg-[#67e8f9] shadow-[0_0_25px_8px_rgba(103,232,249,0.4)]" />
+          </div>
 
-          <h3
-            className={`mt-1 text-base font-semibold ${
-              dark ? "text-white" : "text-[#171717]"
-            }`}
-          >
-            Frontend Development
-          </h3>
+          {/* Middle orbit */}
+          <div
+            className={`absolute left-1/2 top-1/2 h-[590px] w-[590px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#06b6d4]/25" : "border-[#06b6d4]/16"
+              }`}
+          />
+
+          <div className="absolute left-1/2 top-1/2 h-[590px] w-[590px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_46s_linear_infinite] rounded-full border border-transparent border-b-[#06b6d4]/65 border-l-[#67e8f9]/20">
+            <div className="absolute bottom-[-8px] left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_23px_8px_rgba(103,232,249,0.4)]" />
+          </div>
+
+          <div className="absolute left-1/2 top-1/2 h-[590px] w-[590px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitTwo_31s_linear_infinite_reverse] rounded-full">
+            <div className="absolute left-[7%] top-[18%] h-3.5 w-3.5 rounded-full bg-[#a78bfa] shadow-[0_0_22px_7px_rgba(167,139,250,0.4)]" />
+          </div>
+
+          {/* Inner orbit */}
+          <div
+            className={`absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${dark ? "border-[#c084fc]/20" : "border-[#c084fc]/14"
+              }`}
+          />
+
+          <div className="absolute left-1/2 top-1/2 h-[390px] w-[390px] -translate-x-1/2 -translate-y-1/2 animate-[techOrbitOne_27s_linear_infinite] rounded-full border border-transparent border-t-[#c084fc]/60">
+            <div className="absolute right-[-7px] top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_22px_7px_rgba(192,132,252,0.4)]" />
+          </div>
+
+          <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#8b5cf6]/5 blur-[2px]" />
         </div>
 
-        <div className="relative z-10 space-y-3">
-          {[
-            ["HTML5", 100],
-            ["CSS3", 100],
-            ["JavaScript", 100],
-            ["Tailwind", 90],
-            ["React", 60],
-            ["Next.js", 55],
-            ["Bootstrap", 85],
-            ["TypeScript", 45],
-          ].map(([name, level]) => (
-            <div key={name as string}>
-              <div className="mb-1">
-                <span
-                  className={`text-[10px] font-medium ${
-                    dark ? "text-white/65" : "text-black/60"
+        {/* FLOATING PARTICLES */}
+        <div className="pointer-events-none absolute left-[8%] top-[22%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_5s_ease-in-out_infinite]" />
+
+        <div className="pointer-events-none absolute right-[12%] top-[18%] h-2.5 w-2.5 rounded-full bg-[#c084fc] shadow-[0_0_20px_6px_rgba(192,132,252,0.4)] animate-[techParticle_6s_ease-in-out_infinite_1s]" />
+
+        <div className="pointer-events-none absolute bottom-[18%] left-[12%] h-2 w-2 rounded-full bg-[#a78bfa] shadow-[0_0_18px_5px_rgba(167,139,250,0.4)] animate-[techParticle_5.5s_ease-in-out_infinite_0.5s]" />
+
+        <div className="pointer-events-none absolute bottom-[15%] right-[9%] h-2 w-2 rounded-full bg-[#67e8f9] shadow-[0_0_18px_5px_rgba(103,232,249,0.4)] animate-[techParticle_6.5s_ease-in-out_infinite_1.5s]" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          {/* HEADER */}
+          <div className="mb-5 max-w-2xl">
+            <div className="mb-2 flex items-center gap-3">
+              <span
+                className={`h-px w-8 ${dark ? "bg-[#8b5cf6]" : "bg-[#7c3aed]"
                   }`}
-                >
-                  {name as string}
+              />
+
+              <span
+                className={`text-[10px] font-semibold uppercase tracking-[0.28em] ${dark ? "text-[#a78bfa]" : "text-[#7c3aed]"
+                  }`}
+              >
+                Technologies
+              </span>
+            </div>
+
+            <h2
+              className={`text-3xl font-bold tracking-tight sm:text-4xl ${dark ? "text-white" : "text-[#171717]"
+                }`}
+            >
+              Tools I use to
+              <span
+                className={`block ${dark ? "text-[#c084fc]" : "text-[#7c3aed]"
+                  }`}
+              >
+                build & solve.
+              </span>
+            </h2>
+
+            <p
+              className={`mt-2 max-w-xl text-sm leading-5 ${dark ? "text-white/50" : "text-black/50"
+                }`}
+            >
+              A visual overview of the technologies, development tools and
+              technical skills I am currently building with.
+            </p>
+          </div>
+
+          {/* CARDS */}
+          <div className="grid gap-3 md:grid-cols-2">
+            {/* FRONTEND */}
+            <div
+              className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
+                  ? "border-white/8 bg-white/[0.035] hover:border-[#8b5cf6]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(139,92,246,0.15)]"
+                  : "border-black/8 bg-white/55 hover:border-[#8b5cf6]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(139,92,246,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#8b5cf6]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
+
+              <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite] group-hover:h-[2px]" />
+
+              <div className="relative z-10 mb-2.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a78bfa]">
+                  01
                 </span>
+
+                <h3
+                  className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
+                    }`}
+                >
+                  Frontend Development
+                </h3>
               </div>
 
-              <div
-                className={`relative h-[2px] overflow-hidden rounded-full ${
-                  dark ? "bg-white/8" : "bg-black/8"
-                }`}
-              >
-                <div
-                  className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#67e8f9] transition-all duration-500 group-hover:brightness-125"
-                  style={{ width: `${level}%` }}
-                >
-                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
-                </div>
+              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-2">
+                {[
+                  ["HTML5", 100],
+                  ["CSS3", 100],
+                  ["JavaScript", 100],
+                  ["Tailwind", 90],
+                  ["React", 60],
+                  ["Next.js", 55],
+                  ["Bootstrap", 85],
+                  ["TypeScript", 45],
+                ].map(([name, level]) => (
+                  <div key={name as string}>
+                    <div className="mb-1">
+                      <span
+                        className={`text-[10px] font-medium ${dark ? "text-white/70" : "text-black/65"
+                          }`}
+                      >
+                        {name as string}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`relative h-[2px] w-full overflow-hidden rounded-full ${dark ? "bg-white/8" : "bg-black/8"
+                        }`}
+                    >
+                      <div
+                        className="relative h-full rounded-full bg-gradient-to-r from-[#7c3aed] via-[#8b5cf6] to-[#67e8f9]"
+                        style={{ width: `${level}%` }}
+                      >
+                        <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* PROGRAMMING */}
-      <div
-        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
-          dark
-            ? "border-white/8 bg-white/[0.035] hover:border-[#06b6d4]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(6,182,212,0.12)]"
-            : "border-black/8 bg-white/55 hover:border-[#06b6d4]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(6,182,212,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#06b6d4]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
+            {/* PROGRAMMING */}
+            <div
+              className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
+                  ? "border-white/8 bg-white/[0.035] hover:border-[#06b6d4]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(6,182,212,0.15)]"
+                  : "border-black/8 bg-white/55 hover:border-[#06b6d4]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(6,182,212,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#06b6d4]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_1s] group-hover:h-[2px]" />
+              <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_1s] group-hover:h-[2px]" />
 
-        <div className="relative z-10 mb-4">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#06b6d4]">
-            02
-          </span>
-
-          <h3
-            className={`mt-1 text-base font-semibold ${
-              dark ? "text-white" : "text-[#171717]"
-            }`}
-          >
-            Programming & APIs
-          </h3>
-        </div>
-
-        <div className="relative z-10 space-y-3">
-          {[
-            ["C++", 95],
-            ["C#", 80],
-            ["Python", 75],
-            ["REST API", 75],
-            ["JSON", 85],
-            ["Git", 90],
-            ["GitHub", 90],
-          ].map(([name, level]) => (
-            <div key={name as string}>
-              <div className="mb-1">
-                <span
-                  className={`text-[10px] font-medium ${
-                    dark ? "text-white/65" : "text-black/60"
-                  }`}
-                >
-                  {name as string}
+              <div className="relative z-10 mb-2.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#06b6d4]">
+                  02
                 </span>
+
+                <h3
+                  className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
+                    }`}
+                >
+                  Programming & APIs
+                </h3>
               </div>
 
-              <div
-                className={`relative h-[2px] overflow-hidden rounded-full ${
-                  dark ? "bg-white/8" : "bg-black/8"
-                }`}
-              >
-                <div
-                  className="relative h-full rounded-full bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-[#a78bfa] transition-all duration-500 group-hover:brightness-125"
-                  style={{ width: `${level}%` }}
-                >
-                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
-                </div>
+              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-2">
+                {[
+                  ["C++", 95],
+                  ["C#", 80],
+                  ["Python", 75],
+                  ["REST API", 75],
+                  ["JSON", 85],
+                  ["Git", 90],
+                  ["GitHub", 90],
+                ].map(([name, level]) => (
+                  <div key={name as string}>
+                    <div className="mb-1">
+                      <span
+                        className={`text-[10px] font-medium ${dark ? "text-white/70" : "text-black/65"
+                          }`}
+                      >
+                        {name as string}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`relative h-[2px] w-full overflow-hidden rounded-full ${dark ? "bg-white/8" : "bg-black/8"
+                        }`}
+                    >
+                      <div
+                        className="relative h-full rounded-full bg-gradient-to-r from-[#06b6d4] via-[#67e8f9] to-[#a78bfa]"
+                        style={{ width: `${level}%` }}
+                      >
+                        <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* AI & DESIGN */}
-      <div
-        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
-          dark
-            ? "border-white/8 bg-white/[0.035] hover:border-[#c084fc]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(192,132,252,0.12)]"
-            : "border-black/8 bg-white/55 hover:border-[#c084fc]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(192,132,252,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#c084fc]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
+            {/* AI & DESIGN */}
+            <div
+              className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
+                  ? "border-white/8 bg-white/[0.035] hover:border-[#c084fc]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(192,132,252,0.15)]"
+                  : "border-black/8 bg-white/55 hover:border-[#c084fc]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(192,132,252,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#c084fc]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite_2s] group-hover:h-[2px]" />
+              <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite_2s] group-hover:h-[2px]" />
 
-        <div className="relative z-10 mb-4">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c084fc]">
-            03
-          </span>
-
-          <h3
-            className={`mt-1 text-base font-semibold ${
-              dark ? "text-white" : "text-[#171717]"
-            }`}
-          >
-            AI & Design
-          </h3>
-        </div>
-
-        <div className="relative z-10 space-y-3">
-          {[
-            ["AI Integration", 65],
-            ["Figma", 45],
-            ["Canva", 90],
-            ["Word", 90],
-            ["PowerPoint", 90],
-            ["Excel", 80],
-          ].map(([name, level]) => (
-            <div key={name as string}>
-              <div className="mb-1">
-                <span
-                  className={`text-[10px] font-medium ${
-                    dark ? "text-white/65" : "text-black/60"
-                  }`}
-                >
-                  {name as string}
+              <div className="relative z-10 mb-2.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c084fc]">
+                  03
                 </span>
+
+                <h3
+                  className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
+                    }`}
+                >
+                  AI & Design
+                </h3>
               </div>
 
-              <div
-                className={`relative h-[2px] overflow-hidden rounded-full ${
-                  dark ? "bg-white/8" : "bg-black/8"
-                }`}
-              >
-                <div
-                  className="relative h-full rounded-full bg-gradient-to-r from-[#c084fc] via-[#a78bfa] to-[#67e8f9] transition-all duration-500 group-hover:brightness-125"
-                  style={{ width: `${level}%` }}
-                >
-                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_9px_rgba(192,132,252,0.95)]" />
-                </div>
+              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-2">
+                {[
+                  ["AI Integration", 65],
+                  ["Figma", 45],
+                  ["Canva", 90],
+                  ["Word", 90],
+                  ["PowerPoint", 90],
+                  ["Excel", 80],
+                ].map(([name, level]) => (
+                  <div key={name as string}>
+                    <div className="mb-1">
+                      <span
+                        className={`text-[10px] font-medium ${dark ? "text-white/70" : "text-black/65"
+                          }`}
+                      >
+                        {name as string}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`relative h-[2px] w-full overflow-hidden rounded-full ${dark ? "bg-white/8" : "bg-black/8"
+                        }`}
+                    >
+                      <div
+                        className="relative h-full rounded-full bg-gradient-to-r from-[#c084fc] via-[#a78bfa] to-[#67e8f9]"
+                        style={{ width: `${level}%` }}
+                      >
+                        <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#c084fc] shadow-[0_0_9px_rgba(192,132,252,0.95)]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* SUPPORT */}
-      <div
-        className={`group relative overflow-hidden rounded-[20px] border p-4 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${
-          dark
-            ? "border-white/8 bg-white/[0.035] hover:border-[#67e8f9]/40 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(103,232,249,0.12)]"
-            : "border-black/8 bg-white/55 hover:border-[#67e8f9]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(103,232,249,0.10)]"
-        }`}
-      >
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#67e8f9]/15 opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-100" />
+            {/* SUPPORT & WORKFLOW */}
+            <div
+              className={`group relative overflow-hidden rounded-[18px] border px-4 py-3 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${dark
+                  ? "border-white/8 bg-white/[0.035] hover:border-[#67e8f9]/45 hover:bg-white/[0.055] hover:shadow-[0_0_45px_rgba(103,232,249,0.15)]"
+                  : "border-black/8 bg-white/55 hover:border-[#67e8f9]/30 hover:bg-white/80 hover:shadow-[0_0_45px_rgba(103,232,249,0.10)]"
+                }`}
+            >
+              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#67e8f9]/15 opacity-0 blur-[55px] transition-opacity duration-500 group-hover:opacity-100" />
 
-        <div className="pointer-events-none absolute left-0 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_3s] group-hover:h-[2px]" />
+              <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_3s] group-hover:h-[2px]" />
 
-        <div className="relative z-10 mb-4">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#67e8f9]">
-            04
-          </span>
-
-          <h3
-            className={`mt-1 text-base font-semibold ${
-              dark ? "text-white" : "text-[#171717]"
-            }`}
-          >
-            Support & Workflow
-          </h3>
-        </div>
-
-        <div className="relative z-10 space-y-3">
-          {[
-            ["Technical Support", 75],
-            ["Troubleshooting", 80],
-            ["Component Design", 75],
-            ["Responsive Design", 90],
-            ["Problem Solving", 85],
-            ["Team Collaboration", 85],
-          ].map(([name, level]) => (
-            <div key={name as string}>
-              <div className="mb-1">
-                <span
-                  className={`text-[10px] font-medium ${
-                    dark ? "text-white/65" : "text-black/60"
-                  }`}
-                >
-                  {name as string}
+              <div className="relative z-10 mb-2.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#67e8f9]">
+                  04
                 </span>
+
+                <h3
+                  className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
+                    }`}
+                >
+                  Support & Workflow
+                </h3>
               </div>
 
-              <div
-                className={`relative h-[2px] overflow-hidden rounded-full ${
-                  dark ? "bg-white/8" : "bg-black/8"
-                }`}
-              >
-                <div
-                  className="relative h-full rounded-full bg-gradient-to-r from-[#67e8f9] via-[#06b6d4] to-[#8b5cf6] transition-all duration-500 group-hover:brightness-125"
-                  style={{ width: `${level}%` }}
-                >
-                  <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
-                </div>
+              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-2">
+                {[
+                  ["Technical Support", 75],
+                  ["Troubleshooting", 80],
+                  ["Component Design", 75],
+                  ["Responsive Design", 90],
+                  ["Problem Solving", 85],
+                  ["Team Collaboration", 85],
+                ].map(([name, level]) => (
+                  <div key={name as string}>
+                    <div className="mb-1">
+                      <span
+                        className={`text-[10px] font-medium ${dark ? "text-white/70" : "text-black/65"
+                          }`}
+                      >
+                        {name as string}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`relative h-[2px] w-full overflow-hidden rounded-full ${dark ? "bg-white/8" : "bg-black/8"
+                        }`}
+                    >
+                      <div
+                        className="relative h-full rounded-full bg-gradient-to-r from-[#67e8f9] via-[#06b6d4] to-[#8b5cf6]"
+                        style={{ width: `${level}%` }}
+                      >
+                        <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#67e8f9] shadow-[0_0_9px_rgba(103,232,249,0.95)]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
       {/* PROJECTS */}
       <section
         id="projects"
