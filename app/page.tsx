@@ -161,7 +161,6 @@ const experiences = [
     accent: "pink",
   },
 ]
-
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -177,6 +176,10 @@ export default function Home() {
   const [status, setStatus] = useState("")
 
   const dark = darkMode
+
+  const toggleDark = () => {
+    setDarkMode((prev) => !prev)
+  }
 
   const closeMenu = () => {
     setMenuOpen(false)
@@ -226,165 +229,150 @@ export default function Home() {
 
   return (
     <main
-      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${dark
-        ? "bg-[#090718] text-white"
-        : "bg-[#fffaf5] text-[#211b35]"
-        }`}
+      className={`min-h-screen overflow-x-hidden transition-colors duration-700 ease-in-out ${
+        dark
+          ? "bg-[#090718] text-white"
+          : "bg-[#fffaf5] text-[#211b35]"
+      }`}
     >
-      {/* NAVBAR */}
-      <nav
-        className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ${dark
-          ? "border-white/10 bg-[#090718]/80"
-          : "border-[#e8ddd2] bg-[#fffaf5]/85"
-          }`}
+{/* NAVBAR */}
+<nav
+  className={`fixed left-1/2 top-4 z-50 w-[calc(100%-32px)] max-w-6xl -translate-x-1/2 rounded-2xl border backdrop-blur-2xl transition-all duration-300 ${
+    dark
+      ? "border-white/10 bg-[#090718]/55 shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
+      : "border-white/70 bg-white/55 shadow-[0_8px_40px_rgba(124,58,237,0.10)]"
+  }`}
+>
+  {/* Purple / cyan ambient glow */}
+  <div className="pointer-events-none absolute -left-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#7c3aed]/15 blur-3xl" />
+
+  <div className="pointer-events-none absolute -right-10 top-1/2 h-20 w-32 -translate-y-1/2 rounded-full bg-[#06b6d4]/10 blur-3xl" />
+
+  <div className="relative flex h-[68px] items-center justify-between px-5">
+    {/* Logo */}
+    <a
+      href="#home"
+      className="group relative flex items-center gap-2"
+    >
+      <span
+        className={`text-lg font-bold tracking-tight transition-colors ${
+          dark ? "text-white" : "text-[#171225]"
+        }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a
-            href="#home"
-            onClick={closeMenu}
-            aria-label="Go to homepage"
-            className="group text-xl font-black tracking-tight"
-          >
-            <span className={dark ? "text-white" : "text-[#211b35]"}>
-              SY
-            </span>
-            <span className="text-[#a855f7] transition-colors duration-300 group-hover:text-[#06b6d4]">
-              .
-            </span>
-          </a>
+        S<span className="text-[#8b5cf6]">.</span>
+      </span>
 
-          {/* DESKTOP NAVIGATION */}
-          <div className="hidden items-center gap-8 text-sm md:flex">
-            {navItems.map((item) => {
-              const sectionId = item.toLowerCase()
-              const isActive = activeSection === sectionId
+      {/* Logo glow */}
+      <span className="absolute -left-2 top-1/2 -z-10 h-8 w-8 -translate-y-1/2 rounded-full bg-[#8b5cf6]/30 blur-xl transition-all duration-300 group-hover:bg-[#06b6d4]/40" />
+    </a>
 
-              return (
-                <a
-                  key={item}
-                  href={`#${sectionId}`}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`group relative py-2 transition-all duration-300 ${isActive
-                    ? dark
-                      ? "text-white"
-                      : "text-[#7c3aed]"
-                    : dark
-                      ? "text-white/60 hover:text-white"
-                      : "text-[#625a70] hover:text-[#7c3aed]"
-                    }`}
-                >
-                  {item}
-
-                  <span
-                    className={`absolute bottom-0 left-0 h-[2px] rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                  />
-                </a>
-              )
-            })}
-          </div>
-
-          <div className="flex items-center gap-3">
-            {/* THEME BUTTON */}
-            <button
-              type="button"
-              onClick={() => setDarkMode(!darkMode)}
-              aria-label={
-                dark ? "Switch to light mode" : "Switch to dark mode"
-              }
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5 ${dark
-                ? "border-white/15 bg-white/5 text-white hover:border-[#a78bfa]/60 hover:bg-[#8b5cf6]/10"
-                : "border-[#ded3c7] bg-white text-[#211b35] hover:border-[#8b5cf6] hover:bg-[#f3e8ff]"
-                }`}
-            >
-              <span className="hidden sm:inline">
-                {dark ? "☀ Light" : "◐ Dark"}
-              </span>
-
-              <span className="sm:hidden">
-                {dark ? "☀" : "◐"}
-              </span>
-            </button>
-
-            {/* HAMBURGER */}
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              className={`flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-300 md:hidden ${dark
-                ? "border-white/10 bg-white/5"
-                : "border-[#ded3c7] bg-white"
-                }`}
-            >
-              <span
-                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "translate-y-2 rotate-45" : ""
-                  }`}
-              />
-
-              <span
-                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "opacity-0" : ""}`}
-              />
-
-              <span
-                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${dark ? "bg-white" : "bg-[#211b35]"
-                  } ${menuOpen ? "-translate-y-2 -rotate-45" : ""
-                  }`}
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* MOBILE MENU */}
-        <div
-          className={`overflow-hidden border-t transition-all duration-500 ease-in-out md:hidden ${menuOpen
-            ? "max-h-[400px] opacity-100"
-            : "max-h-0 border-transparent opacity-0"
-            } ${dark
-              ? "border-white/10 bg-[#090718]"
-              : "border-[#e8ddd2] bg-[#fffaf5]"
-            }`}
+    {/* Navigation */}
+    <div
+      className={`hidden items-center gap-1 rounded-xl border px-1.5 py-1.5 md:flex ${
+        dark
+          ? "border-white/5 bg-white/[0.03]"
+          : "border-black/5 bg-black/[0.02]"
+      }`}
+    >
+      {[
+        ["Home", "#home"],
+        ["About", "#about"],
+        ["Skills", "#skills"],
+        ["Projects", "#projects"],
+        ["Experience", "#experience"],
+        ["Contact", "#contact"],
+      ].map(([label, href]) => (
+        <a
+          key={href}
+          href={href}
+          className={`group relative rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 ${
+            dark
+              ? "text-white/60 hover:bg-white/[0.06] hover:text-white"
+              : "text-black/55 hover:bg-black/[0.04] hover:text-black"
+          }`}
         >
-          <div className="mx-auto max-w-6xl px-6 py-5">
-            <div className="flex flex-col gap-1">
-              {navItems.map((item, index) => {
-                const sectionId = item.toLowerCase()
-                const isActive = activeSection === sectionId
+          {label}
 
-                return (
-                  <a
-                    key={item}
-                    href={`#${sectionId}`}
-                    onClick={closeMenu}
-                    className={`rounded-xl px-4 py-3 transition-all duration-300 ${isActive
-                      ? dark
-                        ? "bg-white/5 pl-6 text-[#c4b5fd]"
-                        : "bg-[#f3e8ff] pl-6 text-[#7c3aed]"
-                      : dark
-                        ? "text-white/65 hover:bg-white/5 hover:pl-6 hover:text-[#c4b5fd]"
-                        : "text-[#625a70] hover:bg-[#f3e8ff] hover:pl-6 hover:text-[#7c3aed]"
-                      }`}
-                    style={{
-                      transitionDelay: menuOpen
-                        ? `${index * 40}ms`
-                        : "0ms",
-                    }}
-                  >
-                    {item}
-                  </a>
-                )
-              })}
-            </div>
-          </div>
+          {/* Hover glow */}
+          <span className="absolute bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.7)] transition-all duration-300 group-hover:w-4" />
+        </a>
+      ))}
+    </div>
+
+    {/* Right side */}
+    <div className="flex items-center gap-2">
+      {/* Theme button */}
+      <button
+        type="button"
+        onClick={toggleDark}
+        aria-label="Toggle theme"
+        className={`group relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border transition-all duration-300 ${
+          dark
+            ? "border-white/10 bg-white/[0.04] text-white/70 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-white"
+            : "border-black/10 bg-black/[0.03] text-black/60 hover:border-[#8b5cf6]/30 hover:bg-[#8b5cf6]/10 hover:text-black"
+        }`}
+      >
+        <span className="text-sm transition-transform duration-300 group-hover:rotate-12">
+          {dark ? "☀" : "☾"}
+        </span>
+
+        <span className="absolute inset-0 -z-10 rounded-xl bg-[#8b5cf6]/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+      </button>
+
+      {/* Mobile menu button */}
+      <button
+        type="button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Open navigation menu"
+        className={`flex h-9 w-9 items-center justify-center rounded-xl border md:hidden ${
+          dark
+            ? "border-white/10 bg-white/[0.04] text-white"
+            : "border-black/10 bg-black/[0.03] text-black"
+        }`}
+      >
+        <div className="flex flex-col gap-1">
+          <span className="h-[2px] w-4 rounded-full bg-current" />
+          <span className="h-[2px] w-3 rounded-full bg-current" />
+          <span className="h-[2px] w-4 rounded-full bg-current" />
         </div>
-      </nav>
+      </button>
+    </div>
+  </div>
 
-      {/* NAVBAR OFFSET */}
-      <div className="h-[73px]" />
+  {/* Mobile menu */}
+  {menuOpen && (
+    <div
+      className={`border-t px-4 py-3 md:hidden ${
+        dark ? "border-white/10" : "border-black/10"
+      }`}
+    >
+      {[
+        ["Home", "#home"],
+        ["About", "#about"],
+        ["Skills", "#skills"],
+        ["Projects", "#projects"],
+        ["Experience", "#experience"],
+        ["Contact", "#contact"],
+      ].map(([label, href]) => (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setMenuOpen(false)}
+          className={`block rounded-xl px-4 py-3 text-sm transition-colors ${
+            dark
+              ? "text-white/65 hover:bg-white/[0.05] hover:text-white"
+              : "text-black/60 hover:bg-black/[0.04] hover:text-black"
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  )}
+</nav>
 
-      {/* HERO */}
+{/* NAVBAR OFFSET */}
+<div className="h-[73px]" />
       {/* HERO */}
       <section
         id="home"
@@ -634,11 +622,6 @@ export default function Home() {
 
                 {/* Code content */}
                 <div className="relative px-8 py-9 font-mono text-sm leading-8">
-
-                  <div className={dark ? "text-white/25" : "text-black/25"}>
-                    01
-                  </div>
-
                   <div className="pl-6">
                     <span className="text-[#c084fc]">const</span>{" "}
                     <span className={dark ? "text-white" : "text-[#211b35]"}>
