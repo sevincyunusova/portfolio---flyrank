@@ -24,6 +24,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Animated line used inside glass cards */
 @keyframes frameLine {
   0% {
     transform: translateX(-140%);
@@ -52,16 +53,18 @@ body {
   }
 }
 
+/* Technology section moving grid */
 @keyframes techGrid {
   0% {
     transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translate3d(55px, 55px, 0);
+    transform: translate3d(48px, 48px, 0);
   }
 }
 
+/* Technology section ambient glow movement */
 @keyframes techOrbOne {
   0%,
   100% {
@@ -69,7 +72,7 @@ body {
   }
 
   50% {
-    transform: translate3d(100px, 50px, 0) scale(1.15);
+    transform: translate3d(80px, 40px, 0) scale(1.12);
   }
 }
 
@@ -80,7 +83,7 @@ body {
   }
 
   50% {
-    transform: translate3d(-80px, -40px, 0) scale(1.12);
+    transform: translate3d(-70px, -45px, 0) scale(1.1);
   }
 }
 
@@ -91,33 +94,98 @@ body {
   }
 
   50% {
-    transform: translate3d(-50%, -40px, 0) scale(1.12);
+    transform: translate3d(-50%, -35px, 0) scale(1.1);
   }
 }
 
+/* Large technology orbit rotations */
+@keyframes techOrbitOne {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes techOrbitTwo {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Floating particles */
 @keyframes techParticle {
   0%,
   100% {
     transform: translate3d(0, 0, 0);
-    opacity: 0.3;
+    opacity: 0.25;
   }
 
   50% {
-    transform: translate3d(20px, -30px, 0);
-    opacity: 1;
+    transform: translate3d(18px, -24px, 0);
+    opacity: 0.9;
   }
 }
 
+/* Moving light across technology cards */
 @keyframes techLine {
   0% {
-    transform: translateX(-140%);
+    transform: translateX(-150%);
   }
 
   50% {
-    transform: translateX(420%);
+    transform: translateX(500%);
   }
 
   100% {
-    transform: translateX(-140%);
+    transform: translateX(-150%);
+  }
+}
+
+/* About section floating animation */
+@keyframes aboutFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+/* About section animated line */
+@keyframes aboutLine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  50% {
+    transform: translateX(300%);
+  }
+
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
