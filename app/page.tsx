@@ -39,7 +39,6 @@ const projects = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "AI"],
     live: "https://studypilot-coral.vercel.app/",
     github: "https://github.com/sevincyunusova/studypilot",
-    number: "01",
   },
   {
     title: "CineVault",
@@ -48,7 +47,6 @@ const projects = [
     tech: ["React", "JavaScript", "API", "CSS"],
     live: "https://cine-vault-jet.vercel.app/",
     github: "https://github.com/sevincyunusova/CineVault",
-    number: "02",
   },
   {
     title: "SwiftMove",
@@ -57,7 +55,6 @@ const projects = [
     tech: ["HTML", "Tailwind CSS", "JavaScript"],
     live: "https://swiftmove-site.vercel.app/",
     github: "https://github.com/sevincyunusova/swiftmove-site",
-    number: "03",
   },
   {
     title: "Fruitables",
@@ -66,7 +63,6 @@ const projects = [
     tech: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     live: "https://fruitables-site-alpha.vercel.app/",
     github: "https://github.com/sevincyunusova/fruitables-site",
-    number: "04",
   },
   {
     title: "Furni",
@@ -75,7 +71,6 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     live: "https://furni-site-roan.vercel.app/",
     github: "https://github.com/sevincyunusova/furni-site",
-    number: "05",
   },
   {
     title: "RestOrder",
@@ -84,7 +79,6 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     live: "https://sevincyunusova-restorder.vercel.app/",
     github: "https://github.com/sevincyunusova/restorder",
-    number: "06",
   },
 ]
 
@@ -772,7 +766,7 @@ export default function Home() {
                   className={`font-mono text-[11px] tracking-[0.2em] ${dark ? "text-white/25" : "text-black/25"
                     }`}
                 >
-                  01 / ABOUT
+                   ABOUT
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -813,10 +807,10 @@ export default function Home() {
               {/* Mini stats */}
               <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["01", "Frontend"],
-                  ["02", "AI Engineering"],
-                  ["03", "Helpdesk"],
-                  ["04", "Learning"],
+                  ["Frontend"],
+                  ["AI Engineering"],
+                  ["Helpdesk"],
+                  ["Learning"],
                 ].map(([number, label], index) => (
                   <div
                     key={label}
@@ -904,9 +898,6 @@ export default function Home() {
 
                   {/* Code-style identity */}
                   <div className="font-mono text-xs leading-7">
-                    <div className={dark ? "text-white/25" : "text-black/25"}>
-                      01
-                    </div>
 
                     <div className="pl-4">
                       <span className="text-[#c084fc]">const</span>{" "}
@@ -997,9 +988,6 @@ export default function Home() {
 
             <div className="relative">
               <div className="mb-5 flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#a78bfa]">
-                  01
-                </span>
 
                 <span className="text-xl text-[#a78bfa] transition-transform duration-500 group-hover:rotate-12">
                   ◇
@@ -1034,10 +1022,6 @@ export default function Home() {
 
             <div className="relative">
               <div className="mb-5 flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#67e8f9]">
-                  02
-                </span>
-
                 <span className="text-xl text-[#67e8f9] transition-transform duration-500 group-hover:rotate-12">
                   ✦
                 </span>
@@ -1071,10 +1055,6 @@ export default function Home() {
 
             <div className="relative">
               <div className="mb-5 flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#f0abfc]">
-                  03
-                </span>
-
                 <span className="text-xl text-[#f0abfc] transition-transform duration-500 group-hover:rotate-12">
                   ◌
                 </span>
@@ -1155,7 +1135,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                      01 / FRONTEND
+                      FRONTEND
                     </span>
 
                     <h3
@@ -1228,7 +1208,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#06b6d4]">
-                      02 / PROGRAMMING
+                      PROGRAMMING
                     </span>
 
                     <h3
@@ -1296,7 +1276,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#f0abfc]">
-                      03 / AI + DESIGN
+                     AI + DESIGN
                     </span>
 
                     <h3
@@ -1361,7 +1341,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div>
                     <span className="font-mono text-[10px] font-bold tracking-[0.25em] text-[#a78bfa]">
-                      04 / WORKFLOW
+                      WORKFLOW
                     </span>
 
                     <h3
@@ -1565,9 +1545,6 @@ export default function Home() {
               <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite] group-hover:h-[2px]" />
 
               <div className="relative z-10 mb-2.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a78bfa]">
-                  01
-                </span>
 
                 <h3
                   className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
@@ -1626,9 +1603,6 @@ export default function Home() {
               <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_1s] group-hover:h-[2px]" />
 
               <div className="relative z-10 mb-2.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#06b6d4]">
-                  02
-                </span>
 
                 <h3
                   className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
@@ -1686,9 +1660,6 @@ export default function Home() {
               <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#c084fc] to-transparent animate-[techLine_5s_ease-in-out_infinite_2s] group-hover:h-[2px]" />
 
               <div className="relative z-10 mb-2.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c084fc]">
-                  03
-                </span>
 
                 <h3
                   className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
@@ -1745,10 +1716,6 @@ export default function Home() {
               <div className="pointer-events-none absolute left-0 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-[#67e8f9] to-transparent animate-[techLine_5s_ease-in-out_infinite_3s] group-hover:h-[2px]" />
 
               <div className="relative z-10 mb-2.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#67e8f9]">
-                  04
-                </span>
-
                 <h3
                   className={`mt-0.5 text-base font-semibold ${dark ? "text-white" : "text-[#171717]"
                     }`}
@@ -2275,82 +2242,249 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* CONTACT */}
-      <section
-        id="contact"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28"
-      >
+     <section
+  id="contact"
+  className={`relative scroll-mt-24 overflow-hidden border-t ${
+    dark
+      ? "border-white/10 bg-[#090718]"
+      : "border-[#e8ddd2] bg-[#fcf9ff]"
+  }`}
+>
+  {/* BACKGROUND */}
+
+  <div
+    className={`pointer-events-none absolute left-1/2 top-1/2 h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+      dark ? "border-[#8b5cf6]/[0.055]" : "border-[#a855f7]/[0.06]"
+    }`}
+    style={{
+      animation: "techOrbitOne 75s linear infinite",
+    }}
+  >
+    <div
+      className={`absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full ${
+        dark
+          ? "bg-[#67e8f9] shadow-[0_0_18px_rgba(103,232,249,0.9)]"
+          : "bg-[#06b6d4]"
+      }`}
+    />
+  </div>
+
+  <div
+    className={`pointer-events-none absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full border ${
+      dark ? "border-[#06b6d4]/[0.045]" : "border-[#06b6d4]/[0.06]"
+    }`}
+    style={{
+      animation: "techOrbitTwo 52s linear infinite",
+    }}
+  >
+    <div
+      className={`absolute bottom-4 right-12 h-2 w-2 rounded-full ${
+        dark
+          ? "bg-[#c084fc] shadow-[0_0_18px_rgba(192,132,252,0.8)]"
+          : "bg-[#a855f7]"
+      }`}
+    />
+  </div>
+
+  <div
+    className={`pointer-events-none absolute -left-40 top-10 h-[380px] w-[380px] rounded-full blur-[130px] ${
+      dark ? "bg-[#7c3aed]/10" : "bg-[#a855f7]/08"
+    }`}
+    style={{
+      animation: "techOrbOne 15s ease-in-out infinite",
+    }}
+  />
+
+  <div
+    className={`pointer-events-none absolute -right-40 bottom-0 h-[380px] w-[380px] rounded-full blur-[130px] ${
+      dark ? "bg-[#06b6d4]/08" : "bg-[#67e8f9]/08"
+    }`}
+    style={{
+      animation: "techOrbTwo 18s ease-in-out infinite",
+    }}
+  />
+
+  {/* SMALL FLOATING DOTS */}
+
+  <div
+    className={`pointer-events-none absolute left-[9%] top-[25%] h-1.5 w-1.5 rounded-full ${
+      dark
+        ? "bg-[#a78bfa] shadow-[0_0_12px_rgba(167,139,250,0.9)]"
+        : "bg-[#8b5cf6]"
+    }`}
+    style={{
+      animation: "techParticle 6s ease-in-out infinite",
+    }}
+  />
+
+  <div
+    className={`pointer-events-none absolute right-[10%] top-[30%] h-1.5 w-1.5 rounded-full ${
+      dark
+        ? "bg-[#67e8f9] shadow-[0_0_12px_rgba(103,232,249,0.9)]"
+        : "bg-[#06b6d4]"
+    }`}
+    style={{
+      animation: "techParticle 7s ease-in-out infinite 1s",
+    }}
+  />
+
+  {/* MAIN */}
+
+  <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 lg:py-24">
+    <div
+      className={`relative overflow-hidden rounded-[34px] border ${
+        dark
+          ? "border-white/10 bg-[#0d0a1d]/90 shadow-[0_30px_100px_rgba(76,29,149,0.16)]"
+          : "border-[#e3d8e8] bg-white/80 shadow-[0_30px_100px_rgba(168,85,247,0.09)]"
+      }`}
+    >
+      {/* TOP GLOW LINE */}
+
+      <div className="absolute left-0 top-0 h-px w-full overflow-hidden">
         <div
-          className={`relative overflow-hidden rounded-[32px] border p-8 transition-all duration-700 sm:p-12 ${dark
-            ? "border-[#8b5cf6]/30 bg-gradient-to-br from-[#21154a] via-[#17122f] to-[#0d1728]"
-            : "border-[#ddd0e8] bg-gradient-to-br from-[#f5eaff] via-[#fff7fc] to-[#e6faff]"
-            }`}
+          className="h-full w-1/3 bg-gradient-to-r from-transparent via-[#a78bfa] to-transparent"
+          style={{
+            animation: "techLine 6s ease-in-out infinite",
+          }}
+        />
+      </div>
+
+      <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+        {/* LEFT */}
+
+        <div
+          className={`relative overflow-hidden border-b p-8 sm:p-10 lg:border-b-0 lg:border-r lg:p-12 ${
+            dark
+              ? "border-white/10 bg-gradient-to-br from-[#21154a]/70 via-[#120d27]/80 to-[#0d1728]/70"
+              : "border-[#e5dce8] bg-gradient-to-br from-[#f5eaff] via-white to-[#e6faff]"
+          }`}
         >
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#8b5cf6]/20 blur-3xl" />
+          {/* Decorative circle */}
+
+          <div
+            className={`absolute -right-28 -top-28 h-72 w-72 rounded-full blur-[90px] ${
+              dark ? "bg-[#8b5cf6]/20" : "bg-[#a855f7]/15"
+            }`}
+          />
+
+          <div
+            className={`absolute -bottom-24 -left-24 h-64 w-64 rounded-full blur-[90px] ${
+              dark ? "bg-[#06b6d4]/10" : "bg-[#67e8f9]/12"
+            }`}
+          />
 
           <div className="relative">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a78bfa]">
-              Get In Touch
-            </p>
+            <div className="mb-8 flex items-center gap-3">
+              <div className="h-px w-8 bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4]" />
 
-            <h2 className="mt-4 text-4xl font-black sm:text-5xl">
-              Let&apos;s build something.
+              <span className="text-xs font-bold uppercase tracking-[0.28em] text-[#a78bfa]">
+                Get In Touch
+              </span>
+            </div>
+
+            <h2
+              className={`text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl ${
+                dark ? "text-white" : "text-[#211b35]"
+              }`}
+            >
+              Let&apos;s
+              <br />
+              <span className="bg-gradient-to-r from-[#a78bfa] via-[#c084fc] to-[#67e8f9] bg-clip-text text-transparent">
+                talk.
+              </span>
             </h2>
 
             <p
-              className={`mt-5 max-w-2xl leading-7 ${dark ? "text-white/50" : "text-[#665b6f]"
-                }`}
+              className={`mt-7 max-w-sm text-sm leading-7 ${
+                dark ? "text-white/50" : "text-[#6d6572]"
+              }`}
             >
-              I&apos;m open to connecting with developers, teams, and people
-              interested in frontend development and AI-powered web experiences.
+              Have an idea, a project, or simply want to connect? Send me a
+              message and let&apos;s create something meaningful.
             </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {/* CONTACT DETAILS */}
+
+            <div className="mt-9 space-y-4">
               <a
                 href="mailto:yunusovasevinc08@gmail.com"
-                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/5 hover:border-[#a78bfa]/50 hover:bg-white/10"
-                  : "border-[#ddd3e3] bg-white/70 hover:border-[#a855f7]/50"
-                  }`}
+                className="group flex items-center gap-3"
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-[#a78bfa]">
-                  Email
-                </p>
-
-                <p
-                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
-                    }`}
+                <span
+                  className={`flex h-9 w-9 items-center justify-center rounded-xl border text-xs transition-all duration-300 group-hover:scale-110 ${
+                    dark
+                      ? "border-[#8b5cf6]/20 bg-[#8b5cf6]/10 text-[#c4b5fd]"
+                      : "border-[#a855f7]/20 bg-[#f3e8ff] text-[#7c3aed]"
+                  }`}
                 >
-                  yunusovasevinc08@gmail.com
-                </p>
+                  @
+                </span>
+
+                <div>
+                  <p
+                    className={`text-[10px] font-bold uppercase tracking-[0.16em] ${
+                      dark ? "text-white/30" : "text-[#91858f]"
+                    }`}
+                  >
+                    Email
+                  </p>
+
+                  <p
+                    className={`text-sm ${
+                      dark
+                        ? "text-white/70 group-hover:text-[#c4b5fd]"
+                        : "text-[#4d4353] group-hover:text-[#7c3aed]"
+                    }`}
+                  >
+                    yunusovasevinc08@gmail.com
+                  </p>
+                </div>
               </a>
 
               <a
                 href="tel:+994516411470"
-                className={`rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/10 bg-white/5 hover:border-[#67e8f9]/50 hover:bg-white/10"
-                  : "border-[#ddd3e3] bg-white/70 hover:border-[#06b6d4]/50"
-                  }`}
+                className="group flex items-center gap-3"
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-[#67e8f9]">
-                  Phone
-                </p>
-
-                <p
-                  className={`mt-2 text-sm font-medium ${dark ? "text-white/80" : "text-[#332b40]"
-                    }`}
+                <span
+                  className={`flex h-9 w-9 items-center justify-center rounded-xl border text-xs transition-all duration-300 group-hover:scale-110 ${
+                    dark
+                      ? "border-[#06b6d4]/20 bg-[#06b6d4]/10 text-[#67e8f9]"
+                      : "border-[#06b6d4]/20 bg-[#e6faff] text-[#0891b2]"
+                  }`}
                 >
-                  +994 51 641 14 70
-                </p>
+                  ☎
+                </span>
+
+                <div>
+                  <p
+                    className={`text-[10px] font-bold uppercase tracking-[0.16em] ${
+                      dark ? "text-white/30" : "text-[#91858f]"
+                    }`}
+                  >
+                    Phone
+                  </p>
+
+                  <p
+                    className={`text-sm ${
+                      dark
+                        ? "text-white/70 group-hover:text-[#67e8f9]"
+                        : "text-[#4d4353] group-hover:text-[#0891b2]"
+                    }`}
+                  >
+                    +994 51 641 14 70
+                  </p>
+                </div>
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            {/* SOCIAL LINKS */}
+
+            <div className="mt-10 flex flex-wrap gap-2.5">
               <a
                 href="https://www.linkedin.com/in/sevincxan%C4%B1m-yunusova-b21245397/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30"
+                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-4 py-2 text-xs font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25"
               >
                 LinkedIn ↗
               </a>
@@ -2359,10 +2493,11 @@ export default function Home() {
                 href="https://github.com/sevincyunusova"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/15 text-white hover:bg-white/10"
-                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
-                  }`}
+                className={`rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 text-white/65 hover:border-[#67e8f9]/40 hover:text-[#67e8f9]"
+                    : "border-[#d9cddf] text-[#5d5361] hover:border-[#7c3aed]/50 hover:text-[#7c3aed]"
+                }`}
               >
                 GitHub ↗
               </a>
@@ -2371,72 +2506,126 @@ export default function Home() {
                 href="https://canva.link/19vm7ro7zqvgspn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${dark
-                  ? "border-white/15 text-white hover:bg-white/10"
-                  : "border-[#d9cddf] text-[#332b40] hover:bg-white"
-                  }`}
+                className={`rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-300 hover:-translate-y-1 ${
+                  dark
+                    ? "border-white/10 text-white/65 hover:border-[#a78bfa]/40 hover:text-[#a78bfa]"
+                    : "border-[#d9cddf] text-[#5d5361] hover:border-[#7c3aed]/50 hover:text-[#7c3aed]"
+                }`}
               >
                 View CV ↗
               </a>
-
-              <a
-                href="https://calendly.com/yunusovasevinc08/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group rounded-full border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-6 py-3 font-semibold text-[#0891b2] transition-all duration-300 hover:-translate-y-1 hover:border-[#22d3ee] hover:bg-[#22d3ee]/20 hover:shadow-lg hover:shadow-cyan-500/20 dark:text-[#67e8f9]"
-              >
-                <span className="inline-flex items-center gap-2">
-                  Book a meeting
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    ↗
-                  </span>
-                </span>
-              </a>
             </div>
 
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault()
-                setSending(true)
-                setStatus("")
+            {/* CALENDLY */}
 
-                try {
-                  const response = await fetch("/api/contact", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(form),
-                  })
-
-                  const data = await response.json()
-
-                  if (!response.ok) {
-                    throw new Error(data.error || "Failed to send message.")
-                  }
-
-                  setStatus("Message sent successfully!")
-                  setForm({
-                    name: "",
-                    email: "",
-                    message: "",
-                  })
-                } catch (error) {
-                  setStatus(
-                    error instanceof Error
-                      ? error.message
-                      : "Failed to send message."
-                  )
-                } finally {
-                  setSending(false)
-                }
-              }}
-              className="mt-10 max-w-2xl space-y-5"
+            <a
+              href="https://calendly.com/yunusovasevinc08/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group mt-4 inline-flex items-center gap-2 text-xs font-semibold transition-all duration-300 ${
+                dark
+                  ? "text-[#67e8f9] hover:text-white"
+                  : "text-[#0891b2] hover:text-[#7c3aed]"
+              }`}
             >
+              Book a meeting
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT — FORM */}
+
+        <div className="p-8 sm:p-10 lg:p-12">
+          <div className="mb-7 flex items-end justify-between gap-4">
+            <div>
+              <p
+                className={`text-xs font-bold uppercase tracking-[0.22em] ${
+                  dark ? "text-white/35" : "text-[#91858f]"
+                }`}
+              >
+                Send a message
+              </p>
+
+              <h3
+                className={`mt-2 text-2xl font-black ${
+                  dark ? "text-white" : "text-[#211b35]"
+                }`}
+              >
+                Start a conversation.
+              </h3>
+            </div>
+
+            <div
+              className={`hidden items-center gap-2 rounded-full border px-3 py-1.5 sm:flex ${
+                dark
+                  ? "border-white/10 bg-white/[0.03]"
+                  : "border-[#e5dce8] bg-white"
+              }`}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#67e8f9] shadow-[0_0_10px_rgba(103,232,249,0.9)]" />
+
+              <span
+                className={`text-[10px] font-medium ${
+                  dark ? "text-white/40" : "text-[#91858f]"
+                }`}
+              >
+                Open to opportunities
+              </span>
+            </div>
+          </div>
+
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault()
+              setSending(true)
+              setStatus("")
+
+              try {
+                const response = await fetch("/api/contact", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(form),
+                })
+
+                const data = await response.json()
+
+                if (!response.ok) {
+                  throw new Error(data.error || "Failed to send message.")
+                }
+
+                setStatus("Message sent successfully!")
+
+                setForm({
+                  name: "",
+                  email: "",
+                  message: "",
+                })
+              } catch (error) {
+                setStatus(
+                  error instanceof Error
+                    ? error.message
+                    : "Failed to send message."
+                )
+              } finally {
+                setSending(false)
+              }
+            }}
+            className="space-y-5"
+          >
+            {/* NAME + EMAIL */}
+
+            <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm font-semibold"
+                  className={`mb-2 block text-xs font-semibold ${
+                    dark ? "text-white/55" : "text-[#5d5361]"
+                  }`}
                 >
                   Name
                 </label>
@@ -2450,17 +2639,20 @@ export default function Home() {
                   }
                   required
                   placeholder="Your name"
-                  className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
-                    }`}
+                  className={`w-full rounded-2xl border px-4 py-3.5 text-sm outline-none transition-all duration-300 ${
+                    dark
+                      ? "border-white/10 bg-white/[0.035] text-white placeholder:text-white/25 focus:border-[#a78bfa]/60 focus:bg-white/[0.055] focus:shadow-[0_0_25px_rgba(139,92,246,0.08)]"
+                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#a39aa8] focus:border-[#a855f7] focus:shadow-[0_0_25px_rgba(168,85,247,0.08)]"
+                  }`}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-semibold"
+                  className={`mb-2 block text-xs font-semibold ${
+                    dark ? "text-white/55" : "text-[#5d5361]"
+                  }`}
                 >
                   Email
                 </label>
@@ -2474,60 +2666,99 @@ export default function Home() {
                   }
                   required
                   placeholder="your@email.com"
-                  className={`w-full rounded-2xl border px-5 py-4 outline-none transition ${dark
-                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
-                    }`}
+                  className={`w-full rounded-2xl border px-4 py-3.5 text-sm outline-none transition-all duration-300 ${
+                    dark
+                      ? "border-white/10 bg-white/[0.035] text-white placeholder:text-white/25 focus:border-[#a78bfa]/60 focus:bg-white/[0.055] focus:shadow-[0_0_25px_rgba(139,92,246,0.08)]"
+                      : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#a39aa8] focus:border-[#a855f7] focus:shadow-[0_0_25px_rgba(168,85,247,0.08)]"
+                  }`}
                 />
               </div>
+            </div>
 
-              <div>
+            {/* MESSAGE */}
+
+            <div>
+              <div className="mb-2 flex items-center justify-between">
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-sm font-semibold"
+                  className={`block text-xs font-semibold ${
+                    dark ? "text-white/55" : "text-[#5d5361]"
+                  }`}
                 >
                   Message
                 </label>
 
-                <textarea
-                  id="message"
-                  value={form.message}
-                  onChange={(e) =>
-                    setForm({ ...form, message: e.target.value })
-                  }
-                  required
-                  rows={6}
-                  placeholder="Write your message..."
-                  className={`w-full resize-none rounded-2xl border px-5 py-4 outline-none transition ${dark
-                    ? "border-white/10 bg-white/5 text-white placeholder:text-white/60 focus:border-[#a78bfa]"
-                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#8b7f8c] focus:border-[#a855f7]"
-                    }`}
-                />
+                <span
+                  className={`text-[10px] ${
+                    dark ? "text-white/25" : "text-[#a39aa8]"
+                  }`}
+                >
+                  Let&apos;s create something.
+                </span>
               </div>
+
+              <textarea
+                id="message"
+                value={form.message}
+                onChange={(e) =>
+                  setForm({ ...form, message: e.target.value })
+                }
+                required
+                rows={6}
+                placeholder="Tell me about your idea..."
+                className={`w-full resize-none rounded-2xl border px-4 py-3.5 text-sm outline-none transition-all duration-300 ${
+                  dark
+                    ? "border-white/10 bg-white/[0.035] text-white placeholder:text-white/25 focus:border-[#a78bfa]/60 focus:bg-white/[0.055] focus:shadow-[0_0_30px_rgba(139,92,246,0.08)]"
+                    : "border-[#ddd3e3] bg-white/70 text-[#332b40] placeholder:text-[#a39aa8] focus:border-[#a855f7] focus:shadow-[0_0_30px_rgba(168,85,247,0.08)]"
+                }`}
+              />
+            </div>
+
+            {/* SUBMIT */}
+
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
+              <p
+                className={`max-w-[220px] text-[11px] leading-5 ${
+                  dark ? "text-white/30" : "text-[#91858f]"
+                }`}
+              >
+                Your message will be sent directly to my inbox.
+              </p>
 
               <button
                 type="submit"
                 disabled={sending}
-                className="rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-7 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+                className="group rounded-full bg-gradient-to-r from-[#7c3aed] to-[#a855f7] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_35px_rgba(139,92,246,0.3)] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {sending ? "Sending..." : "Send Message"}
-              </button>
+                <span className="inline-flex items-center gap-2">
+                  {sending ? "Sending..." : "Send Message"}
 
-              {status && (
-                <p
-                  className={`text-sm font-medium ${status === "Message sent successfully!"
+                  {!sending && (
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  )}
+                </span>
+              </button>
+            </div>
+
+            {status && (
+              <p
+                className={`text-xs font-medium ${
+                  status === "Message sent successfully!"
                     ? "text-green-500"
                     : "text-red-500"
-                    }`}
-                >
-                  {status}
-                </p>
-              )}
-            </form>
-          </div>
+                }`}
+              >
+                {status}
+              </p>
+            )}
+          </form>
         </div>
-      </section>
-
+      </div>
+    </div>
+  </div>
+</section>
       {/* FOOTER */}
       <footer
         className={`border-t transition-colors duration-700 ${dark ? "border-white/10" : "border-[#e8dfd3]"
