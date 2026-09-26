@@ -21,11 +21,11 @@ The project data is currently managed in `app/page.tsx` inside the `projects` ar
 
 ## Next piece of work
 
-StudyPilot — AI-Powered Study Planner
+Baku Design Academy MVP Project — Frontend Developer
 
 This will be the next portfolio case study.
 
-The case study will focus on the problem StudyPilot solves, my frontend and AI integration work, the technologies and implementation decisions, and the final outcome.
+The case study will focus on the problem the MVP addresses, my frontend implementation and contributions, the technologies and implementation decisions, and the final outcome.
 
 ## Build context
 
